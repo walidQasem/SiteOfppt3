@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordi</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/Viepc.css">
+    <link rel="shortcut icon" type="image/png" href="image/aa1.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300;1,300&family=Spartan:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magnify.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+    
+<div class="ras">
+    <div class="container "  style="display: flex; align-items: center;">
+        <p><i class="bi bi-telephone px-2"  style="font-size: 20px;"></i>Available 24/7 at<a href="tel:(00) 33 169 7720">(00) 33 169 7720</a></p>
+</div>
+</div>
+<style>
+.ras{
+    width: 100%;
+    height: 35px;
+    background-color: rgb(66, 69, 77);
+    color: white;
+    
+}
+.ras p {
+    
+    font-size: 12px;
+}
+.ras a{
+    
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+</style>
+
+
+<header class="header bg-white navbar-white text-white px-3 py-2  ">
+    <div class="container-fluid d-flex align-items-center " style="width:93%;">
+    <a href="#" ><img src="image/LOGOS.png" class="img-fluid" width="230px"></a>
+    <input class=" ms-5 d-none d-lg-block  " type="search" placeholder="search for products" style="height: 43px;border-radius: 5px; outline:  none; padding-left: 10p; border: 1px solid rgb(206, 206, 206); padding-left: 40px; width: 670px;">
+
+    <i class="bi bi-search d-none d-lg-block"  style="position: absolute; font-size: 20px; cursor: pointer; color : rgb(255, 106, 0); margin-left: 283px;"></i>
+    <button class="navbar-toggler d-lg-none    "  data-bs-toggle="collapse" data-bs-target="#mainmenu"><i class="bi bi-list" style="font-size: 30px;"></i></button>
+ 
+    <a href="#"   class="ms-auto d-flex align-items-center" style="text-decoration: none;"><i class="bi bi-person px-2" style="font-size: 25px;  color: rgb(128, 128, 128);"></i>  <p class="text-black d-none d-sm-block " style="font-weight: 500; font-size: 12px;"><span style="font-size: 9px;color: rgb(94, 94, 94) ; font-weight: bold;">Hello,Sign in</span><br>My Account</p> </a>
+  
+
+<!-- <div id="brr" class="d-sm-none d-lg-block" >No products in the cart</div> --> <a href="panier.html"   class="ms-auto d-flex align-items-center p" style="text-decoration: none;"><div id="num">3</div><i class="bi bi-cart2 px-2 mx-2" style="font-size: 25px; color: rgb(133, 133, 133);"></i>  <p class="text-black d-none d-sm-block dropdown-toggle " style="font-size: 12px;"><span  style="font-size: 9px;color: rgb(97, 97, 97) ; font-weight: bold;">My cart</span><br>$1,247.00 </p> </a>
+  
+
+    
+</div>
+
+<!--search sm-->
+<div id="searchsm" style="display: none;"><input class="form-control  d-lg-none  m-auto mt-3" type="search" style="width: 80%;" placeholder="search for products"></div>
+
+<div class="navbar navbar-expand-lg bg-white navbar-dark text-black ">
+    <div class="container ">
+
+
+    <div class="collapse navbar-collapse" id="mainmenu" >
+       
+
+
+
+    <ul class="navbar-nav ">
+        <li class="nav-item d-flex align-items-center  "><i class="bi bi-house px-2" style="font-size: 23px; "></i><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Home</a></li>
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:15px;font-weight: bold">Nos ordinateur</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="nav-link dropdown-item text-dark text-dark ">VERIO</a></li>
+                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark">GERIO</a></li>
+            </ul>
+        </li>
+       
+
+
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:15px;font-weight: bold ">Nos cofrrer</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="nav-link dropdown-item text-dark text-dark ">VERIO</a></li>
+                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark">GERIO</a></li>
+            </ul>
+        </li>
+
+
+
+
+
+
+        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: 600;">Nos fournisseur</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Qui sommes-noun?</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Blog</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px;font-weight: bold;">Espace Client</a></li>
+    </ul>
+</div>    
+</div>
+</div>
+</header>
+<!--header tel sm-->
+<div class="d-lg-none align-items-center  " style="height: 70px; padding-bottom: 20px; width: 100%; background-color: rgb(255, 255, 255); position: fixed;bottom: 0; z-index: 1; border-top: 1px solid rgb(222, 222, 222);">
+    <div class="row d-flex  d-lg-none align-items-center   " style="margin: auto;">
+<div class="col-4" ><button  style="border: none ;outline: none;" class="px-5 btnmin py-2"><i class="bi bi-house" style="font-size: 23px;"></i><p style="font-size: 12px; font-weight: bold; ">Home</p></button></div>
+<div class="col-4" ><button class="btnmin px-5"  style="border: none ;outline: none;  "  data-bs-toggle="collapse" data-bs-target="#mainmenu"><i class="bi bi-list" style="font-size: 30px;"></i><p style="font-size: 12px; font-weight: bold; border: none;">Category</p></button></div>
+<div class="col-4" ><button  style="border: none ;outline: none;  " class="btnmin px-5 py-2" onclick="visible('searchsm')"><i class="bi bi-search" style="font-size: 23px;"></i><p style="font-size: 12px; font-weight: bold;">Search</p></button></div>
+</div></div>
+
+<style>  
+.btnmin{
+    background-color: white;
+    transition: 0.3s;
+    outline: none;
+    box-shadow: 0px;
+    width: 100%;
+}
+.btnmin:hover{
+
+background-color: rgb(231, 231, 231);
+transition: 0.3s;
+box-shadow: inset;
+ box-shadow: 1px 1px 1px white;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---head-->
+
+<div class="container-fluid py-3" style="width: 85%;" >
+ <div class="row d-flex align-items-center">
+
+
+
+
+     <div class="col-sm-9 ">
+<h2 class="mt-4" style="font-weight: bold; color: rgb(92, 92, 92);">Smartwatch Youth Edition</h2>
+<i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
+<i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
+<i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
+<i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
+<i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
+<b class="mx-1" style="color: gray; font-size: 12px;">74 Reviews</b>
+</div>
+
+
+
+
+
+<div class="col-sm  py-3">
+<style>
+    .bi-chevron-right{
+        font-size: 12px;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+</style>
+
+       <a href="index.html"><i class="bi bi-house px-2" style="font-size: 17px;"></i><b style="font-size: 12px; ">home</b></a>
+       <i class="bi bi-chevron-right"></i>
+       <a href="#"><b style="font-size: 12px; ">shop</b></a>
+       <i class="bi bi-chevron-right"></i>
+       <b style="font-size: 10px; color: rgb(102, 102, 102);">Product Page v.2</b>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+</div>
+
+<div class="container-fluid" style="width: 87%;" >
+        <div class="mmm py-2">
+<b id="c1">General Info</b>
+<b  id="c2">Tech Specs</b>
+<b  id="c3" >Reviews<span class="mx-2" style="color: gray;">(74)</span></b>
+<hr>
+    </div>
+
+
+
+
+
+
+
+
+<div id="v2">
+<div class="row d-flex align-items-center">
+    <div class="col d-flex align-items-center">
+<img src="image/p1.jpg" style="width: 150px;" class="img-fluid  px-3">
+<div >
+<b class="py-3" style="font-size: 12px;">Smartwatch Youth Edition</b><br>
+<span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;">$124.99</span>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="col ms-auto d-flex align-items-center justify-content-end py-4  ">
+    <button class="mx-2" id="buy" ><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i></button>
+<select class=" info " style="height: 46px;">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+</select>
+
+<button class="info mx-2"  style="height: 46px;"><i class="bi bi-heart"></i></button>
+<button class="info mx-2"  style="height: 46px;"><i class="bi bi-arrow-repeat " ></i></button>
+</div>
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- table1 -->
+<div class="row">
+
+    <table class="col-md table table-hover ">
+        <tr>
+<th colspan="2">Information générale</th>
+        </tr>
+<tr>
+    <td><b class="tit">Avis Client :</b></td>
+    <td><b class="bit">5</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">HDMI : :</b></td>
+    <td><b class="bit">HDMI</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Microphones intégrés :</b></td>
+    <td><b class="bit">Microphones intégrés</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">ndice de réparabilité (note sur 10) :</b></td>
+    <td><b class="bit">6.1</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Marque :</b></td>
+    <td><b class="bit">Asus</b></td>
+    
+</tr>
+    </table>
+
+
+
+    <table class="col-md table table-hover" >
+        <tr>
+<th colspan="2">Dimension</th>
+        </tr>
+<tr>
+    <td><b class="tit">Poids kg :</b></td>
+    <td><b class="bit">1.65</b></td>
+    
+</tr>
+
+<tr>
+    <td><b class="tit">Hauteur cm :</b></td>
+    <td><b class="bit">22.3</b></td>
+    
+</tr>
+
+
+<tr>
+    <td><b class="tit">Largeur Cm :</b></td>
+    <td><b class="bit">32.3</b></td>
+    
+</tr>
+
+
+<tr>
+    <td><b class="tit">Profondeur cm :</b></td>
+    <td><b class="bit">1.99</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Poids kg :</b></td>
+    <td><b class="bit">1.65</b></td>
+    
+</tr>
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- table2 -->
+<div class="row">
+
+    <table class="col-md table table-hover ">
+        <tr>
+<th colspan="2">Communication / Réseau</th>
+        </tr>
+<tr>
+    <td><b class="tit">Version Bluetooth </b></td>
+    <td><b class="bit">5.0 Low Energy (LE)</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Bluetooth : </b></td>
+    <td><b class="bit">Avec bluetooth</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Norme Wi-Fi : </b></td>
+    <td><b class="bit">IEEE 802.11ax</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Wi-Fi :</b></td>
+    <td><b class="bit">Wi-Fi </b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Wi-Fi :</b></td>
+    <td><b class="bit">Wi-Fi </b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Wi-Fi :</b></td>
+    <td><b class="bit">Wi-Fi </b></td>
+    
+</tr>
+
+
+    </table>
+
+
+
+    <table class="col-md table table-hover" >
+        <tr>
+<th colspan="2">Ecran</th>
+        </tr>
+<tr>
+    <td><b class="tit">Taille standard d'écran d'ordinateur :</b></td>
+    <td><b class="bit">14 pouces</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Ratio surface d'écran sur appareil :</b></td>
+    <td><b class="bit">90</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Luminosité :</b></td>
+    <td><b class="bit">300</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Ecran tactile :</b></td>
+    <td><b class="bit">Ecran tactile</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Qualité max de la résolution de l'ordinateur :</b></td>
+    <td><b class="bit">Full HD</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Technologie d'écran d'ordinateur :</b></td>
+    <td><b class="bit">IPS</b></td>
+    
+</tr>
+
+
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- table2 -->
+<div class="row">
+
+    <table class="col-md table table-hover ">
+        <tr>
+<th colspan="2">Stockage</th>
+        </tr>
+<tr>
+    <td><b class="tit">Capacité totale de stockage (en Go) : </b></td>
+    <td><b class="bit">512</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Capacité SSD :</b></td>
+    <td><b class="bit">512</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">ype de SSD : </b></td>
+    <td><b class="bit">M.2 PCI Express - NVME</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Type de stockage :</b></td>
+    <td><b class="bit">SSD</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Type de stockage :</b></td>
+    <td><b class="bit">SSD</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Type de stockage :</b></td>
+    <td><b class="bit">SSD</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Type de stockage :</b></td>
+    <td><b class="bit">SSD</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Type de stockage :</b></td>
+    <td><b class="bit">SSD</b></td>
+    
+</tr>
+    </table>
+
+
+
+    <table class="col-md table table-hover" >
+        <tr>
+<th colspan="2">Equipement</th>
+        </tr>
+<tr>
+    <td><b class="tit">Norme du clavier :</b></td>
+    <td><b class="bit">Azerty</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Type de clavier d'ordinateur portable :</b></td>
+    <td><b class="bit">Chiclet</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Spécifications audio :</b></td>
+    <td><b class="bit">Haut-Parleurs intégrés</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Rétroéclairage du clavier d'ordinateur portable :</b></td>
+    <td><b class="bit">Rétroéclairage blance</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Capteur : Empreintes (Fingerprint) :</b></td>
+    <td><b class="bit">Sans lecteur d'empreintes digitales</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Pavé numérique :</b></td>
+    <td><b class="bit">Sans pavé numérique</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Webcam :</b></td>
+    <td><b class="bit">Webcam</b></td>
+    
+</tr>
+<tr>
+    <td><b class="tit">Système de refroidissement :</b></td>
+    <td><b class="bit">Ventilateurs</b></td>
+    
+</tr>
+
+
+
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="v3">
+    <div class="row d-flex align-items-center" >
+        <div class="col d-flex align-items-center">
+    <img src="image/p1.jpg" style="width: 150px;" class="img-fluid  px-3">
+    <div >
+    <b class="py-3" style="font-size: 12px;">Smartwatch Youth Edition</b><br>
+    <span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;">$124.99</span>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="col ms-auto d-flex align-items-center justify-content-end py-4   " style="text-align: center;">
+        <button class="mx-2" id="buy" ><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i></button>
+    <select class=" info " style="height: 46px;">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    
+    <button class="info mx-2"  style="height: 46px;"><i class="bi bi-heart"></i></button>
+    <button class="info mx-2"  style="height: 46px;"><i class="bi bi-arrow-repeat " ></i></button>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    <hr>
+    
+
+
+
+
+   <div class="row  d-flex align-items-center">
+       <div class="col-md-4 ">
+           <h1><b style="font-size: 20px;"">74 Reviews</b></h1>
+           <div class="">
+           <i class="bi bi-star-fill"></i>
+           <i class="bi bi-star-fill"></i>
+           <i class="bi bi-star-fill"></i>
+           <i class="bi bi-star-fill"></i>
+           <i class="bi bi-star-fill"></i>
+           <i class="bi bi-star-fill"></i>
+          
+           <b style="font-size: 11px;" class="px-3">4.1 Overall rating</b>
+        </div>
+        <p style="font-weight: bold; font-size: 10px;">58 out of 74 (77%)<br>Customers recommended this product</p>
+       </div>
+<div class="col">
+    
+  
+  
+       <div class="progress my-4 " style="height: 4px;">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+  
+      </div>
+      <div class="progress my-4" style="height: 4px;">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 30%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+        
+      </div>
+      <div class="progress my-4" style="height: 4px;">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+        
+      </div>
+      <div class="progress my-4" style="height: 4px;">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+        
+      </div>
+      <div class="progress my-4" style="height: 4px;">
+        <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+        
+      </div>
+    </div>
+       
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<div class="row">
+    <!--profil1-->
+
+    <div class="col-md-7 ">
+        <div class=" d-flex align-items-center " >
+<img src="image/02.jpg" style="border-radius: 50%; width: 55px;">
+<div>
+<b style="font-size: 11px;">Barbara Palson</b><br>
+<b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
+    </div>
+</div>
+<p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
+<b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
+<div class="d-flex">
+<div class="d-flex align-items-center"   ><i class="bi bi-hand-thumbs-up " onclick="hani(this)"   style="font-size: 22px ;color: green; cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 17</b></i></div>
+<div class="d-flex align-items-center ms-3"><i class="bi bi-hand-thumbs-down"  onclick="hani(this)"    style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--profil2-->
+
+
+
+
+<div class=" d-flex align-items-center py-3" >
+    <img src="image/01.jpg" style="border-radius: 50%; width: 55px;">
+    <div>
+    <b style="font-size: 11px;">Barbara Palson</b><br>
+    <b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
+        </div>
+    </div>
+    <p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
+    <b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
+    <div class="d-flex pb-4">
+<div class="d-flex align-items-center"   ><i class="bi bi-hand-thumbs-up " onclick="hani(this)"    style="font-size: 22px ;color: green; cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 17</b></i></div>
+    <div class="d-flex align-items-center ms-3  "><i class="bi bi-hand-thumbs-down " onclick="hani(this)"    style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<!--profil2-->
+
+
+
+
+<div class=" d-flex align-items-center py-3" >
+    <img src="image/02.jpg" style="border-radius: 50%; width: 55px;">
+    <div>
+    <b style="font-size: 11px;">Barbara Palson</b><br>
+    <b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
+        </div>
+    </div>
+    <p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
+    <b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
+    <div class="d-flex pb-4">
+    <div class="d-flex align-items-center"><i class="bi bi-hand-thumbs-up " onclick="hani(this)"    style="font-size: 22px ;color: green; cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 17</b></i></div>
+    <div class="d-flex align-items-center ms-3"><i class="bi bi-hand-thumbs-down " onclick="hani(this)"   style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--profil2-->
+
+
+
+
+<div class=" d-flex align-items-center py-3" >
+    <img src="image/02.jpg" style="border-radius: 50%; width: 55px;">
+    <div>
+    <b style="font-size: 11px;">Barbara Palson</b><br>
+    <b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
+        </div>
+    </div>
+    <p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
+    <b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
+    <div class="d-flex pb-4">
+    <div class="d-flex align-items-center"><i class="bi bi-hand-thumbs-up jeem " onclick="hani(this)"   style="font-size: 22px ;color: green; cursor: pointer; "><b  style="font-size: 10px;" class="ms-1"> 17</b></i></div>
+    <div class="d-flex align-items-center ms-3"><i class="bi bi-hand-thumbs-down jeem  " onclick="hani(this)"   style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-4 ms-auto py-5">
+<h1><b style="font-size: 20px;">Write a review</b></h1>
+<label><b style="font-size: 13px;">Your name*</b></label>
+<input type="text" class="form-control" style="height: 42px;" required>
+<b style="font-size: 10px; color: gray;">Will be displayed on the comment.</b><br>
+<label class="py-1"><b style="font-size: 13px;" >Your  email*</b></label>
+<input type="email" class="form-control" style="height: 42px;" required>
+<b style="font-size: 10px; color: gray;">Authentication only - we won't spam you.</b><br>
+<label class="py-1"><b>Rating*</b></label>
+<select class="form-select" aria-label="Default select example" style="height: 42px;">
+    <option selected><b>Open this select menu</b></option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <label class="py-2"><b style="font-size: 13px;">Review*</b></label>
+  <textarea  class="form-control" style="height: 140px;"></textarea>
+
+
+
+  <label class="py-2"><b style="font-size: 13px;">Pros</b></label>
+  <textarea  class="form-control" ></textarea>
+
+
+
+
+  <label class="py-2"><b style="font-size: 13px;">Cons</b></label>
+  <textarea  class="form-control"></textarea>
+  <button class=" mino " type="submit">submit Reviews</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="v11">
+<div class="row">
+    <div class="col-2 imagex ">
+        <img src="image/jpk1.jpg"  onmousemove="change(this)" class="img-fluid " style="width: 80px;">
+         <img  src="image/pj2.jpg" onmousemove="change(this)"  class="img-fluid " style="width: 80px;">
+         <img src="image/pj3.jpg"  onmousemove="change(this)" class="img-fluid " style="width: 80px;">
+         <img src="image/pj5.jpg" onmousemove="change(this)" class="img-fluid " style="width: 80px;">
+         
+    </div>
+    <div class="col-6" style="margin: auto;">
+        <img src="image/jpk1.jpg" class="zoom pub img-fluid"  data-magnify-src="image/jpk1.jpg"    >
+    </div>
+    <div class="col-md py-3">
+        <div class="row">
+      
+      
+
+
+
+
+
+
+
+
+
+       <div class="mt-3">
+        <div class="row d-flex align-items-center ">
+    <div class="col " ><b c style="color: blue;font-size: 22px; "  >$124.99 </b></div>
+    <div class="col  " style="margin-left: 20px;"> <span id="spanix"><i class="bi bi-patch-check px-2" style="color: white; font-size: 16px;"></i>Product available</span></div>
+    </div>
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+</div>
+
+
+
+
+
+
+    <div class="mt-3">
+        <div class="row">
+    <select class="col-2 info ">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <button class="col" id="buy" style="margin-left: 20px;"><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i>Add to card</button>
+</div>
+
+
+
+
+
+
+
+
+<div class="mt-3">
+    <div class="row">
+<button class="col info "><i class="bi bi-heart px-2" style="color: balck; font-size:15px;"></i>Add to Wishlist</button>
+<button class="col info  " style="margin-left: 20px;"><i class="bi bi-arrow-repeat px-2" style="color: balck; font-size:16px;"></i>Compart</button>
+</div>
+</div>
+<!---name1-->
+<div class="row">
+<div class="col bobix my-3 py-3">
+    <b class="d-flex align-items-center" style="font-size: 12px;"><i class="bi bi-truck px-3" style="font-size: 22px;" ></i>Shipping options</b>
+    <hr>
+    <div class="d-flex" style="width: 95%; padding-left: 10px;">
+        <p  style="font-size: 11px; font-weight: bold;">Local courier shipping<br><b  style="color: gray;">2 - 4 days</b></p>
+        <p class="ms-auto" style="font-size: 11px; font-weight: bold;">$16.50</p>
+    </div>
+
+    <div class="d-flex" style="width: 95%; padding-left: 10px;">
+        <p  style="font-size: 11px; font-weight: bold;" >UPS ground shipping<br><b  style="color: gray;">2 - 4 days</b></p>
+        <p class="ms-auto" style="font-size: 11px; font-weight: bold;">$19.00</p>
+    </div>
+    <div class="d-flex" style="width: 95%; padding-left: 10px;">
+        <p  style="font-size: 11px; font-weight: bold;">Local pickup from store<br><b style="color: gray;">2 - 4 days</b></p>
+        <p class="ms-auto" style="font-size: 11px; font-weight: bold;">$0.50</p>
+    </div>
+    <hr>
+    <b class="d-flex align-items-center" style="font-size: 11px; font-weight: bold;" ><i class="bi bi-geo-alt px-3" style="font-size: 22px;" ></i>Find in local store</b>
+    <select class="form-select m-auto " style="width: 90%;"  >
+        <option selected>Select your countre</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+</div>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: start; " >
+<b>Share:</b>
+<div class="twitter mx-1">
+<b class="bi bi-twitter "></b><b>twitter</b>
+</div>
+<div class="instagram mx-1">
+    <b class="bi bi-instagram "></b><b>instagram</b>
+    </div>
+    <div class="facebook mx-1">
+        <b class="bi bi-facebook"></b><b>facebook</b>
+        </div>
+
+
+
+
+
+
+</div>
+    </div>
+
+
+        </div>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container py-3">
+    <h1 style="font-weight: bold; text-align: center; font-size: 23px;">You may also like</h1>
+</div>
+
+
+
+
+<!----card-->
+<!-- <div class="lefex"><i class="bi bi-chevron-left"></i></div>
+<div class="reghtix"><i class="bi bi-chevron-right"></i></div> -->
+<div class="container my-5">
+   <div class="row ">
+    <div class="col-sm ckli">
+        <div class="card bg-light text-dark mb-5 " style="border: none;">
+            <img class="card-img-top img-fluid m-auto" src="image/pcc5.png" style="width: 250px;" >
+            <div class="card-body">
+                <div  style="font-size: 11px; color: rgb(126, 126, 126); font-weight: bold;">Computers</div>
+                <div class="card-text py-2" style="font-size: 12px; font-weight: bold; ">pc portable hp victus professionnel</div>
+         <span style="padding-right: 40px;font-size: 18px; color: blue;">1454$</span>
+       
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star"></i>
+        
+             </div>
+             <button class="bott"><i class="bi bi-cart"></i>shoop</button>
+             <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+        </div>
+        
+    </div>
+
+
+ 
+       <div class="col-sm ckli">
+        <div class="card bg-light text-dark mb-5" style="border: none;">
+            <img class="card-img-top img-fluid m-auto" src="image/pcc5.png" style="width: 250px;">
+            <div class="card-body">
+                <div  style="font-size: 11px; color: rgb(126, 126, 126); font-weight: bold;">Computers</div>
+                <div class="card-text py-2" style="font-size: 12px; font-weight: bold; ">pc portable hp victus professionnel</div>
+         <span style="padding-right: 50px;font-size: 18px; color: blue;">1454$</span>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star"></i>
+         
+             </div>
+             <button class="bott"><i class="bi bi-cart"></i>shoop</button>
+             <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-sm ckli">
+        <div class="card bg-light text-dark mb-5" style="border: none;">
+            <img class="card-img-top img-fluid m-auto" src="image/pcc5.png" style="width: 250px;">
+            <div class="card-body">
+                <div  style="font-size: 11px; color: rgb(126, 126, 126); font-weight: bold;">Computers</div>
+                <div class="card-text py-2" style="font-size: 12px; font-weight: bold; ">pc portable hp victus professionnel</div>
+         <span style="padding-right: 50px;font-size: 18px; color: blue;">1454$</span>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star"></i>
+         <i class="bi bi-star"></i>
+         
+             </div>
+             <button class="bott"><i class="bi bi-cart"></i>shoop</button>
+             <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm ckli">
+        <div class="card bg-light text-dark mb-5" style="border: none;">
+            <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
+            <div class="card-body">
+                <div  style="font-size: 11px; color: rgb(126, 126, 126); font-weight: bold;">Computers</div>
+                <div class="card-text py-2" style="font-size: 12px; font-weight: bold; ">pc portable hp victus professionnel</div>
+         <span style="padding-right: 50px;font-size: 20px; color: blue;">1454$</span>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star-fill"></i>
+         <i class="bi bi-star"></i>
+             </div>
+             <button class="bott"><i class="bi bi-cart"></i>shoop</button>
+             <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+<div class="container py-5 " style="border: 1px solid rgb(234, 234, 234);">
+    <div style="padding-bottom: 20px;"><h1 style="font-weight: bold; text-align: center; font-size: 23px;">Cheaper together</h1></div>
+<div class="row d-flex align-items-center" >
+    <div class="col m-auto" style="margin: auto ; text-align: center;">
+<img src="image/pcc5.png" class="img-fluid" style="width: 200px;"><br>
+<b>Your products</b><br>
+<b>pc bureau</b><br>
+<b style="color: blue;">$1412.1</b>
+    </div>
+    <div class="col-1">
+        <b style="font-size: 40px; color: gray;">+</b>
+    </div>
+
+
+
+    <div class="col m-auto" style="margin: auto ; text-align: center;">
+        <img src="image/LD0005523855_2_0005916680.jpg" class="img-fluid" style="width: 200px;"><br>
+        <b>Your products</b><br>
+        <b>Logitech G G502 SE Hero</b><br>
+        <b style="color: blue;">$1412.1</b>
+            </div>
+
+
+
+
+
+
+            <div class="col-1 d-none d-lg-block">
+                <b style="font-size: 40px; color: gray;">=</b>
+            </div>
+<div class="col-md-3 py-5 " style="text-align: center;">
+<b style="color: blue; font-size: 25px;">$2000.5</b><br>
+<button class="btn text-white my-3"  style="  background-image: linear-gradient(to left,rgb(255, 119, 0) , rgb(224, 111, 111)); padding: 10px 60px; font-weight: bold; font-size: 12px; border-radius: 10px;" >purchase together</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </div>
+
+
+
+
+   </div>
+</div>
+
+
+
+<!--fixed-->
+<a href="#"><p id="cor" ><i class="bi bi-arrow-up-circle-fill" style="color: black; font-size: 40px;"></i></p></a>
+<!---footer-->
+<div style="background-color:#2b3445 " class="mt-3">
+<footer class="row container m-auto pt-4">
+
+
+    
+    <div class="col">
+        <b class="bero">QUI SOMMES NOUS ?</b>
+        <div class="lienox">
+        <a href="#" class="d-block">Notre Histoire</a>
+        <a href="#" class="d-block">CGV / Avis clients</a>
+        <a href="#" class="d-block">Données personnelles et Cookies</a>
+        <a href="#" class="d-block">Gérer mes cookies</a>
+        <a href="#" class="d-block">Notre Histoire</a>
+        <a href="#" class="d-block">CGV / Avis clients</a>
+        <a href="#" class="d-block">Données personnelles et Cookies</a>
+        <a href="#" class="d-block">Gérer mes cookies</a>
+        <a href="#" class="d-block">Mentions légales</a>
+
+    </div>
+    </div>
+    <div class="col">
+        <b class="bero">NOUS REJOINDRE :</b>
+        <div class="lienox">
+        <a href="#" class="d-block">Vendez sur ORDISHOP.COM</a>
+        <a href="#" class="d-block">Recrutement</a>
+        <a href="#" class="d-block">wl'École LDLC</a>
+        <a href="#" class="d-block">Marketplace</a>
+        <a href="#" class="d-block">Notre Histoire</a>
+        <a href="#" class="d-block">CGV / Avis clients</a>
+        <a href="#" class="d-block">Données personnelles et Cookies</a>
+
+        <a href="#" class="d-block">Gérer mes cookies</a>
+        <a href="#" class="d-block">Mentions légales</a>
+
+    </div>
+    </div>
+        <div class="col " >
+        <b class="bero">BESOIN D'AIDE ?</b>
+        <div class="lienox">
+        <a href="#" class="d-block">Questions fréquentes</a>
+        <a href="#" class="d-block">Modes de livraison</a>
+        <a href="#" class="d-block">Modes de règlement</a>
+        <a href="#" class="d-block">Garanties et Pack Confort</a>
+        <a href="#" class="d-block">Demander un retour</a>
+        <a href="#" class="d-block">Notre Histoire</a>
+        <a href="#" class="d-block">CGV / Avis clients</a>
+
+    </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm mt-3 text-md-start" style="text-align: center;" >
+        <b class="bero">NOUS CONTACTER :</b><br>
+        <button id="subscip">subscibe</button>
+       <img src="image/iconemail.png" id="emailicon" > <input type="email" id="search">
+  
+       <p id="para" >*Subscribe to our newsletter to receive early discount offers, updates and new products info.</p>
+       <b class="bero">Download our app</b>
+       <!---play-->
+       <div class="fox"  style="text-align: center;">
+        <div class="cbb">
+        <button id="btd2"><img src="image/kk.png">
+        <p>Download on the</p><span>App Store</span></p></button>
+        <button id="btd2"><img src="image/play.png"><p>Download on the</p><span>App Store</span></p></button>
+    </div>
+</div>
+       <!--appel-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</footer>
+<!---pub////-->
+<div class="row m-auto">
+     <div class="col-sm"><div class="rox"><img src="image/icontruck.png"><p>Fast and free delivery<br><span>Free delivery for all orders over $200</span></p></div></div>
+     <div class="col-sm"><div class="rox"><img src="image/icontruck.png"><p>Fast and free delivery<br><span>Free delivery for all orders over $200</span></p></div></div>
+    <div class="col-sm"><div class="rox"><img src="image/iconcasq.png"><p>24/7 customer support<br><span>Friendly 24/7 customer support</span></p></div></div>
+    <div class="col-sm"><div class="rox"> <img src="image/iconcart.png"><p>Secure online payment<br><span>We possess SSL / Secure сertificate</span></p></div>
+  
+</div>
+</div>
+</div>
+ 
+
+</body>
+<script src="js/jquery.magnify.js"  charset="utf-8"></script>
+
+<script src="js/Viepc.js"></script>
+
+</html>
