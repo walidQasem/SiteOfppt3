@@ -19,188 +19,98 @@
 </head>
 <body>
     
-<div class="ras">
-    <div class="container "  style="display: flex; align-items: center;">
-        <p><i class="bi bi-telephone px-2"  style="font-size: 20px;"></i>Available 24/7 at<a href="tel:(00) 33 169 7720">(00) 33 169 7720</a></p>
-</div>
-</div>
-<style>
-.ras{
-    width: 100%;
-    height: 35px;
-    background-color: rgb(66, 69, 77);
-    color: white;
-    
-}
-.ras p {
-    
-    font-size: 12px;
-}
-.ras a{
-    
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-</style>
 
 
-<header class="header bg-white navbar-white text-white px-3 py-2  ">
-    <div class="container-fluid d-flex align-items-center " style="width:93%;">
-    <a href="#" ><img src="image/LOGOS.png" class="img-fluid" width="230px"></a>
-    <input class=" ms-5 d-none d-lg-block  " type="search" placeholder="search for products" style="height: 43px;border-radius: 5px; outline:  none; padding-left: 10p; border: 1px solid rgb(206, 206, 206); padding-left: 40px; width: 670px;">
-
-    <i class="bi bi-search d-none d-lg-block"  style="position: absolute; font-size: 20px; cursor: pointer; color : rgb(255, 106, 0); margin-left: 283px;"></i>
-    <button class="navbar-toggler d-lg-none    "  data-bs-toggle="collapse" data-bs-target="#mainmenu"><i class="bi bi-list" style="font-size: 30px;"></i></button>
+<?php
+// if(isset($_POST['ajpanier'])){
+//     session_start();
+//     $_SESSION['idP']=$_POST['ajpanier'];
  
-    <a href="#"   class="ms-auto d-flex align-items-center" style="text-decoration: none;"><i class="bi bi-person px-2" style="font-size: 25px;  color: rgb(128, 128, 128);"></i>  <p class="text-black d-none d-sm-block " style="font-weight: 500; font-size: 12px;"><span style="font-size: 9px;color: rgb(94, 94, 94) ; font-weight: bold;">Hello,Sign in</span><br>My Account</p> </a>
+//     echo '<div class="alert alert-success"  style="position: absolute;" role="alert">
+//     est Ajouter au panier
+//   </div>';
+//   header("Location:viePC.php");
   
-
-<!-- <div id="brr" class="d-sm-none d-lg-block" >No products in the cart</div> --> <a href="panier.html"   class="ms-auto d-flex align-items-center p" style="text-decoration: none;"><div id="num">3</div><i class="bi bi-cart2 px-2 mx-2" style="font-size: 25px; color: rgb(133, 133, 133);"></i>  <p class="text-black d-none d-sm-block dropdown-toggle " style="font-size: 12px;"><span  style="font-size: 9px;color: rgb(97, 97, 97) ; font-weight: bold;">My cart</span><br>$1,247.00 </p> </a>
-  
-
-    
-</div>
-
-<!--search sm-->
-<div id="searchsm" style="display: none;"><input class="form-control  d-lg-none  m-auto mt-3" type="search" style="width: 80%;" placeholder="search for products"></div>
-
-<div class="navbar navbar-expand-lg bg-white navbar-dark text-black ">
-    <div class="container ">
-
-
-    <div class="collapse navbar-collapse" id="mainmenu" >
-       
-
-
-
-    <ul class="navbar-nav ">
-        <li class="nav-item d-flex align-items-center  "><i class="bi bi-house px-2" style="font-size: 23px; "></i><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Home</a></li>
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:15px;font-weight: bold">Nos ordinateur</a>
-            <ul class="dropdown-menu">
-                <li><a href="#" class="nav-link dropdown-item text-dark text-dark ">VERIO</a></li>
-                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark">GERIO</a></li>
-            </ul>
-        </li>
-       
-
-
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:15px;font-weight: bold ">Nos cofrrer</a>
-            <ul class="dropdown-menu">
-                <li><a href="#" class="nav-link dropdown-item text-dark text-dark ">VERIO</a></li>
-                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark">GERIO</a></li>
-            </ul>
-        </li>
+// }
+?>
 
 
 
 
 
 
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: 600;">Nos fournisseur</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Qui sommes-noun?</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Blog</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px;font-weight: bold;">Espace Client</a></li>
-    </ul>
-</div>    
-</div>
-</div>
-</header>
-<!--header tel sm-->
-<div class="d-lg-none align-items-center  " style="height: 70px; padding-bottom: 20px; width: 100%; background-color: rgb(255, 255, 255); position: fixed;bottom: 0; z-index: 1; border-top: 1px solid rgb(222, 222, 222);">
-    <div class="row d-flex  d-lg-none align-items-center   " style="margin: auto;">
-<div class="col-4" ><button  style="border: none ;outline: none;" class="px-5 btnmin py-2"><i class="bi bi-house" style="font-size: 23px;"></i><p style="font-size: 12px; font-weight: bold; ">Home</p></button></div>
-<div class="col-4" ><button class="btnmin px-5"  style="border: none ;outline: none;  "  data-bs-toggle="collapse" data-bs-target="#mainmenu"><i class="bi bi-list" style="font-size: 30px;"></i><p style="font-size: 12px; font-weight: bold; border: none;">Category</p></button></div>
-<div class="col-4" ><button  style="border: none ;outline: none;  " class="btnmin px-5 py-2" onclick="visible('searchsm')"><i class="bi bi-search" style="font-size: 23px;"></i><p style="font-size: 12px; font-weight: bold;">Search</p></button></div>
-</div></div>
 
-<style>  
-.btnmin{
-    background-color: white;
-    transition: 0.3s;
-    outline: none;
-    box-shadow: 0px;
-    width: 100%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+include "BS.php";
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+// session_start();
+// $id=$_SESSION['id'];
+// $sam=$data->prepare("select * from Produite where idproduit=$id");
+// $sam->execute();
+
+include "HEADER.php";
+
+
+?>
+
+
+
+<?php
+
+
+$id=$_SESSION['id'];
+$sel=$data->prepare("SELECT * FROM Produite WHERE idProduit=:id");
+$sel->bindParam(":id",$id);
+$sel->execute();
+foreach($sel as $men){
+    $img1=$men['imgP'];
+    $img2=$men['img1'];
+    $img3=$men['img2'];
+    $img4=$men['img3'];
+    $img5=$men['img4'];
+    $lib=$men['libelleP'];
+    $marque=$men['MarqueP'];
+    $type=$men['typeP'];
+    $prix=$men['prixP'];
+    $description=$men['descriptionP'];
 }
-.btnmin:hover{
 
-background-color: rgb(231, 231, 231);
-transition: 0.3s;
-box-shadow: inset;
- box-shadow: 1px 1px 1px white;
-}
-</style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
 
 
 
@@ -231,7 +141,7 @@ box-shadow: inset;
 
 
      <div class="col-sm-9 ">
-<h2 class="mt-4" style="font-weight: bold; color: rgb(92, 92, 92);">Smartwatch Youth Edition</h2>
+<h2 class="mt-4" style="font-weight: bold; color: rgb(92, 92, 92);"><?php echo $lib ?></h2>
 <i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
@@ -301,16 +211,16 @@ box-shadow: inset;
 
 
 
-
 <div id="v2">
-<div class="row d-flex align-items-center">
-    <div class="col d-flex align-items-center">
-<img src="image/p1.jpg" style="width: 150px;" class="img-fluid  px-3">
-<div >
-<b class="py-3" style="font-size: 12px;">Smartwatch Youth Edition</b><br>
-<span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;">$124.99</span>
-</div>
-</div>
+    <div class="row d-flex align-items-center" >
+        <div class="col d-flex align-items-center">
+    <img src="image/<?php echo $img1 ?>" style="width: 150px;" class="img-fluid  px-3">
+    <div >
+    <b class="py-3" style="font-size: 12px;"><?php echo $lib ?></b><br>
+    <span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;"><?php echo $prix ?>$</span>
+    </div>
+    </div>
+
 
 
 
@@ -806,18 +716,21 @@ box-shadow: inset;
 
 
 
+
+
+
+
 <div id="v3">
     <div class="row d-flex align-items-center" >
         <div class="col d-flex align-items-center">
-    <img src="image/p1.jpg" style="width: 150px;" class="img-fluid  px-3">
+    <img src="image/<?php echo $img1 ?>" style="width: 150px;" class="img-fluid  px-3">
     <div >
-    <b class="py-3" style="font-size: 12px;">Smartwatch Youth Edition</b><br>
-    <span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;">$124.99</span>
+    <b class="py-3" style="font-size: 12px;"><?php echo $lib ?></b><br>
+    <span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;"><?php echo $prix ?>$</span>
     </div>
-    </div>
-    
-    
-    
+    </div>';
+
+
     
     
     
@@ -1284,72 +1197,69 @@ box-shadow: inset;
 
     <div id="v11">
 <div class="row">
-    <div class="col-2 imagex ">
-        <img src="image/jpk1.jpg"  onmousemove="change(this)" class="img-fluid " style="width: 80px;">
-         <img  src="image/pj2.jpg" onmousemove="change(this)"  class="img-fluid " style="width: 80px;">
-         <img src="image/pj3.jpg"  onmousemove="change(this)" class="img-fluid " style="width: 80px;">
-         <img src="image/pj5.jpg" onmousemove="change(this)" class="img-fluid " style="width: 80px;">
-         
+ 
+   
+
+<div class="col-2 imagex ">
+<img src="image/<?php echo $img2 ?>"  onmousemove="change(this)" class="img-fluid " style="width: 80px;">
+         <img  src="image/<?php echo $img3 ?>" onmousemove="change(this)"  class="img-fluid " style="width: 80px;">
+         <img src="image/<?php echo $img4 ?>"  onmousemove="change(this)" class="img-fluid " style="width: 80px;">
+         <img src="image/<?php echo $img5 ?>" onmousemove="change(this)" class="img-fluid " style="width: 80px;">
     </div>
     <div class="col-6" style="margin: auto;">
-        <img src="image/jpk1.jpg" class="zoom pub img-fluid"  data-magnify-src="image/jpk1.jpg"    >
+        <img src="image/<?php echo $img1 ?>" class="zoom pub img-fluid"  data-magnify-src="image/<?php echo $img1 ?>"   >
     </div>
+  
+ 
     <div class="col-md py-3">
         <div class="row">
-      
-      
-
-
-
-
-
-
-
-
-
+    
        <div class="mt-3">
         <div class="row d-flex align-items-center ">
-    <div class="col " ><b c style="color: blue;font-size: 22px; "  >$124.99 </b></div>
+    <div class="col " ><b c style="color: blue;font-size: 22px; "  ><?php echo $prix ?>$</b></div>
     <div class="col  " style="margin-left: 20px;"> <span id="spanix"><i class="bi bi-patch-check px-2" style="color: white; font-size: 16px;"></i>Product available</span></div>
+    </div>
     </div>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
        
 
 
 
 
 
-
-
-
-
-
-
-
-
-       
-</div>
-
-
-
-
-
+<form method="POST">
 
     <div class="mt-3">
         <div class="row">
     <select class="col-2 info ">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
     </select>
-    <button class="col" id="buy" style="margin-left: 20px;"><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i>Add to card</button>
-</div>
+    
 
+   
+   <button class="col" id="buy" value="<?php echo $id ?>" name="ajpanier" style="margin-left: 20px;"><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i>Add to card</button>';
+
+
+</div>
 
 
 
@@ -1383,14 +1293,26 @@ box-shadow: inset;
     </div>
     <hr>
     <b class="d-flex align-items-center" style="font-size: 11px; font-weight: bold;" ><i class="bi bi-geo-alt px-3" style="font-size: 22px;" ></i>Find in local store</b>
-    <select class="form-select m-auto " style="width: 90%;"  >
-        <option selected>Select your countre</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <select class=" m-auto info "  style="width: 100%;"  >
+        <option selected>Select your Ville</option>
+        <option value="1">safi</option>
+        <option value="2">casa</option>
+        <option value="3">agadir</option>
       </select>
 </div>
 </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
 
 <div style="display: flex; align-items: center; justify-content: start; " >
 <b>Share:</b>
@@ -1706,108 +1628,9 @@ box-shadow: inset;
 
 
 
-<!--fixed-->
-<a href="#"><p id="cor" ><i class="bi bi-arrow-up-circle-fill" style="color: black; font-size: 40px;"></i></p></a>
-<!---footer-->
-<div style="background-color:#2b3445 " class="mt-3">
-<footer class="row container m-auto pt-4">
-
-
-    
-    <div class="col">
-        <b class="bero">QUI SOMMES NOUS ?</b>
-        <div class="lienox">
-        <a href="#" class="d-block">Notre Histoire</a>
-        <a href="#" class="d-block">CGV / Avis clients</a>
-        <a href="#" class="d-block">Données personnelles et Cookies</a>
-        <a href="#" class="d-block">Gérer mes cookies</a>
-        <a href="#" class="d-block">Notre Histoire</a>
-        <a href="#" class="d-block">CGV / Avis clients</a>
-        <a href="#" class="d-block">Données personnelles et Cookies</a>
-        <a href="#" class="d-block">Gérer mes cookies</a>
-        <a href="#" class="d-block">Mentions légales</a>
-
-    </div>
-    </div>
-    <div class="col">
-        <b class="bero">NOUS REJOINDRE :</b>
-        <div class="lienox">
-        <a href="#" class="d-block">Vendez sur ORDISHOP.COM</a>
-        <a href="#" class="d-block">Recrutement</a>
-        <a href="#" class="d-block">wl'École LDLC</a>
-        <a href="#" class="d-block">Marketplace</a>
-        <a href="#" class="d-block">Notre Histoire</a>
-        <a href="#" class="d-block">CGV / Avis clients</a>
-        <a href="#" class="d-block">Données personnelles et Cookies</a>
-
-        <a href="#" class="d-block">Gérer mes cookies</a>
-        <a href="#" class="d-block">Mentions légales</a>
-
-    </div>
-    </div>
-        <div class="col " >
-        <b class="bero">BESOIN D'AIDE ?</b>
-        <div class="lienox">
-        <a href="#" class="d-block">Questions fréquentes</a>
-        <a href="#" class="d-block">Modes de livraison</a>
-        <a href="#" class="d-block">Modes de règlement</a>
-        <a href="#" class="d-block">Garanties et Pack Confort</a>
-        <a href="#" class="d-block">Demander un retour</a>
-        <a href="#" class="d-block">Notre Histoire</a>
-        <a href="#" class="d-block">CGV / Avis clients</a>
-
-    </div>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-
-    <div class="col-sm mt-3 text-md-start" style="text-align: center;" >
-        <b class="bero">NOUS CONTACTER :</b><br>
-        <button id="subscip">subscibe</button>
-       <img src="image/iconemail.png" id="emailicon" > <input type="email" id="search">
-  
-       <p id="para" >*Subscribe to our newsletter to receive early discount offers, updates and new products info.</p>
-       <b class="bero">Download our app</b>
-       <!---play-->
-       <div class="fox"  style="text-align: center;">
-        <div class="cbb">
-        <button id="btd2"><img src="image/kk.png">
-        <p>Download on the</p><span>App Store</span></p></button>
-        <button id="btd2"><img src="image/play.png"><p>Download on the</p><span>App Store</span></p></button>
-    </div>
-</div>
-       <!--appel-->
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</footer>
-<!---pub////-->
-<div class="row m-auto">
-     <div class="col-sm"><div class="rox"><img src="image/icontruck.png"><p>Fast and free delivery<br><span>Free delivery for all orders over $200</span></p></div></div>
-     <div class="col-sm"><div class="rox"><img src="image/icontruck.png"><p>Fast and free delivery<br><span>Free delivery for all orders over $200</span></p></div></div>
-    <div class="col-sm"><div class="rox"><img src="image/iconcasq.png"><p>24/7 customer support<br><span>Friendly 24/7 customer support</span></p></div></div>
-    <div class="col-sm"><div class="rox"> <img src="image/iconcart.png"><p>Secure online payment<br><span>We possess SSL / Secure сertificate</span></p></div>
-  
-</div>
+<?php
+include "FOOTER.php";
+?>
 </div>
 </div>
  

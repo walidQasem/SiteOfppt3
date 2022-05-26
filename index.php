@@ -21,123 +21,10 @@
 
 
 
+<?php
+include "HEADER.php";
+?>
 
-
-
-<div class="ras">
-    <div class="container "  style="display: flex; align-items: center;">
-        <p><i class="bi bi-telephone px-2"  style="font-size: 20px;"></i>Available 24/7 at<a href="tel:(00) 33 169 7720">(00) 33 169 7720</a></p>
-</div>
-</div>
-<style>
-.ras{
-    width: 100%;
-    height: 35px;
-    background-color: rgb(66, 69, 77);
-    color: white;
-    
-}
-.ras p {
-    
-    font-size: 12px;
-}
-.ras a{
-    
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-</style>
-
-
-<header class="header bg-white navbar-white text-white px-3  ">
-    <div class="container-fluid d-flex align-items-center " style="width:93%;">
-    <a href="#" ><img src="image/LOGOS.png" class="img-fluid" width="230px"></a>
-    <input class=" ms-5 d-none d-lg-block  " type="search" placeholder="search for products" style="height: 43px;border-radius: 5px; outline:  none; padding-left: 10p; border: 1px solid rgb(206, 206, 206); padding-left: 40px; width: 670px;">
-
-    <i class="bi bi-search d-none d-lg-block"  style="position: absolute; font-size: 20px; cursor: pointer; color : rgb(255, 106, 0); margin-left: 283px;"></i>
-    <button class="navbar-toggler d-lg-none    "  data-bs-toggle="collapse" data-bs-target="#mainmenu"><i class="bi bi-list" style="font-size: 30px;"></i></button>
- 
-    <a href="login.html"   class="ms-auto d-flex align-items-center" style="text-decoration: none;"><i class="bi bi-person px-2" style="font-size: 25px;  color: rgb(128, 128, 128);"></i>  <p class="text-black d-none d-sm-block " style="font-weight: 500; font-size: 12px;"><span style="font-size: 9px;color: rgb(94, 94, 94) ; font-weight: bold;">Hello,Sign in</span><br>My Account</p> </a>
-  
-
-<!-- <div id="brr" class="d-sm-none d-lg-block" >No products in the cart</div> --> <a href="#"   class="ms-auto d-flex align-items-center p" style="text-decoration: none;"><div id="num">3</div><i class="bi bi-cart2 px-2 mx-2" style="font-size: 25px; color: rgb(133, 133, 133);"></i>  <p class="text-black d-none d-sm-block dropdown-toggle " style="font-size: 12px;"><span  style="font-size: 9px;color: rgb(97, 97, 97) ; font-weight: bold;">My cart</span><br>$1,247.00 </p> </a>
-  
-
-    
-</div>
-
-<!--search sm-->
-<div id="searchsm" style="display: none;"><input class="form-control  d-lg-none  m-auto mt-3" type="search" style="width: 80%;" placeholder="search for products"></div>
-
-<div class="navbar navbar-expand-lg bg-white navbar-dark text-black ">
-    <div class="container ">
-
-
-    <div class="collapse navbar-collapse" id="mainmenu" >
-       
-
-
-
-    <ul class="navbar-nav ">
-        <li class="nav-item d-flex align-items-center  "><i class="bi bi-house px-2" style="font-size: 23px; "></i><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Home</a></li>
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:15px;font-weight: bold">Nos ordinateur</a>
-            <ul class="dropdown-menu">
-                <li><a href="#" class="nav-link dropdown-item text-dark text-dark ">VERIO</a></li>
-                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark">GERIO</a></li>
-            </ul>
-        </li>
-       
-
-
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:15px;font-weight: bold ">Nos cofrrer</a>
-            <ul class="dropdown-menu">
-                <li><a href="#" class="nav-link dropdown-item text-dark text-dark ">VERIO</a></li>
-                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark">GERIO</a></li>
-            </ul>
-        </li>
-
-
-
-
-
-
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: 600;">Nos fournisseur</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Qui sommes-noun?</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px; font-weight: bold;">Blog</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 15px;font-weight: bold;">Espace Client</a></li>
-    </ul>
-</div>    
-</div>
-</div>
-</header>
-<!--header tel sm-->
-<div class="d-lg-none align-items-center  " style="height: 70px; padding-bottom: 20px; width: 100%; background-color: rgb(255, 255, 255); position: fixed;bottom: 0; z-index: 1; border-top: 1px solid rgb(222, 222, 222);">
-    <div class="row d-flex  d-lg-none align-items-center   " style="margin: auto;">
-<div class="col-4" ><button  style="border: none ;outline: none;" class="px-5 btnmin py-2"><i class="bi bi-house" style="font-size: 23px;"></i><p style="font-size: 12px; font-weight: bold; ">Home</p></button></div>
-<div class="col-4" ><button class="btnmin px-5"  style="border: none ;outline: none;  "  data-bs-toggle="collapse" data-bs-target="#mainmenu"><i class="bi bi-list" style="font-size: 30px;"></i><p style="font-size: 12px; font-weight: bold; border: none;">Category</p></button></div>
-<div class="col-4" ><button  style="border: none ;outline: none;  " class="btnmin px-5 py-2" onclick="visible('searchsm')"><i class="bi bi-search" style="font-size: 23px;"></i><p style="font-size: 12px; font-weight: bold;">Search</p></button></div>
-</div></div>
-
-<style>  
-.btnmin{
-    background-color: white;
-    transition: 0.3s;
-    outline: none;
-    box-shadow: 0px;
-    width: 100%;
-}
-.btnmin:hover{
-
-background-color: rgb(231, 231, 231);
-transition: 0.3s;
-box-shadow: inset;
- box-shadow: 1px 1px 1px white;
-}
-</style>
 
 
 
@@ -149,12 +36,12 @@ box-shadow: inset;
     <div class="row d-flex align-items-centere row-reverse ">
 
 
-        <div class="col-md-3">
+        <div class="col-lg-3">
             
-<div class="maina my-3"><img src="image/pcc5.png" style="width: 110px;"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
-<div class="maina my-3"><img src="image/casq.png" style="width: 110px;"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
+<div class="maina my-3"><img src="image/pcc5.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
+<div class="maina my-3"><img src="image/casq.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
 
-<div class="maina my-3"><img src="image/pcc3.png" style="width: 110px;"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
+<div class="maina my-3"><img src="image/pcc3.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
         </div>
 
 <style>
@@ -176,7 +63,7 @@ box-shadow: inset;
             <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
             <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
             <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
-            <button  class="btn1 mt-5 text-white d-flex align-items-center  "  >Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button>
+            <a href="shopNew.php"><button  class="btn1 mt-5 text-white d-flex align-items-center  "  >Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
         </div>
 
 <div class="col "><img src="image/download.jpg" style="width: 100%; " class="img-fluid w-60 "></div>
@@ -292,11 +179,10 @@ box-shadow: inset;
         <hr>
     </div>
    <div class="row ">
-
-    <div class="col-sm ckli">
-       
+    <div class="col-sm ckli ">
+        <i class="bi bi-heart main" style="margin-left: 250px;"></i>
         <div class="card bg-light text-dark mb-5" style="border: none;">
-            <a href="viePC.html"><img class="card-img-top img-fluid m-auto d-flex justify-content-center"src="image/p1.jpg" style="width: 250px;"></a>
+            <a href="viePC.php"><img class="card-img-top img-fluid m-auto d-flex justify-content-center"src="image/p1.jpg" style="width: 250px;"></a>
             <div class="card-body">
                 <div  style="font-size: 11px; color: rgb(126, 126, 126); font-weight: bold;">Computers</div>
                 <div class="card-text py-2" style="font-size: 12px; font-weight: bold; ">pc portable hp victus professionnel</div>
@@ -318,6 +204,7 @@ box-shadow: inset;
  
   
     <div class="col-sm ckli">
+        <i class="bi bi-heart main" style="margin-left: 250px;"></i>
         <div class="card bg-light text-dark mb-5" style="border: none;">
             <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
             <div class="card-body">
@@ -340,6 +227,7 @@ box-shadow: inset;
 
 
     <div class="col-sm ckli">
+        <i class="bi bi-heart main" style="margin-left: 250px;"></i>
         <div class="card bg-light text-dark mb-5" style="border: none;">
             <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
             <div class="card-body">
@@ -376,6 +264,7 @@ box-shadow: inset;
 
 
     <div class="col-sm ckli">
+        <i class="bi bi-heart main" style="margin-left: 250px;"></i>
         <div class="card bg-light text-dark mb-5" style="border: none;">
             <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
             <div class="card-body">
@@ -420,6 +309,7 @@ box-shadow: inset;
     <div class="row ">
  
         <div class="col-sm ckli">
+            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -442,6 +332,7 @@ box-shadow: inset;
   
 
         <div class="col-sm ckli">
+            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -464,6 +355,7 @@ box-shadow: inset;
  
 
         <div class="col-sm ckli">
+            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -502,6 +394,7 @@ box-shadow: inset;
  
 
         <div class="col-sm ckli">
+            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -726,108 +619,22 @@ box-shadow: inset;
         <p class="p2">#ordishop</p>
     </div>
 </div> 
-<!--fixed-->
-<a href="#"><p id="cor" ><i class="bi bi-arrow-up-circle-fill" style="color: black; font-size: 40px;"></i></p></a>
-<!---footer-->
-<div style="background-color:#2b3445 " class="mt-3">
-    <footer class="row container m-auto pt-4">
 
 
-    
-        <div class="col">
-            <b class="bero">QUI SOMMES NOUS ?</b>
-            <div class="lienox">
-            <a href="#" class="d-block">Notre Histoire</a>
-            <a href="#" class="d-block">CGV / Avis clients</a>
-            <a href="#" class="d-block">Données personnelles et Cookies</a>
-            <a href="#" class="d-block">Gérer mes cookies</a>
-            <a href="#" class="d-block">Notre Histoire</a>
-            <a href="#" class="d-block">CGV / Avis clients</a>
-            <a href="#" class="d-block">Données personnelles et Cookies</a>
-            <a href="#" class="d-block">Gérer mes cookies</a>
-            <a href="#" class="d-block">Mentions légales</a>
-    
-        </div>
-        </div>
-        <div class="col">
-            <b class="bero">NOUS REJOINDRE :</b>
-            <div class="lienox">
-            <a href="#" class="d-block">Vendez sur ORDISHOP.COM</a>
-            <a href="#" class="d-block">Recrutement</a>
-            <a href="#" class="d-block">wl'École LDLC</a>
-            <a href="#" class="d-block">Marketplace</a>
-            <a href="#" class="d-block">Notre Histoire</a>
-            <a href="#" class="d-block">CGV / Avis clients</a>
-            <a href="#" class="d-block">Données personnelles et Cookies</a>
-    
-            <a href="#" class="d-block">Gérer mes cookies</a>
-            <a href="#" class="d-block">Mentions légales</a>
-    
-        </div>
-        </div>
-            <div class="col " >
-            <b class="bero">BESOIN D'AIDE ?</b>
-            <div class="lienox">
-            <a href="#" class="d-block">Questions fréquentes</a>
-            <a href="#" class="d-block">Modes de livraison</a>
-            <a href="#" class="d-block">Modes de règlement</a>
-            <a href="#" class="d-block">Garanties et Pack Confort</a>
-            <a href="#" class="d-block">Demander un retour</a>
-            <a href="#" class="d-block">Notre Histoire</a>
-            <a href="#" class="d-block">CGV / Avis clients</a>
-    
-        </div>
-        </div>
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        <div class="col-sm mt-3 text-md-start" style="text-align: center;" >
-            <b class="bero">NOUS CONTACTER :</b><br>
-            <button id="subscip">subscibe</button>
-           <img src="image/iconemail.png" id="emailicon" > <input type="email" id="search">
-      
-           <p id="para" >*Subscribe to our newsletter to receive early discount offers, updates and new products info.</p>
-           <b class="bero">Download our app</b>
-           <!---play-->
-           <div class="fox"  style="text-align: center;">
-            <div class="cbb">
-            <button id="btd2"><img src="image/kk.png">
-            <p>Download on the</p><span>App Store</span></p></button>
-            <button id="btd2"><img src="image/play.png"><p>Download on the</p><span>App Store</span></p></button>
-        </div>
-    </div>
-           <!--appel-->
-        </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </footer>
-<!---pub////-->
-<div class="row m-auto">
-     <div class="col-sm"><div class="rox"><img src="image/icontruck.png"><p>Fast and free delivery<br><span>Free delivery for all orders over $200</span></p></div></div>
-     <div class="col-sm"><div class="rox"><img src="image/icontruck.png"><p>Fast and free delivery<br><span>Free delivery for all orders over $200</span></p></div></div>
-    <div class="col-sm"><div class="rox"><img src="image/iconcasq.png"><p>24/7 customer support<br><span>Friendly 24/7 customer support</span></p></div></div>
-    <div class="col-sm"><div class="rox"> <img src="image/iconcart.png"><p>Secure online payment<br><span>We possess SSL / Secure сertificate</span></p></div>
-  
-</div>
+
+
+
+
+
+<?php
+include "FOOTER.php";
+?>
+
+
+
+
+
+
 </div>
 </div>
 

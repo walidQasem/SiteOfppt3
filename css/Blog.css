@@ -399,6 +399,14 @@ font-weight: bold;
     color: white;
     transition: 0.54s;
 }
+.btn15{
+    background-image: linear-gradient(to left,rgb(255, 73, 73),rgb(255, 136, 0));
+    color: white;
+    font-weight: bold;
+}
+.pard{
+    font-size: 12px;
+}
 .pc1 {
     opacity: 1;
     transition: opacity 0.5s linear;
@@ -413,6 +421,16 @@ transition: 0.5s;
     margin-top: 10px;
     margin: auto;
    
+}
+.li{
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 11px;
+}
+.bi-person{
+    font-weight: bold;
+
+    font-size: 22px;
 }
 #add b{
     margin-left: 10px;

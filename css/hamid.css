@@ -371,3 +371,9 @@ font-weight: bold;
         color: white;
         transition: 0.4s;
     }
+.main{
+    
+}
+.main:hover{
+    color: goldenrod;
+}
