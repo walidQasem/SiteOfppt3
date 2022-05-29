@@ -337,7 +337,7 @@ include "HEADER.php";
           <i class="bi bi-star-fill"></i>
           <i class="bi bi-star-fill"></i>
               </div>
-              <button class="bott" name="btn1"  value="'.$te['idProduit'].'"><i class="bi bi-cart"></i>shoop</button>
+              <button class="bott" style="border-radius:5px;" name="btn1"  value="'.$te['idProduit'].'"><i class="bi bi-cart"></i>shoop</button>
           
          </div>
          <hr class="hrex">

@@ -38,6 +38,7 @@
 $bob='none';
 $red='none';
 $user='root';
+$bre="";
 $ps="";
 $data= new PDO("mysql:host=localhost;dbname=ordishop",$user,$ps);
 if(isset($_POST['singin'])){
@@ -47,20 +48,31 @@ if(isset($_POST['singin'])){
     $go->bindParam(':email',$email);
     $go->bindParam(':password',$password);
     $go->execute();
+
     if($go->rowCount()===1){
         foreach($go as $role){
             session_start();
             if($role['role']=="admin"){
                 $_SESSION['email']=$role['emailU'];
                 header('Location:admin.php');
+               
                 
             }
             else{
+                if($role['role']=="user"){
                 $_SESSION['email']=$role['emailU'];
                 header('Location:index.php');
+                
+                }
+
 
             }
         }
+    }
+
+
+    else{
+    $bre="Password in valide";
     }
     }
 ?>
@@ -100,6 +112,7 @@ include "HEADER.php";
 <?php
 $bob='none';
 $red='none';
+$redbo="";
 $user='root';
 $ps="";
 $data= new PDO("mysql:host=localhost;dbname=ordishop",$user,$ps);
@@ -112,6 +125,7 @@ $prenom=strip_tags($_POST['prenom']);
 $email=strip_tags($_POST['email']);
 $tel=strip_tags($_POST['tel']);
 $password=sha1($_POST['password']);
+$password1=sha1($_POST['password1']);
 
 
 $test=$data->prepare("SELECT * FROM user WHERE emailU=:email");
@@ -120,8 +134,10 @@ $test->execute();
 if($test->rowCount()>0){
    $red='block';
    $bob='none';
+   $redbo="Email deja existe!!";
 }
 else{
+    if($password===$password1){
 $var=$data->prepare("INSERT INTO user(nomU,prenomU,ageU,emailU,telU,passwordU,adresseU,role,imgU)VALUES(:nom,:prenom,null,:email,:tel,:password,null,'user','maj.jpg')"); 
 $var->bindParam(":nom",$name);
 $var->bindParam(":prenom",$prenom);
@@ -131,6 +147,12 @@ $var->bindParam(":password",$password);
 $var->execute();
 $bob='block';
 $red='none';
+}
+else{
+    $red='block';
+    $bob='none';
+    $redbo="Le deuxième mot de passe n'est pas le même!!";
+}
 }
 }
 
@@ -147,18 +169,18 @@ $red='none';
 
 <div style="display:<?php echo $bob ;?>; background-color: green; color: white;  font-weight: bold; font-size: 12px; "  id="VRE" class="container alert"  role="alert">enregistré avec succès</div>
 
-<div style="display:<?php echo $red ;?>; background-color: red; color: white; font-weight: bold;  font-size: 12px;"  id="VRE" class="container alert"  role="alert">enregistré avec succès</div>
+<div style="display:<?php echo $red ;?>; background-color: red; color: white; font-weight: bold;  font-size: 12px;"  id="VRE" class="container alert"  role="alert"><?php echo $redbo?></div>
 <div class="col">
 
 
 
     <b class="b8">Nom*</b>
-    <input class="form-control py-2  "  type="text" name='nom' required>
+    <input class="form-control py-2  low"  type="text" name='nom' required value="<?php if(isset($_GET['singup']) AND isset($_GET['nom'])){echo $_GET['nom'];} ?>">
 </div>
 
 <div class="col">
     <b class="b8">Prenom*</b>
-    <input class="form-control py-2" type="text" name='prenom' required>
+    <input class="form-control py-2 low" type="text" name='prenom' required>
 </div>
 
 </div>
@@ -172,12 +194,12 @@ $red='none';
 <div class="row mt-3">
 <div class="col-6">
     <b class="b8">Email-Adresse*</b>
-    <input class="form-control py-2" type="email" name='email' required>
+    <input class="form-control py-2 low" type="email" name='email' required>
 </div>
 
 <div class="col-6">
     <b class="b8">Tel*</b>
-    <input class="form-control py-2" type="tel" name='tel' required>
+    <input class="form-control py-2 low" type="tel" name='tel' required>
 </div>
 
 </div>
@@ -193,14 +215,14 @@ $red='none';
 
 <div class="col-6">
     <b class="b8">Mot de passe*</b>
-    <input class="form-control py-2" type="password" name='password' required>
+    <input class="form-control py-2 low" type="password" name='password' required>
 </div>
 
 
 
 <div class="col-6">
     <b class="b8">Confirmer Mot de passe*</b>
-    <input class="form-control py-2" type="password" name='text' required>
+    <input class="form-control py-2 low" type="password" name='password1' required>
 </div>
 
 </div>
@@ -224,6 +246,11 @@ $red='none';
         display: flex;
         align-items: center;
         
+    }
+    .low{
+        font-size: 11px;
+        font-weight: bold;
+        height: 40px;
     }
 </style>
 
@@ -294,17 +321,17 @@ $red='none';
 <div class="py-3"><b class="py-3" style="font-size: 12px;">Ou via le formulaire ci-dessous</b></div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
-  <input style="font-weight: bold;" name='email1' type="text" class="form-control py-3" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input style="font-weight: bold;" name='email1' type="text" class="form-control py-3 low" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock" style="font-size:22px ;"></i></span>
-  <input style="font-weight: bold;" name='password1'  type="password" class="form-control py-3" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+  <input style="font-weight: bold;" name='password1'  type="password" class="form-control py-3 low" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
 </div>
-
-<div class="d-flex align-items-center">
+<div ><b style="color: red; font-size:12px;" ><?php echo  $bre; ?></b></div>
+<div class="d-flex align-items-center my-2">
     <input required type="checkbox"><b class="b8 mx-3">Souviens-toi de moi</b>
     <a href="#" class="b8 ms-auto" style="text-decoration: none;">mot de passe oublié?</a>
 </div>

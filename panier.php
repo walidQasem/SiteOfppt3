@@ -19,12 +19,18 @@
     
 
 <?php
+include "BS.php";
+if(isset($_POST['che'])){
+    header('location:Checkout.php');
+}
+?>
+
+
+<?php
 include "HEADER.php";
 ?>
 
-<?php
-include "BS.php";
-?>
+
 
 
 
@@ -178,22 +184,58 @@ include "BS.php";
 
 
 
+<form method="POST">
 
-
-<div id="add" class="mt-3 py-3 ">
+<div id="add" class="mt-3 py-3  " style="border-radius: 7px;">
 <b class="py-3">Apply promo code</b>
 <hr>
-
+<input type="text" name='code' class="form-control" placeholder="Code Promo" style="font-size:11px; font-weight: bold;">
+<input type="submit" class="d-flex justify-content-center mt-3 tft">
 </div>
 
 
 
 
+<div class="row">
+<button class="col  mt-3 hos "name='che' ><i class="bi bi-credit-card-2-back mx-2" style="font-size: 25px;"></i>Proceed to Checkout</button>
+
+</div>
+
+
+</form>
 
 
 
 
+<style>
+    .hos{
+        background-image: linear-gradient(to left,rgb(255, 119, 0) , rgb(224, 111, 111));
+        font-weight:bold ;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        border: none;
+        padding: 3px 0px;
+        color: white;
+        
+    }
+    .tft{
+        border: 1px solid orange;
+        border-radius: 5px;
+        color: orange;
+     transition: 0.5s;
+     font-weight: bold;
+     background-color:white;
+    }
+    .tft:hover{
+        color: white;
+        background-color:orange;
+        transition: 0.5s;
 
+    }
+</style>
 
 
 

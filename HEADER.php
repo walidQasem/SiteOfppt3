@@ -41,9 +41,36 @@ else{
 
 
 
-<div class="ras">
+<div class="ras" style="height:40px;display: flex; align-items: center;" >
     <div class="container "  style="display: flex; align-items: center;">
-        <p><i class="bi bi-telephone px-2"  style="font-size: 20px;"></i>Available 24/7 at<a href="tel:(00) 33 169 7720">(00) 33 169 7720</a></p>
+
+
+
+
+
+<ul class="navbar-nav d-flex ">
+<li class="nav-item dropdown d-flex">
+            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold "><img src="image/la-france.png" style="width: 25px; ;"><b style="color: white; font-size: 10px;" class="mx-2">ENG/$</b></a>
+            
+            <ul class="dropdown-menu">
+                <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;"><img src="image/la-france.png" style="width: 25px; ;"><b style="color: white; font-size: 10px;" class="mx-2"></b></a></li>
+                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Coffret ordinateur bureau avec accessoires</b></a></li>
+            </ul>
+        </li>
+ 
+</ul>
+
+<!-- <p><i class="bi bi-telephone px-2"  style="font-size: 20px;"></i><b style="font-size: 10px; color: #DCDCDC;">Available 24/7 at</b><a href="tel:(00) 33 169 7720">(00) 33 169 7720</a></p> -->
+
+
+
+
+
+
+
+
+
+       
 </div>
 </div>
 <style>
@@ -68,12 +95,12 @@ else{
 </style>
 
 
-<header class="header bg-white navbar-white text-white px-3 py-2  ">
+<header class="header bg-white navbar-white text-white px-3   ">
     <div class="container-fluid d-flex align-items-center " style="width:93%;">
-    <a href="#" ><img src="image/logo24.png" class="img-fluid " width="190px"></a>
-    <input class=" ms-5 d-none d-lg-block  " type="search" placeholder="search for products" style="height: 43px;border-radius: 5px; outline:  none; padding-left: 10p; border: 1px solid rgb(206, 206, 206); padding-left: 40px; width: 670px;">
+    <a href="index.php" ><img src="image/logo14.png" class="img-fluid " width="170px"></a>
+    <input class=" ms-5 d-none d-lg-block  " type="search" placeholder="search for products" style="height: 43px;border-radius: 5px; outline:  none; padding-left: 10p; border: 1px solid rgb(206, 206, 206); padding-left: 40px; width: 670px; font-weight: bold; font-size: 12px;">
 
-    <i class="bi bi-search d-none d-lg-block"  style="position: absolute; font-size: 20px; cursor: pointer; color : rgb(255, 106, 0); margin-left: 283px;"></i>
+    <!-- <i class="bi bi-search d-none d-lg-block"  style="position: absolute; font-size: 20px; cursor: pointer; color : rgb(255, 106, 0); margin-left: 283px;"></i> -->
     <button class="navbar-toggler d-lg-none    "  data-bs-toggle="collapse" data-bs-target="#mainmenu"><i class="bi bi-list" style="font-size: 30px;"></i></button>
  
     <a href="login.php"   class="ms-auto d-flex align-items-center" style="text-decoration: none;"><i class=" <?php echo $icon ?> px-2" style="font-size: 25px;  color: rgb(128, 128, 128);"></i>  <p class="text-black d-none d-sm-block " style="font-weight: 500; font-size: 12px;"><span style="font-size: 9px;color: rgb(94, 94, 94) ; font-weight: bold;"><?php echo $gon; ?></span><br><b style="font-size: 11px;"><?php echo $nom." ".$prenom?></b></p> </a>

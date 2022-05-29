@@ -1033,12 +1033,12 @@ foreach($sel as $men){
 <input type="email" class="form-control" style="height: 42px;" required>
 <b style="font-size: 10px; color: gray;">Authentication only - we won't spam you.</b><br>
 <label class="py-1"><b>Rating*</b></label>
-<select class="form-select" aria-label="Default select example" style="height: 42px;">
-    <option selected><b>Open this select menu</b></option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
+<select class=" m-auto info "  style="width: 100%;"  >
+        <option selected>Select your Ville</option>
+        <option value="1">safi</option>
+        <option value="2">casa</option>
+        <option value="3">agadir</option>
+      </select>
   <label class="py-2"><b style="font-size: 13px;">Review*</b></label>
   <textarea  class="form-control" style="height: 140px;"></textarea>
 

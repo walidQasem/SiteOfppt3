@@ -186,14 +186,14 @@ include "HEADER.php";
             <div class="card-body">
                 <div  style="font-size: 11px; color: rgb(126, 126, 126); font-weight: bold;">Computers</div>
                 <div class="card-text py-2" style="font-size: 12px; font-weight: bold; ">pc portable hp victus professionnel</div>
-         <span style="padding-right: 50px;font-size: 20px; color: blue;">1454$</span>
+         <span style="padding-right: 50px;font-size: 14px; color: blue;">1454$</span>
          <i class="bi bi-star-fill"></i>
          <i class="bi bi-star-fill"></i>
          <i class="bi bi-star-fill"></i>
          <i class="bi bi-star-fill"></i>
          <i class="bi bi-star"></i>
              </div>
-             <button class="bott"><i class="bi bi-cart"></i>shoop</button>
+             <button class="bott " style="border-radius:5px;"><i class="bi bi-cart"></i>shoop</button>
              <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
         </div>
     </div>
@@ -217,7 +217,7 @@ include "HEADER.php";
          <i class="bi bi-star-fill"></i>
          <i class="bi bi-star"></i>
              </div>
-             <button class="bott"><i class="bi bi-cart"></i>shoop</button>
+             <button class="bott" ><i class="bi bi-cart"></i>shoop</button>
              <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
         </div>
     </div>

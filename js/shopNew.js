@@ -54,7 +54,7 @@ function girdex(){
         ch[i].children[0].removeAttribute('class')
        
         ch[i].classList.add('col-6')
-        ch[i].classList.add('col-lg-3')
+        ch[i].classList.add('col-lg-4')
         ch[i].classList.add('col-sm-6')
         ch[i].classList.add('col-md-6')
         ch[i].classList.add('ckli')
