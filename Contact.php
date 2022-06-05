@@ -65,11 +65,11 @@
     <div class="col">
         <h4 class="my-2"><b>Drop us a line</b></h4>
         <div class="row mt-2">
-            <div class="col"><label>Your name: *</label><input type="text" class="form-control py-3" placeholder="Walid" required></div>
+            <div class="col"><label>Your name:*</label><input type="text" class="form-control py-3" placeholder="Walid" required></div>
             <div class="col"><label>Email address: *</label><input type="text" class="form-control py-3" placeholder="Qasem" required></div>
         </div>
         <div class="row mt-2">
-            <div class="col"><label>Your phone: *</label><input type="text" class="form-control py-3" placeholder="0621542411" required></div>
+            <div class="col"><label>Your phone:*</label><input type="text" class="form-control py-3" placeholder="0621542411" required></div>
             <div class="col"><label>Subject:</label><input type="text" class="form-control py-3" placeholder="Provide" required></div>
         </div>
         <div class="row mt-2">
