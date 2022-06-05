@@ -128,7 +128,7 @@ justify-content: center;
   border: 2px solid #ddd;
   background-color: #fff;
   border-radius: 100%;
-  z-index: 4;
+ 
   
 }
 
@@ -150,7 +150,7 @@ justify-content: center;
   height: 5px;
   margin: auto 0;
   background-color: #c3c3c3;
-  z-index: 1;
+  
 }
 #checkout-bar.step1:after,
 #checkout-bar.step2:after,
@@ -158,7 +158,7 @@ justify-content: center;
 #checkout-bar.step4:after {
   width: 25%;
   background-color: orange;
-  z-index: 2;
+ 
   -webkit-transition: width 2s;
   /* Safari */
   transition: width 2s;

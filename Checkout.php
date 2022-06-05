@@ -373,7 +373,7 @@ button {
 #checkout-bar.step4:after {
   width: 50%;
   background-color: orange;
-  z-index: 2;
+
   -webkit-transition: width 2s;
   /* Safari */
   transition: width 2s;

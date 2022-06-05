@@ -30,8 +30,17 @@
 
 
 
+<?php 
+include "BS.php";
+$de=$data->prepare("SELECT * FROM produite");
+$user=$data->prepare("SELECT * FROM user");
+$de->execute();
+$user->execute();
+$var=$de->rowCount();
 
+$usere=$user->rowCount();
 
+?>
 
 
 
@@ -74,14 +83,14 @@
 
     <div class="fox">
     <i class="bi bi-people-fill me-4 test" ></i>
-    <div class="s1"><b>450</b><br><b>Peapele</b></div>
+    <div class="s1"><b><?php echo $usere ?></b><br><b>Peapele</b></div>
 </div>
 </div>
 
 <div class="col py-2">
     <div class=" fox">
     <i class="bi bi-cart-fill me-4 test " ></i>
-    <div class="s1"> <b>1000</b><br><b>Produits</b></div>
+    <div class="s1"> <b><?php echo $var ?></b><br><b>Produits</b></div>
 </div>
 </div>
 
@@ -91,7 +100,7 @@
 <div class="col  py-2">
     <div class="fox">
     <i class="bi bi-people-fill me-4 test" ></i>
-    <div class="s1"><b>450</b><br><b>Peapele</b></div>
+    <div class="s1"><b>450</b><br><b>Commande</b></div>
 </div>
 </div>
 

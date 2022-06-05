@@ -50,11 +50,12 @@ if(isset($_POST['singup'])){
     $_POST['img']=$img;
    }
  $bob=$_SESSION['email'];
-    $sup=$data->prepare("UPDATE user SET nomU=:nom,prenomU=:prenom,telU=:tel,imgU=:img WHERE emailU='$bob'");
+    $sup=$data->prepare("UPDATE user SET nomU=:nom,prenomU=:prenom,telU=:tel,imgU=:img,passwordU=:pas  WHERE emailU='$bob'");
     $sup->bindParam(":nom",strip_tags($_POST['nom']));
     $sup->bindParam(":prenom",strip_tags($_POST['prenom']));
     $sup->bindParam(":tel",strip_tags($_POST['tel']));
     $sup->bindParam(":img",strip_tags($_POST['img']));
+    $sup->bindParam(":pas",strip_tags($_POST['password']));
     $sup->execute();
         header("Location:profil.php");
         $bole=true;
@@ -221,7 +222,7 @@ include "HEADER.php";
 
 
 
-<div class="col-md-4 ">
+<div class="col-md-4  p-4 ">
         <div class="d-flex align-items-center">
         <img src="image/<?php echo $img ?>" value="<?php echo $img ?>" style="width:80px;height: 80px; border-radius: 50%;">
         <div class="mx-3">
@@ -279,7 +280,7 @@ if($bole==true){
         <br>
         <b style="color: gray; font-size: 11px;">Upload JPG, GIF or PNG image. 300 x 300 required.</b></div>
 
-        <button name='logo' class="btn btn-danger text-white ms-auto"><i class="bi bi-box-arrow-in-right mx-2"></i>Log out</button>
+        <button name='logo' class="btn btn-danger text-white ms-auto p-1 d-flex justify-content-center" style="border-radius:50%;"><i class="bi bi-box-arrow-in-right mx-2" style="font-size:20px;"></i></button>
     </div>
 
 
@@ -348,18 +349,18 @@ if($bole==true){
 
 
 
-        <div class="row mt-3">
+        <div class="row ">
 
 
 
 
 
-<div class="col">
+<div class="col-sm-6 py-2">
 <b class="b8">Nom</b>
-<input class='form-control in'  value="<?php echo $nom ?>" type='text' name='nom' required>";
+<input class='form-control in'  value="<?php echo $nom ?>" type='text' name='nom' required>
 </div>
 
-<div class="col">
+<div class="col-sm-6 py-2">
     <b class="b8">Prenom</b>
     <input class="form-control in" type="text" value="<?php echo $prenom ?>" name='prenom' required>
 </div>
@@ -372,13 +373,13 @@ if($bole==true){
 
 
 
-<div class="row mt-2">
-<div class="col-6">
+<div class="row ">
+<div class="col-sm-6 py-2">
     <b class="b8">Email-Adresse</b>
     <input class="form-control in" id='email' type="email" value="<?php echo $email ?>" readonly name='email' >
 </div>
 
-<div class="col-6">
+<div class="col-sm-6 py-2">
     <b class="b8">Tel*</b>
     <input class="form-control in" type="tel" value="<?php echo $tel ?>" name='tel' required>
 </div>
@@ -392,18 +393,18 @@ if($bole==true){
 
 
 
-<div class="row mt-4">
+<div class="row ">
 
-<div class="col-6">
+<div class="col-sm-6 py-2">
     <b class="b8">Mot de passe</b>
     <input class="form-control in " type="password" value="<?php echo $password ?>" name='password' required>
 </div>
 
 
 
-<div class="col-6">
+<div class="col-sm-6 py-2">
     <b class="b8">Confirmer Mot de passe</b>
-    <input class="form-control in" type="password" value="<?php echo $password ?>" name='text' required>
+    <input class="form-control in" type="password" value="<?php echo $password ?>" name='password1' required>
 </div>
 
 </div>
@@ -421,16 +422,17 @@ if($bole==true){
         font-weight: 500;
         background-image: linear-gradient(to left,rgb(255, 119, 0) , rgb(224, 111, 111));
         color: white;
-        border-radius: 10px;
+        border-radius: 5px;
         border: none;
-        font-size: 12px;
+        font-size: 10px;
         display: flex;
         align-items: center;
         text-align: center;
+        font-weight: bold;
         
     }
     .in{
-        height: 42px;
+        height: 50px;
         font-weight: bold;
         font-size: 12px;
       

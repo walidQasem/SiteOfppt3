@@ -13,6 +13,7 @@
 <?php 
 include "BS.php";
        session_start();
+       if(!empty($_SESSION['email'])){
        $email=$_SESSION['email'];
        $ee=$data->prepare("SELECT * FROM user WHERE emailU= '$email'");
        $ee->execute();
@@ -21,6 +22,10 @@ include "BS.php";
            $prenom=$me['prenomU'];
            $img=$me['imgU'];
        }
+      }
+      else{
+        header('location:login.php');
+      }
 ?>
 
 
@@ -36,18 +41,91 @@ include "BS.php";
 <div id="mySidenav" class="sidenav">
 <img src="image/pcadmin.png" class="py-4" style="width: 140px; margin-left: 50px;">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="admin.php" class="kok"><i class="bi bi-house-door mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Dashboard</b></a>
-                       <a href="AjouterProduit.php" class="kok"><i class="bi bi-cart-plus mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Add Produits</b></a>
-                       <a href="#" class="kok"><i class="bi bi-house-door mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Dashboard</b></a>
-                       <a href="#" class="kok"><i class="bi bi-house-door mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Dashboard</b></a>
-                       <a href="BlogAdmin.php" class="kok"><i class="bi bi-book-half mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Blog</b></a>
-                       <a href="#" class="kok"><i class="bi bi-house-door mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Dashboard</b></a>
+            
+    <a href="#" class="kok"><i class="bi bi-house-door mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Dashboard</b></a>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    <div class="dropdown my-4">
+    <a  class="dropdown-toggle" data-bs-toggle="dropdown" style="color: white;font-size:15px;cursor: pointer;"><b><i class="bi bi-people  mx-3"></i>user</b></a>
+    <ul class="dropdown-menu jp ms-5" >
+      <li><a class="dropdown-item p-0 gom" href="utilasateurAdmin.php"><b style="font-size:13px;">utilisateur</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="#"><b style="font-size:13px;">Admin</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="login.php"><b style="font-size:13px;">Log out</b></a></li>
+    </ul>
+  </div>
+
+
+  <div class="dropdown my-4">
+    <a  class="dropdown-toggle" data-bs-toggle="dropdown" style="color: white;font-size:15px;cursor: pointer;"><b><i class="bi  bi-bag mx-3"></i>Produit</b></a>
+    <ul class="dropdown-menu jp ms-5">
+      <li><a class="dropdown-item p-0 gom" href="#"><b style="font-size:13px;">Activity Log</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="#"><b style="font-size:13px;">Setting</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="login.php"><b style="font-size:13px;">Log out</b></a></li>
+    </ul>
+  </div>
+
+
+
+  <div class="dropdown my-4">
+    <a  class="dropdown-toggle" data-bs-toggle="dropdown" style="color: white;font-size:15px;cursor: pointer;"><b><i class="bi bi-bookmark  mx-3"></i>Blog</b></a>
+    <ul class="dropdown-menu jp ms-5">
+      <li><a class="dropdown-item p-0 gom" href="#"><b style="font-size:13px;">Activity Log</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="#"><b style="font-size:13px;">Setting</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="login.php"><b style="font-size:13px;">Log out</b></a></li>
+    </ul>
+  </div>
+
+
+  <div class="dropdown my-4">
+    <a  class="dropdown-toggle" data-bs-toggle="dropdown" style="color: white;font-size:15px;cursor: pointer;"><b><i class="bi bi-bookmark  mx-3"></i>Blog</b></a>
+    <ul class="dropdown-menu jp ms-5">
+      <li><a class="dropdown-item p-0 gom" href="BlogAdmin.php"><b style="font-size:13px;">Liste de Blog</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="addBlog.php"><b style="font-size:13px;">Add Blog</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="login.php"><b style="font-size:13px;">Log out</b></a></li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+    
 </div>
 
 
 
-<div class="container">
-<div class="row py-3">
+<div class="container-fluid">
+<div class="row py-3" id="main">
     <div class="col">
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 </div>
@@ -106,10 +184,11 @@ include "BS.php";
 
 </div>
 <script>
+
     function openNav() {
   document.getElementById("mySidenav").style.width = "270px";
   document.getElementById("main").style.marginLeft = "270px";
-  
+  document.querySelector('body').style.overflowX="hidden"
 }
 openNav()
 
@@ -132,7 +211,14 @@ function myFunction() {
   font-family: "Lato", sans-serif;
   transition: background-color .5s;
 }
-
+.jp{
+  background-color: black;
+}
+.gom:hover{
+background-color: #111;
+color: white;
+margin-left: 10px;
+}
 .sidenav {
   height: 100%;
   width: 0;
@@ -183,13 +269,7 @@ color: white;
     
     
 }
-.kok:hover{
-  margin-left: 20px;
-background-color: white;
-border-radius: 5px;
-color: black;
-transition: 0.4s;
-}
+
 
 
 .dark-mode {

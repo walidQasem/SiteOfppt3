@@ -6,7 +6,6 @@ $user='root';
 $ps="";
 $data= new PDO("mysql:host=localhost;dbname=ordishop",$user,$ps);
 if(!isset($_SESSION)){
-
 session_start();
 if(!empty($_SESSION['email'])){
 $go=$data->prepare("SELECT * FROM user WHERE emailU=:email");
@@ -61,16 +60,6 @@ else{
 </ul>
 
 <!-- <p><i class="bi bi-telephone px-2"  style="font-size: 20px;"></i><b style="font-size: 10px; color: #DCDCDC;">Available 24/7 at</b><a href="tel:(00) 33 169 7720">(00) 33 169 7720</a></p> -->
-
-
-
-
-
-
-
-
-
-       
 </div>
 </div>
 <style>
@@ -95,7 +84,7 @@ else{
 </style>
 
 
-<header class="header bg-white navbar-white text-white px-3   ">
+<header class="header bg-white navbar-white text-white px-3    ">
     <div class="container-fluid d-flex align-items-center " style="width:93%;">
     <a href="index.php" ><img src="image/logo14.png" class="img-fluid " width="170px"></a>
     <input class=" ms-5 d-none d-lg-block  " type="search" placeholder="search for products" style="height: 43px;border-radius: 5px; outline:  none; padding-left: 10p; border: 1px solid rgb(206, 206, 206); padding-left: 40px; width: 670px; font-weight: bold; font-size: 12px;">
@@ -106,7 +95,7 @@ else{
     <a href="login.php"   class="ms-auto d-flex align-items-center" style="text-decoration: none;"><i class=" <?php echo $icon ?> px-2" style="font-size: 25px;  color: rgb(128, 128, 128);"></i>  <p class="text-black d-none d-sm-block " style="font-weight: 500; font-size: 12px;"><span style="font-size: 9px;color: rgb(94, 94, 94) ; font-weight: bold;"><?php echo $gon; ?></span><br><b style="font-size: 11px;"><?php echo $nom." ".$prenom?></b></p> </a>
   
 
-<!-- <div id="brr" class="d-sm-none d-lg-block" >No products in the cart</div> --> <a href="panier.php"   class="ms-auto d-flex align-items-center p" style="text-decoration: none;"><div id="num">0</div><i class="bi bi-cart2 px-2 mx-2" style="font-size: 25px; color: rgb(133, 133, 133);"></i>  <p class="text-black d-none d-sm-block dropdown-toggle " style="font-size: 12px;"><span  style="font-size: 9px;color: rgb(97, 97, 97) ; font-weight: bold;">My cart</span><br>$1,247.00 </p> </a>
+<!-- <div id="brr" class="d-sm-none d-lg-block" >No products in the cart</div> --> <a href="panier.php"   class="ms-auto d-flex align-items-center p" style="text-decoration: none;"><div id="num">2</div><i class="bi bi-cart2 px-2 mx-2" style="font-size: 25px; color: rgb(133, 133, 133);"></i>  <p class="text-black d-none d-sm-block dropdown-toggle " style="font-size: 12px;"><span  style="font-size: 9px;color: rgb(97, 97, 97) ; font-weight: bold;">My cart</span><br><b style="font-size:10px;">$1,247.00</b> </p> </a>
   
 
     
@@ -124,7 +113,7 @@ else{
 
 
 
-    <ul class="navbar-nav ">
+    <ul class="navbar-nav py-2">
         <li class="nav-item d-flex align-items-center  "><i class="bi bi-house px-2" style="font-size: 23px; "></i><a href="index.php" class="nav-link text-dark" style=" font-size: 13px; font-weight: bold;">Home</a></li>
         <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold">Nos ordinateur</a>
@@ -151,7 +140,7 @@ else{
 
 
         <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 13px; font-weight: 600;">Nos fournisseur</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 13px; font-weight: bold;">Qui sommes-noun?</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 13px; font-weight: bold;">Qui sommes-nous?</a></li>
         <li class="nav-item"><a href="Blog.php" class="nav-link text-dark" style=" font-size: 14px; font-weight: bold;">Blog</a></li>
 
 
@@ -170,6 +159,14 @@ else{
 
 
 
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold ">Aide</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;">FAQ</b></a></li>
+                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Mentions legales</b></a></li>
+                <li><a href="Contact.php" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Contact</b></a></li>
+            </ul>
+        </li>
 
 
     </ul>

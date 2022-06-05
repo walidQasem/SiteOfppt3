@@ -53,9 +53,10 @@ include "HEADER.php";
 <div class="row mt-5"> 
 <?php
 include "BS.php";
-$data="select * from Bloge order by DateB DESC LIMIT 7";
-$test=mysqli_query($cont,$data);
-foreach($test as $in){
+$da=$data->prepare("select * from Bloge order by DateB DESC LIMIT 7");
+$da->execute();
+foreach($da as $in){
+  
   echo '<div class="col-md col-xl-4 col-lg-4 my-3 ">
   <div class="card ">
       <div class="geeks"><img  src="image/'.$in['imgB'].'" class="card-img-top  m-auto" alt="..."></div>

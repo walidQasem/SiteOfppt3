@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300;1,300&family=Spartan:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/magnify.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        <script src="js/jquery-3.6.0.js"></script>
     </head>
 <body>
 
@@ -319,7 +320,7 @@ include "HEADER.php";
     $var=$data->prepare("select * from Produite");
     $var->execute();
     foreach($var as $te){
-  echo  '<div class="col-6 col-lg-4 col-sm-6 col-md-6 ckli ">
+  echo  '<div class="col-6 col-lg-4 col-sm-6 col-md-6 ckli " id="pro">
  
 
 
@@ -416,7 +417,14 @@ include "FOOTER.php";
 </div>
 </body>
 <script src="js/shopNew.js">
+
+
+//   $("p").mouseout(function(){
+//     $("p").css("background-color", "lightgray");
+//   });
+
+</script>
+<script>
     
 </script>
-<script src="js/jquery-3.6.0.js"></script>
 </html>

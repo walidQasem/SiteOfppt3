@@ -109,14 +109,17 @@ color: rgb(255, 159, 4);
 }
 .card{cursor: pointer;}
 .bott{
-    padding: 3px 20px;
+    padding: 3px 0px;
     border: none;
     background-image: linear-gradient(to left,rgb(255, 119, 0) , rgb(224, 111, 111));
     color: white;
-    border-radius: 9px;
-    font-size: 16px;
+    border-radius: 3px;
+ 
     display: none;
     transition: 1s;
+
+    font-weight: bold;
+    font-size: 10px;
 }
 .bott1{
     padding: 3px 20px;
@@ -124,13 +127,17 @@ color: rgb(255, 159, 4);
     background-color: rgb(240, 240, 240);
     color: rgb(82, 82, 82);
     border-radius: 9px;
-    font-size: 16px;
+    font-size: 11px;
   display: none;
     transition: 1s;
+    font-weight: bold;
     margin-top: 5px;
 }
+.bi-eye{
+    font-size: 20px;
+}
 .bi-cart{
-    font-size: 22px;
+    font-size: 20px;
     margin-right: 20px;
 }
 header{
@@ -332,17 +339,7 @@ font-weight: bold;
         transition: 1s;
 
     }
-    .bott1{
-        padding: 3px 20px;
-        border: none;
-        background-color: rgb(240, 240, 240);
-        color: rgb(82, 82, 82);
-        border-radius: 9px;
-        font-size: 16px;
-      display: none;
-        transition: 1s;
-        margin-top: 7px;
-    }
+
     .ckli:hover .bott1{
         display: block;
         transition: 1s;

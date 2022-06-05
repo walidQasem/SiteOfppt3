@@ -23,17 +23,14 @@
        if(isset($_POST['aff'])){
        $limit=$_POST['limit'];
        }
-
-
-       $sel=$data->prepare("SELECT * FROM bloge order By DateB DESC LIMIT $limit ");
+       $sel=$data->prepare("SELECT * FROM user  ");
        $sel->execute();
-       
        $c=$sel->rowCount();
        if(isset($_POST['supprimere'])){
         $id=$_POST['supprimere'];
-        $rol=$data->prepare("DELETE FROM bloge WHERE idB='$id'");
+        $rol=$data->prepare("DELETE FROM user WHERE idU='$id'");
         $rol->execute();
-        header('Location:BlogAdmin.php');
+        header('Location:utilasateurAdmin.php');
       
     }
 
@@ -69,27 +66,32 @@
 
     }
 
-
     if(isset($_POST['update'])){
-        foreach($sel as $men){
-            $om=$men['imgB'];
+    //     foreach($sel as $men){
+    //         $om=$men['imgB'];
             
         
-        if($_POST['img']==""){
-            $img=$om;
-        }
-        else{
-            $img=$_POST['img'];
-        }
-        }
-    $id=$_POST['id'];
-        $titre=$_POST['titre'];
-        $autour=$_POST['auteur'];
-        $date=$_POST['date'];
-        $dec=$_POST['desc'];
-    $ce=$data->prepare("UPDATE bloge set imgB='$img',titleP='$titre',DateB='$date',decB='$dec',NomL='$autour'  Where idB=$id");
-    $ce->execute();
-    header('Location:BlogAdmin.php');
+    //     if($_POST['img']==""){
+    //         $img=$om;
+    //     }
+    //     else{
+    //         $img=$_POST['img'];
+    //     }
+    //     }
+    // $id=$_POST['id'];
+    //     $titre=$_POST['titre'];
+    //     $autour=$_POST['auteur'];
+    //     $date=$_POST['date'];
+    //     $dec=$_POST['desc'];
+    // $ce=$data->prepare("UPDATE bloge set imgB='$img',titleP='$titre',DateB='$date',decB='$dec',NomL='$autour'  Where idB=$id");
+    // $ce->execute();
+    
+
+    session_start();
+    $_SESSION['id']=$_POST['update'];
+    header('Location:profilUtilasateur.php');
+
+
     }
 
        
@@ -100,17 +102,17 @@
    <div class="container">
 
 <div class="d-flex align-items-center mt-4">
-   <button class="lole my-3">Add New<i class="bi bi-plus-circle mx-2"></i></button>
-      <b style="font-size: 11px; color: grey;" class="mx-2 ms-5">Resultas Page</b>
+   <!-- <button class="lole my-3">Add New<i class="bi bi-plus-circle mx-2"></i></button>
+      <b style="font-size: 11px; color: grey;" class="mx-2 ms-5">Resultas Page</b> -->
       <form method="POST">
-      <select class=" m-auto info " name="limit"  >
+      <!-- <select class=" m-auto info " name="limit"  >
 
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="25">25</option>
         <option value="50">50</option>
-      </select>
-      <button name="aff" class="info " ;><i class="bi bi-eye-fill "></i></button>
+      </select> -->
+      <!-- <button name="aff" class="info " ;><i class="bi bi-eye-fill "></i></button> -->
       </form>
       <input type="search" id="myInput" class="form-control py-2 w-50 ms-auto" name="search" placeholder="Search in Blog...">
 </div>
@@ -119,66 +121,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="add mt-5">
-
-
-      <form method="POST">
-
-<div class="row d-flex m-auto"><div class="col-12">
-
-
-<input type='file'  name="img" id='img' style="display: none;"  class="form-control mt-2" id="customFile">
-       
-       <label for="img" id='ffil' >Add image Blog..<i class="bi bi-cloud-arrow-up mx-2" style="font-size: 40px;"></i></label>
-
-
-
-</div></div>
-<div class="row mt-3">
-    <div class="col-md py-2"><label>Id Blog</label><input type="text" id="id" name="id" class="form-control p-2" readonly></div>
-    <div class="col-md py-2"><label>Titre Blog</label><input type="text" id="titre" name="titre" class="form-control  p-2"></div>
-</div>
-
-
-<div class="row ">
-    <div class="col-md py-2"><label>Auteur</label><input type="text" id="auteur" name="auteur" class="form-control p-2"></div>
-    <div class="col-md py-2"><label>Date</label><input  name="date"  value='<?php echo date('Y-m-d') ?>' type="date" class="form-control  p-2"></div>
-</div>
-
-
-
-
-<div class="row ">
-
-    <div class="col-md-12 py-2"><label>Description</label><textarea rows="8" id="desce" name="desc" style="resize: none;" class="form-control"></textarea></div>
-  
-</div>
-
-
-
-
-
-<div class="row ">
-    <button  class="col-md-4 btn  my-2 d-flex align-items-center justify-content-center " id="btn" name="add"    ;
-"    ><i class="bi bi-node-plus  mx-2 "  style="font-size:24px;"></i>Add Blog</button>
-    <button  class="col-md-2 btn btn-danger ms-2 my-2 close d-flex align-items-center justify-content-center" type="button" style="border-radius:10px;"><i class="bi bi-reply-all mx-2"  style="font-size:23px;"></i>Close</button>
-  
-</div>
-
-</form>
 
 </div>
 
@@ -205,32 +147,31 @@
      
            <tr >
 
-               <th>ID Blog</th>
-               <th>Blog Name</th>
-               <th >Date Blog</th>
-               <th >DEs Blog</th>
-               <th >Auteur Nom</th>
-               <th>Img</th>
-               <th >Update</th>
-               <th >Supprimer</th>
+               <th >ID Utilisateur</th>
+               <th>image</th>
+               <th>UserName</th>
+               <th>Telephon</th>
+    
                
                
            </tr>
-           <tbody id='myTable' >
+           <tbody id='myTable'  >
            <?php
            foreach($sel as $me){
             
                echo "
             
                <tr >
-               <td>".$me['idB']."</td>
-               <td>".$me['titleP']."</td>
-               <td style='color:blue;'>".$me['DateB']."</td>
-               <td><textarea disabled>".$me['DecB']."</textarea></td>
-               <td>".$me['NomL']."</td>
-               <td>".$me['imgB']."</td>
-                <td><a href='#'><button  class='btn' type='button' onclick='app(this)' value='".$me['idB']."'><i class='bi bi-pencil-square text-success' style='font-size:22px;'></i></button></a></td>
-                <td><button  class='btn'   onclick='supprimer(this)'   name='supprimere' type='button'  value='".$me['idB']."'><i class='bi bi-trash3-fill text-danger' style='font-size:22px;'></i></button></td>
+               <td>".$me['idU']."</td>
+               <td><img id='profil' src='image/".$me['imgU']."'></td>
+               <td >".$me['nomU']."  ".$me['prenomU']."".'<br><p class="text-secondary">'.$me['emailU']."</p></td>
+        
+
+               <td>".$me['telU']."</td>
+               <td>".$me['adresseU']."</td>
+               <td> <div> ".$me['role']." </div></td>
+                <td><button  class='btn' name='update'  value='".$me['idU']."'><i class='bi bi-eye text-success' style='font-size:22px;'></i></button></td>
+                <td><button  class='btn'   onclick='supprimer(this)'   name='supprimere' type='button'  value='".$me['idU']."'><i class='bi bi-trash3-fill text-danger' style='font-size:22px;'></i></button></td>
                </tr>
               
                
@@ -238,10 +179,10 @@
            }
 
            ?>
-            </tbody>
+            </tbody >
         
 
-       </table>
+       </table >
        
        <?php
          echo "<b style='font-size:11px;color:'grey''>Showing 1 to 10 of ".$c." entries</b>";
@@ -278,6 +219,10 @@
            justify-content: center;
            align-items: center;
            
+       }
+       #profil{
+           border-radius: 50%;
+           width:70px;
        }
          
        #btn {
@@ -453,38 +398,8 @@
           
     
     }
-    $('.add').hide();
-    $(".lole").click(function(){
-        $(".add").slideToggle("slow");
-        document.getElementById('id').value="";
-        document.getElementById('titre').value="";
-        document.getElementById('desce').value="";
-        document.getElementById('auteur').value="";
-        document.getElementById('btn').innerHTML="<i class='bi bi-node-plus  mx-2 'style='font-size:24px;'></i>Add Blog"
-        document.getElementById('btn').name='add'
-   
-    });
-    $('.close').click(function(){
-        $(".add").slideUp("slow")
-   
-    })
-//  $('.lole').hide();
+
  
-
-
-
-function app(x){
-    document.getElementById('btn').innerHTML="<i class=' bi bi-arrow-repeat mx-2 'style='font-size:24px;'></i>Update artice"
-    document.getElementById('btn').name='update'
- 
-    $(".add").slideDown("slow");
-     document.getElementById('id').value=x.parentNode.parentNode.parentNode.children[0].innerHTML
-     document.getElementById('titre').value=x.parentNode.parentNode.parentNode.children[1].innerHTML
-     document.getElementById('auteur').value=x.parentNode.parentNode.parentNode.children[4].innerHTML
-      document.getElementById('desce').value=x.parentNode.parentNode.parentNode.children[3].children[0].innerHTML
-    // document.getElementById('ffil').innerHTML=x.parentNode.parentNode.parentNode.children[5].innerHTML   
-     
-    }
 
 
 $(document).ready(function(){
@@ -495,6 +410,28 @@ $(document).ready(function(){
     });
   });
 });
+
+
+
+
+// function change(x){
+//     var input=document.createElement('input');
+//     var i=document.createElement('i');
+//     input.id='inn'
+//     input.name='ipda'
+//     input.classList.add("form-control")
+//     i.classList.add("bi-check-circle")
+//     input.value=x.firstElementChild.innerHTML
+//     x.append(input)
+//     x.removeChild(x.firstElementChild)
+//     var tr=x.parentNode
+//     tr.children[8].children[0].classList.remove('d-none')
+   
+//     $("#inn").focus()
+// }
+
+
+
 
 
 </script>
