@@ -299,7 +299,7 @@ include "HEADER.php";
 
 
 
-<div class="container my-5">
+<div class="container-fluid  my-5" style="width:100%;">
 
 
 
@@ -320,15 +320,13 @@ include "HEADER.php";
     $var=$data->prepare("select * from Produite");
     $var->execute();
     foreach($var as $te){
-  echo  '<div class="col-6 col-lg-4 col-sm-6 col-md-6 ckli " id="pro">
+  echo  '
  
-
-
-
-
-
+<div class="col-12 col-lg-4 col-sm-6 col-md-6 ckli " id="pro">
        <div class="card bg-light text-dark " style="border: none;">
+       <a href="viePC.php?id='.$te['idProduit'].'" class="m-auto">
              <img class="card-img-top img-fluid  m-auto" src="image/'.$te['imgP'].'" style="width: 250px;" >
+             </a>
              <div class="card-body">
                  <div  style="font-size: 11px; color: rgb(126, 126, 126); font-weight: bold;">'.$te['typeP'].'</div>
                  <div class="title">'.$te['libelleP'].'</div>
@@ -338,9 +336,10 @@ include "HEADER.php";
           <i class="bi bi-star-fill"></i>
           <i class="bi bi-star-fill"></i>
               </div>
-              <button class="bott" style="border-radius:5px;" name="btn1"  value="'.$te['idProduit'].'"><i class="bi bi-cart"></i>shoop</button>
-          
+              <button class="bott" style="border-radius:5px;" name="btn1"  value="'.$te['idProduit'].'"><i class="bi bi-cart"></i>ajouter au panier</button>
+             
          </div>
+         
          <hr class="hrex">
      
 
@@ -359,7 +358,7 @@ include "HEADER.php";
 
 
 
-     </div>';
+        </div>';
     }
     ?>
   <!-- <button class="bott1" ><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>     -->

@@ -64,11 +64,10 @@ justify-content: center;
     outline: none;
     padding: 5px 26px;
     color: white;
-   
     background-image: linear-gradient(to left,rgb(255, 119, 0) , rgb(224, 111, 111));
+    border-radius: 5px;
+    font-size: 12px;font-weight: bold;
 
-    border-radius: 8px;
-    font-size: 17px;font-weight: bold;
     
 }
 .card{
@@ -109,17 +108,16 @@ color: rgb(255, 159, 4);
 }
 .card{cursor: pointer;}
 .bott{
-    padding: 3px 0px;
+    padding: 3px 20px;
     border: none;
     background-image: linear-gradient(to left,rgb(255, 119, 0) , rgb(224, 111, 111));
     color: white;
-    border-radius: 3px;
- 
-    display: none;
-    transition: 1s;
-
+    border-radius: 5px;
+    font-size: 13px;
+    transform: translate(-0%,100%);
     font-weight: bold;
-    font-size: 10px;
+    transition: 0.7s;
+    opacity: 0;
 }
 .bott1{
     padding: 3px 20px;
@@ -335,8 +333,10 @@ font-weight: bold;
         font-size: 15px;
     }
     .ckli:hover .bott{
-        display: block;
-        transition: 1s;
+       
+        transition: 0.7s;
+        opacity: 1;
+        transform: translate(-0%,0%);
 
     }
 

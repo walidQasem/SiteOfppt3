@@ -54,6 +54,7 @@ if(isset($_POST['singin'])){
             session_start();
             if($role['role']=="admin"){
                 $_SESSION['email']=$role['emailU'];
+                setcookie('email',$_SESSION['email'],time() + (86400 * 30), "/");
                 header('Location:admin.php');
                
                 
@@ -61,6 +62,7 @@ if(isset($_POST['singin'])){
             else{
                 if($role['role']=="user"){
                 $_SESSION['email']=$role['emailU'];
+                setcookie('email',$_SESSION['email'],time() + (86400 * 30), "/");
                 header('Location:index.php');
                 
                 }
@@ -217,7 +219,7 @@ else{
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock" style="font-size:22px ;"></i></span>
-  <input style="font-weight: bold; font-size:11px ;" name='password1'  type="password" class="form-control py-3 " placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+  <input style="font-weight: bold; font-size:11px ;" name='password1'  type="password" class="form-control  py-3 " placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <div ><b style="color: red; font-size:12px;" ><?php echo  $bre; ?></b></div>
 <div class="d-flex align-items-center my-2">

@@ -71,28 +71,11 @@ include "BS.php";
 
 
 
-
-
-
-
-<?php
-
-// session_start();
-// $id=$_SESSION['id'];
-// $sam=$data->prepare("select * from Produite where idproduit=$id");
-// $sam->execute();
-
-include "HEADER.php";
-
-
-?>
-
-
-
 <?php
 
 
-$id=$_SESSION['id'];
+$id=$_GET['id'];
+
 $sel=$data->prepare("SELECT * FROM Produite WHERE idProduit=:id");
 $sel->bindParam(":id",$id);
 $sel->execute();
@@ -110,7 +93,57 @@ foreach($sel as $men){
 }
 
 
+if(isset($_POST['rev'])){
+    if(isset($_COOKIE['email'])){
+$date=date("Y-m-d h:i:sa");
+$email=$_COOKIE['email'];
+$sa=$data->prepare("SELECT * FROM user WHERE emailU='$email'");
+$sa->execute();
+    foreach($sa as $men){
+        $idC=$men['idU'];
+    }
+
+
+
+$text=$_POST['textC'];
+$Pros=$_POST['Pros'];
+$Cons=$_POST['Cons'];
+$com=$data->prepare("INSERT INTO commentaire(`idC`, `TextC`, `id_user`, `id_produit`, `dateC`,`Pros`,Cons) VALUES (NULL,'$text',$idC,$id,'$date','$Pros','$Cons')");
+$com->execute();
+    }
+    else{
+        header("location:login.php");
+    }
+}
+
+$sql=$data->prepare("SELECT * FROM commentaire WHERE id_produit=$id");
+$sql->execute();
+$rev=$sql->rowCount();
+
+
 ?>
+
+
+
+
+
+
+
+
+
+<?php
+
+// session_start();
+// $id=$_SESSION['id'];
+// $sam=$data->prepare("select * from Produite where idproduit=$id");
+// $sam->execute();
+
+include "HEADER.php";
+
+
+?>
+
+
 
 
 
@@ -147,7 +180,7 @@ foreach($sel as $men){
 <i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
-<b class="mx-1" style="color: gray; font-size: 12px;">74 Reviews</b>
+<b class="mx-1" style="color: gray; font-size: 12px;"><?php echo $rev?> Reviews</b>
 </div>
 
 
@@ -201,7 +234,7 @@ foreach($sel as $men){
         <div class="mmm py-2">
 <b id="c1">General Info</b>
 <b  id="c2">Tech Specs</b>
-<b  id="c3" >Reviews<span class="mx-2" style="color: gray;">(74)</span></b>
+<b  id="c3" >Reviews<span class="mx-2" style="color: gray;">(<?php echo $rev?>)</span></b>
 <hr>
     </div>
 
@@ -764,7 +797,7 @@ foreach($sel as $men){
 
    <div class="row  d-flex align-items-center">
        <div class="col-md-4 ">
-           <h1><b style="font-size: 20px;"">74 Reviews</b></h1>
+           <h1><b style="font-size: 20px;""><?php echo $rev?> Reviews</b></h1>
            <div class="">
            <i class="bi bi-star-fill"></i>
            <i class="bi bi-star-fill"></i>
@@ -841,123 +874,44 @@ foreach($sel as $men){
     <!--profil1-->
 
     <div class="col-md-7 ">
-        <div class=" d-flex align-items-center " >
-<img src="image/02.jpg" style="border-radius: 50%; width: 55px;">
+
+    <?php
+$sql1=$data->prepare("SELECT * FROM commentaire WHERE id_produit=$id");
+$sql1->execute();
+
+
+
+foreach($sql as $qs){
+    foreach($sql1 as $m){
+        $s=$m["id_user"];
+        $use=$data->prepare("SELECT * FROM user WHERE idU=$s");
+        $use->execute();
+        foreach($use as $yh){
+echo '
+        <div class=" d-flex align-items-center mt-5 " >
+<img src="image/'.$yh["imgU"].'" class="me-3" style="border-radius: 50%; width: 55px;">
 <div>
-<b style="font-size: 11px;">Barbara Palson</b><br>
-<b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
+<b style="font-size: 11px;">'.$yh["nomU"]."  ".$yh["prenomU"].'</b><br>
+<b style="color: gray; font-size: 11px;">'.$m['dateC'].'</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
     </div>
 </div>
-<p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
-<b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
+<p style="font-weight: bold; font-size: 12px; " class="mt-2"  >'.$m['TextC'].'.</p>
+<b style="font-size: 11px;">Pros:<b style="color: gray;">'.$m["Pros"].'</b></b><br>
+<b style="font-size: 11px;">Cons:<b style="color: gray;">'.$m["Cons"].'</b></b><br>
 <div class="d-flex">
 <div class="d-flex align-items-center"   ><i class="bi bi-hand-thumbs-up " onclick="hani(this)"   style="font-size: 22px ;color: green; cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 17</b></i></div>
 <div class="d-flex align-items-center ms-3"><i class="bi bi-hand-thumbs-down"  onclick="hani(this)"    style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
-</div>
+</div>';
+}
+}
+}
+?>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--profil2-->
-
-
-
-
-<div class=" d-flex align-items-center py-3" >
-    <img src="image/01.jpg" style="border-radius: 50%; width: 55px;">
-    <div>
-    <b style="font-size: 11px;">Barbara Palson</b><br>
-    <b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
-        </div>
-    </div>
-    <p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
-    <b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
-    <div class="d-flex pb-4">
-<div class="d-flex align-items-center"   ><i class="bi bi-hand-thumbs-up " onclick="hani(this)"    style="font-size: 22px ;color: green; cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 17</b></i></div>
-    <div class="d-flex align-items-center ms-3  "><i class="bi bi-hand-thumbs-down " onclick="hani(this)"    style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-<!--profil2-->
-
-
-
-
-<div class=" d-flex align-items-center py-3" >
-    <img src="image/02.jpg" style="border-radius: 50%; width: 55px;">
-    <div>
-    <b style="font-size: 11px;">Barbara Palson</b><br>
-    <b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
-        </div>
-    </div>
-    <p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
-    <b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
-    <div class="d-flex pb-4">
-    <div class="d-flex align-items-center"><i class="bi bi-hand-thumbs-up " onclick="hani(this)"    style="font-size: 22px ;color: green; cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 17</b></i></div>
-    <div class="d-flex align-items-center ms-3"><i class="bi bi-hand-thumbs-down " onclick="hani(this)"   style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--profil2-->
-
-
-
-
-<div class=" d-flex align-items-center py-3" >
-    <img src="image/02.jpg" style="border-radius: 50%; width: 55px;">
-    <div>
-    <b style="font-size: 11px;">Barbara Palson</b><br>
-    <b style="color: gray; font-size: 11px;">May 17, 2019</b><b style="color: gray; font-size: 10px;" class="mx-5">99% of users found this review helpful</b>
-        </div>
-    </div>
-    <p style="font-weight: bold; font-size: 12px;"  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <b style="font-size: 11px;">Pros:<b style="color: gray;"> Consequuntur magni, voluptatem sequi, tempora</b></b><br>
-    <b style="font-size: 11px;">Cons:<b style="color: gray;"> Architecto beatae, quis autem</b></b><br>
-    <div class="d-flex pb-4">
-    <div class="d-flex align-items-center"><i class="bi bi-hand-thumbs-up jeem " onclick="hani(this)"   style="font-size: 22px ;color: green; cursor: pointer; "><b  style="font-size: 10px;" class="ms-1"> 17</b></i></div>
-    <div class="d-flex align-items-center ms-3"><i class="bi bi-hand-thumbs-down jeem  " onclick="hani(this)"   style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="ka" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
-    </div>
 
 
 
@@ -1025,34 +979,25 @@ foreach($sel as $men){
 
 
 <div class="col-md-4 ms-auto py-5">
+<form method="POST">
 <h1><b style="font-size: 20px;">Write a review</b></h1>
-<label><b style="font-size: 13px;">Your name*</b></label>
-<input type="text" class="form-control" style="height: 42px;" required>
-<b style="font-size: 10px; color: gray;">Will be displayed on the comment.</b><br>
-<label class="py-1"><b style="font-size: 13px;" >Your  email*</b></label>
-<input type="email" class="form-control" style="height: 42px;" required>
 <b style="font-size: 10px; color: gray;">Authentication only - we won't spam you.</b><br>
-<label class="py-1"><b>Rating*</b></label>
-<select class=" m-auto info "  style="width: 100%;"  >
-        <option selected>Select your Ville</option>
-        <option value="1">safi</option>
-        <option value="2">casa</option>
-        <option value="3">agadir</option>
-      </select>
   <label class="py-2"><b style="font-size: 13px;">Review*</b></label>
-  <textarea  class="form-control" style="height: 140px;"></textarea>
+  <textarea  class="form-control" style="height: 140px;" name='textC'></textarea>
 
 
 
   <label class="py-2"><b style="font-size: 13px;">Pros</b></label>
-  <textarea  class="form-control" ></textarea>
+  <textarea  class="form-control" name='Pros'></textarea>
 
 
 
 
   <label class="py-2"><b style="font-size: 13px;">Cons</b></label>
-  <textarea  class="form-control"></textarea>
-  <button class=" mino " type="submit">submit Reviews</button>
+  <textarea  class="form-control" name='Cons'></textarea>
+  <button class=" mino " type="submit" name='rev'>submit Reviews</button>
+  
+</form>
 </div>
 
 
@@ -1081,7 +1026,6 @@ foreach($sel as $men){
 
 
 </div>
-
 
 
 

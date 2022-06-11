@@ -28,10 +28,10 @@
 <?php include "Progress.php"?>
 
 
-<form method="POST">
+<form method="POST ">
 
 
-<div class="accordion" id="accordionExample">
+<div class="accordion mt-5" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><b style="font-size:11px;"><i class="bi bi-credit-card-2-back mx-2" style="font-size:21px;"></i>Pay with Credit Card</b></button>
@@ -168,7 +168,7 @@
 #checkout-bar.step4:after {
   width: 100%;
   background-color: orange;
-  z-index: 2;
+
   -webkit-transition: width 2s;
   /* Safari */
   transition: width 2s;

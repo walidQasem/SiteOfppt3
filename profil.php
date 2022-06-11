@@ -25,10 +25,9 @@ $bole=false;
     $user='root';
     $ps="";
     $data= new PDO("mysql:host=localhost;dbname=ordishop",$user,$ps);
-    session_start();
- if(!empty($_SESSION['email']))   {
+ if(isset($_COOKIE['email'])){
 $sel=$data->prepare("SELECT * FROM user WHERE emailU=:email");
-$sel->bindParam(":email",$_SESSION['email']);
+$sel->bindParam(":email",$_COOKIE['email']);
 $sel->execute();
 
     foreach($sel as $m){
@@ -49,7 +48,7 @@ if(isset($_POST['singup'])){
    if($_POST['img']==""){
     $_POST['img']=$img;
    }
- $bob=$_SESSION['email'];
+ $bob=$_COOKIE['email'];
     $sup=$data->prepare("UPDATE user SET nomU=:nom,prenomU=:prenom,telU=:tel,imgU=:img,passwordU=:pas  WHERE emailU='$bob'");
     $sup->bindParam(":nom",strip_tags($_POST['nom']));
     $sup->bindParam(":prenom",strip_tags($_POST['prenom']));
@@ -72,8 +71,10 @@ else{
 }
 
 if(isset($_POST['logo'])){
-    session_unset();
-    header('location:login.php');
+    unset($_COOKIE['email']);
+    setcookie('email', '', time() - 3600, '/');
+    header("location:login.php");
+  
     
 }
 ?>

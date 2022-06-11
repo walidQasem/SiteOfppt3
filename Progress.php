@@ -121,12 +121,12 @@ justify-content: center;
   position: relative;
   content: "";
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 22px;
+  height: 22px;
   top: 2.5px;
   left: 50%;
   border: 2px solid #ddd;
-  background-color: #fff;
+  background-color:orange;
   border-radius: 100%;
  
   

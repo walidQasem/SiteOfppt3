@@ -42,7 +42,7 @@ include "BS.php";
 <img src="image/pcadmin.png" class="py-4" style="width: 140px; margin-left: 50px;">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             
-    <a href="#" class="kok"><i class="bi bi-house-door mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Dashboard</b></a>
+    <a href="admin.php" class="kok"><i class="bi bi-house-door mx-3" style="font-size:20px ;"></i><b style="font-size:12px ;">Dashboard</b></a>
     
 
 
@@ -85,7 +85,7 @@ include "BS.php";
   <div class="dropdown my-4">
     <a  class="dropdown-toggle" data-bs-toggle="dropdown" style="color: white;font-size:15px;cursor: pointer;"><b><i class="bi  bi-bag mx-3"></i>Produit</b></a>
     <ul class="dropdown-menu jp ms-5">
-      <li><a class="dropdown-item p-0 gom" href="#"><b style="font-size:13px;">Activity Log</b></a></li>
+      <li><a class="dropdown-item p-0 gom" href="addProduit.php"><b style="font-size:13px;">Activity Log</b></a></li>
       <li><a class="dropdown-item p-0 gom" href="#"><b style="font-size:13px;">Setting</b></a></li>
       <li><a class="dropdown-item p-0 gom" href="login.php"><b style="font-size:13px;">Log out</b></a></li>
     </ul>
@@ -125,7 +125,7 @@ include "BS.php";
 
 
 <div class="container-fluid">
-<div class="row py-3" id="main">
+<div class="row py-3" id="maine">
     <div class="col">
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 </div>
@@ -145,7 +145,7 @@ include "BS.php";
 <i class="bi bi-bell" style="font-size:27px;"></i>
 </div>
 <div class="col d-flex align-items-center">
-    <img src="image/<?php echo $img?>" style="width: 55px; border-radius:50% ;">
+    <img src="image/<?php echo $img?>" style="width: 55px; border-radius:50% ; " class="mx-2">
 
  
 
@@ -187,14 +187,14 @@ include "BS.php";
 
     function openNav() {
   document.getElementById("mySidenav").style.width = "270px";
-  document.getElementById("main").style.marginLeft = "270px";
+  document.getElementById("maine").style.marginLeft = "270px";
   document.querySelector('body').style.overflowX="hidden"
 }
 openNav()
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("maine").style.marginLeft= "0";
   document.body.style.backgroundColor = "white";
 }
 
@@ -251,7 +251,7 @@ color: white;
   margin-left: 50px;
 }
 
-#main {
+#maine {
   transition: margin-left .5s;
   padding: 16px;
 }

@@ -2,14 +2,23 @@
 
 
 <?php
-$user='root';
-$ps="";
-$data= new PDO("mysql:host=localhost;dbname=ordishop",$user,$ps);
-if(!isset($_SESSION)){
-session_start();
-if(!empty($_SESSION['email'])){
+include "BS.php";
+
+
+
+
+
+
+
+
+
+
+
+
+if(isset($_COOKIE)){
+if(!empty($_COOKIE['email'])){
 $go=$data->prepare("SELECT * FROM user WHERE emailU=:email");
-$go->bindParam(':email',$_SESSION['email']);
+$go->bindParam(':email',$_COOKIE['email']);
 $go->execute();
 foreach($go as $mom){
     $nom=$mom['nomU'];
@@ -29,6 +38,7 @@ else{
     $icon="bi bi-person-check";
     $gon="Bonjour";
 }
+
 ?>
 
 
@@ -49,11 +59,11 @@ else{
 
 <ul class="navbar-nav d-flex ">
 <li class="nav-item dropdown d-flex">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold "><img src="image/la-france.png" style="width: 25px; ;"><b style="color: white; font-size: 10px;" class="mx-2">ENG/$</b></a>
+            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold "><i class="bi bi-translate" style="font-size:22px; color:white;"></i><b style="color: white; font-size: 10px;" class="mx-2">Translate</b></a>
             
             <ul class="dropdown-menu">
-                <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;"><img src="image/la-france.png" style="width: 25px; ;"><b style="color: white; font-size: 10px;" class="mx-2"></b></a></li>
-                <li><a href="#" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Coffret ordinateur bureau avec accessoires</b></a></li>
+                <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;"><img src="image/la-france.png" style="width: 25px; ;" class="mx-3"><b style="color: white; font-size: 10px;" class="mx-2"></b>France</a></li>
+                <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;"><img src="image/maroc2.png" style="width: 25px; ;" class="mx-3"><b style="color: white; font-size: 10px;" class="mx-2"></b>العربية</a></li>
             </ul>
         </li>
  
@@ -116,7 +126,7 @@ else{
     <ul class="navbar-nav py-2">
         <li class="nav-item d-flex align-items-center  "><i class="bi bi-house px-2" style="font-size: 23px; "></i><a href="index.php" class="nav-link text-dark" style=" font-size: 13px; font-weight: bold;">Home</a></li>
         <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold">Nos ordinateur</a>
+            <a href="#" class="nav-link dropdown-toggle text-dark mx-2" data-bs-toggle="dropdown" style=" font-size:12px;font-weight: bold">Nos ordinateur</a>
             <ul class="dropdown-menu">
                 <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;">Nos ordinateurs de bureau</b></a></li>
                 <li><a href="#" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Mini pc</b></a></li>
@@ -127,7 +137,7 @@ else{
 
 
         <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold ">Nos cofrrer</a>
+            <a href="#" class="nav-link dropdown-toggle text-dark mx-2" data-bs-toggle="dropdown" style=" font-size:12px;font-weight: bold ">Nos cofrrer</a>
             <ul class="dropdown-menu">
                 <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;">Cofrret Entreprise/Ecole</b></a></li>
                 <li><a href="#" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Coffret ordinateur bureau avec accessoires</b></a></li>
@@ -139,7 +149,7 @@ else{
 
 
 
-        <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 13px; font-weight: 600;">Nos fournisseur</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark mx-2" style=" font-size: 13px; font-weight: 600;">Nos fournisseur</a></li>
         <li class="nav-item"><a href="#" class="nav-link text-dark" style=" font-size: 13px; font-weight: bold;">Qui sommes-nous?</a></li>
         <li class="nav-item"><a href="Blog.php" class="nav-link text-dark" style=" font-size: 14px; font-weight: bold;">Blog</a></li>
 
@@ -148,7 +158,7 @@ else{
 
 
         <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold ">Espace Client</a>
+            <a href="#" class="nav-link dropdown-toggle text-dark mx-2" data-bs-toggle="dropdown" style=" font-size:12px;font-weight: bold ">Espace Client</a>
             <ul class="dropdown-menu">
                 <li><a href="login.php" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;">s'inscrire</b></a></li>
                 <li><a href="profil.php" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Profil<i class="bi bi-person ms-1" style="font-size:17px;"></i></a></b></li>
@@ -160,7 +170,7 @@ else{
 
 
         <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" style=" font-size:13px;font-weight: bold ">Aide</a>
+            <a href="#" class="nav-link dropdown-toggle text-dark mx-2" data-bs-toggle="dropdown" style=" font-size:12px;font-weight: bold ">Aide</a>
             <ul class="dropdown-menu">
                 <li><a href="#" class="nav-link dropdown-item text-dark text-dark "><b style="font-size:12px ;">FAQ</b></a></li>
                 <li><a href="#" class="nav-link dropdown-item text-dark  text-dark"><b style="font-size:12px ;">Mentions legales</b></a></li>

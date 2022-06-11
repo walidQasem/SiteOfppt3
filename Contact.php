@@ -13,7 +13,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300;1,300&family=Spartan:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include "HEADER.php" ?>
+    <?php include "HEADER.php" ;
+    if(isset($_POST['submit'])){
+       $nom=$_POST['nom'];
+       $email=$_POST['email'];
+       $tel=$_POST['tel'];
+       $messagee=$_POST['message'];
+
+       $to = $email;
+       $subject =$messagee;
+       
+       $message =$messagee;
+       
+       // Always set content-type when sending HTML email
+       $headers = "MIME-Version: 1.0" . "\r\n";
+       $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+       
+       // More headers
+       $headers .= 'From:qasemwalid8@gmail.com';
+
+       
+      $meil= mail($to,$subject,$message,$headers);
+if($meil){
+    echo "<script>OUI</script>";
+}
+else{
+    echo "<script>NON</script>";
+}
+
+
+
+    }
+    ?>
 
 <div class="container">
 
@@ -58,24 +89,24 @@
 
     </div>
 </div>
-<div class="container-fluid" style="width:93%;">
+<div class="container-fluid py-5" style="width:93%;">
 <form method="POST">
 <div class="row mt-5">
     <div class="col-md-6"><img src="image/personnes-travaillant-dans-centre-appels_23-2148094830.jpg" class="img-fluid w-100" style="width:600px; border-radius:20px;"></div>
     <div class="col">
         <h4 class="my-2"><b>Drop us a line</b></h4>
         <div class="row mt-2">
-            <div class="col"><label>Your name:*</label><input type="text" class="form-control py-3" placeholder="Walid" required></div>
-            <div class="col"><label>Email address: *</label><input type="text" class="form-control py-3" placeholder="Qasem" required></div>
+            <div class="col"><label>Your name:*</label><input type="text" class="form-control py-3" placeholder="Walid" name="nom" required></div>
+            <div class="col"><label>Email address: *</label><input type="email" class="form-control py-3" name="email" placeholder="Qasem" required></div>
         </div>
         <div class="row mt-2">
-            <div class="col"><label>Your phone:*</label><input type="text" class="form-control py-3" placeholder="0621542411" required></div>
-            <div class="col"><label>Subject:</label><input type="text" class="form-control py-3" placeholder="Provide" required></div>
+            <div class="col"><label>Your phone:*</label><input type="text" class="form-control py-3" name="tel" placeholder="0621542411" required></div>
+            <div class="col"><label>Subject:</label><input type="text" class="form-control py-3" name="subject" placeholder="Provide" required></div>
         </div>
         <div class="row mt-2">
-            <div class="col"><label>Message:*</label><textarea placeholder="Please describe" class="form-control py-3" rows="8" required></textarea></div>
+            <div class="col"><label>Message:*</label><textarea placeholder="Please describe" name="message" class="form-control py-3" rows="8" required></textarea></div>
         </div>
-        <button class="btn btn-danger text-white mt-3 p-2"><b style="font-size:12px;">Send message<b></b></button>
+        <button name="submit" class="btn btn-danger text-white mt-3 p-2"><b style="font-size:12px;">Send message<b></b></button>
     </div>
 </div>
 </form>

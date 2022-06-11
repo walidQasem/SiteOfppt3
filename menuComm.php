@@ -35,7 +35,7 @@
 <b style="color:grey;font-size:11px;" class="me-5">Discount::</b><b class="ms-auto mx-5">-</b>
 
 <hr style="color:DarkGray;">
-<h1 class="text-center" style="font-size:20px;"><b>$274.50</b></h1>
+<h1 class="text-center my-5" style="font-size:20px;" ><b>$274.50</b></h1>
 
 <input type="text" name='code' class="form-control" placeholder="Code Promo" style="font-size:11px; font-weight: bold; height: 45px;">
 <input id="btn-progress" type="submit" class="d-flex justify-content-center mt-3 tft" value="apply Code">

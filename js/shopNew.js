@@ -30,6 +30,7 @@ var ch=document.querySelectorAll('.ckli') ;
 var hr=document.querySelectorAll('.hrex')
 
 liste.addEventListener('click',function(){
+
     liste.classList.add("sty")
     grid.classList.remove("sty")
 
@@ -40,9 +41,7 @@ liste.addEventListener('click',function(){
         ch[i].children[0].children[0].style.width="180px"
         for(var j= 0 ; j<hr.length;j++){
             hr[j].style.display='block'
-        }
-   
-       
+        }   
     }
 })
 grid.addEventListener('click',girdex);

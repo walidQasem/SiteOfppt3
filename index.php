@@ -41,7 +41,7 @@ include "HEADER.php";
     <div class="container-fluid d-md-flex align-items-center justify-content-center text-center  px-4 text-md-start" style="width: 90%; ">
     <div >
     </div>
-    <div class="row d-flex align-items-centere row-reverse ">
+    <div class="row d-flex align-items-centere  ">
 
 
         <div class="col-lg-3">
@@ -67,14 +67,120 @@ include "HEADER.php";
 
 
 
-        <div class="col-md  py-5 ms-3    " >
+        <!-- <div class="col-md  py-5 ms-3    " >
             <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
             <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
             <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
             <a href="shopNew.php" style="text-decoration: none;"><button  class="btn1 mt-5 text-white  "   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
         </div>
-
 <div class="col d-none d-sm-block "><img src="image/download.jpg" style="width: 100%; " class="img-fluid w-60 "></div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col d-flex align-items-center ">
+ <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row d-flex align-items-center ">
+      <div class="col-md  py-5 px-4   " >
+            <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
+            <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
+            <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
+            <a href="shopNew.php" style="text-decoration: none;margin: auto;"><button  class="btn1 mt-5 text-white"   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
+        </div>
+<div class="col "><img src="image/272d197df3c6ec1716ea70b84da6c5b2.gif" style="width: 100%; " class="img-fluid w-100  "></div>
+      </div>
+
+
+    </div>
+    <div class="carousel-item">
+    <div class="row d-flex align-items-center">
+      <div class="col-md  py-5 px-4 " >
+            <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
+            <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
+            <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
+            <a href="shopNew.php" style="text-decoration: none;"><button  class="btn1 mt-5 text-white  "   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
+        </div>
+<div class="col  "><img src="image/apple-apple-mac.gif" style="width: 100%; height: 100%; " class="img-fluid w-100 "></div>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <div class="row d-flex align-items-center">
+      <div class="col-md  py-5 px-4   " >
+            <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
+            <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
+            <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
+            <a href="shopNew.php" style="text-decoration: none;"><button  class="btn1 mt-5 text-white  "   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
+        </div>
+        <div class="col "><img src="image/272d197df3c6ec1716ea70b84da6c5b2.gif" style="width: 100%; " class="img-fluid w-100  "></div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>
 
@@ -187,34 +293,6 @@ include "HEADER.php";
         <hr>
     </div>
    <div class="row ">
-
-
-
-
-
-
-
- 
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="jcarousel-wrapper">
                 <div class="jcarousel">
                     <ul>
@@ -240,7 +318,7 @@ foreach($slq as $date){
          <i class="bi bi-star"></i>
              </div>
              <button class="bott"><i class="bi bi-cart"></i>Add to card</button>
-             <button class="bott1"><i class="bi bi-eye px-2" style="color: balck;"></i>Quick view</button>
+             
        
     </div>
     </li>';
@@ -407,7 +485,7 @@ foreach($slq as $date){
         </div>
     
     
-    </div></div></div></div>
+    </div></div></div>
 
 <!---les bass-->
 <div class="container">

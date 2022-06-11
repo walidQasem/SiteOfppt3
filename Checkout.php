@@ -19,9 +19,23 @@
 
 
 <?php 
+include "BS.php";
     if(isset($_POST['env'])){
         header("Location:Shipping.php");
     }
+    $email=$_COOKIE["email"];
+    $form=$data->prepare("SELECT * FROM user WHERE emailU='$email'");
+    $form->execute();
+    foreach($form as $f){
+        $name=$f['nomU'];
+        $prenom=$f['prenomU'];
+        $email=$f['emailU'];
+        $tel=$f['telU'];
+    }
+    
+
+
+
 ?>
 
 
@@ -36,34 +50,27 @@
 
 <!--container-->
 <div class="container">
+  
     <div class="row">
         <div class="col-md py-5">
  <?php include "Progress.php"?>
 
+   <img src="image/01.jpg"  style="width: 80px;border-radius: 50%; display: flex; justify-content:center;" class="mx-3 ">
 
-<div class="d-flex align-items-center">
-   <img src="image/01.jpg" style="width: 100px;border-radius: 50%;" class="mx-3">
-   <div>
-   <b style="font-size:12px;">Walid Qasem</b><br>
-   <b style="color: blue; font-size:10px;">WalidQasem@gmail.com</b>
-   </div>
-<button name='Edit' id="edit">Edit Profil</button>
-</div> 
-
+<form method="POST">
 <div class="mt-3">
-    <form method="POST">
 <b>Shipping address</b>
 <hr>
 
 <div class="row mt-3">
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">First Name</b>
-    <input class="form-control py-2 low" type="text" name='name' required>
+    <input class="form-control py-2 low" type="text" name='name' disabled value='<?php echo $name ?>' required>
 </div>
 
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">Last Name</b>
-    <input class="form-control py-2 low" type="text" name='prenom' required>
+    <input class="form-control py-2 low" type="text" name='prenom'  disabled value='<?php echo $prenom ?>' required>
 </div>
 
 </div>
@@ -74,14 +81,14 @@
 
 
 <div class="row mt-3">
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">E-mail Address</b>
-    <input class="form-control py-2 low" type="email" name='email' required>
+    <input class="form-control py-2 low" type="email" disabled value="<?php echo  $email ?>" name='email' required>
 </div>
 
-<div class="col-6">
-    <b class="b8">Last Name</b>
-    <input class="form-control py-2 low" type="tel" name='tel' required>
+<div class="col-md-6 py-2">
+    <b class="b8">Phone Number</b>
+    <input class="form-control py-2 low" type="tel" disabled value="<?php echo  $tel ?>" name='tel' required>
 </div>
 
 </div>
@@ -94,12 +101,12 @@
 
 
 <div class="row mt-3 ">
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">Company</b>
     <input class="form-control py-2 low" type="text" name='Company' required>
 </div>
 
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">Country</b>
     <select class="form-select py-2 low">
         <option value="Canada"><b>Canada</b></option>
@@ -130,7 +137,7 @@
 
 
 
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">City</b>
     <select class="form-select py-2 low">
         <option value="Canada"><b>Canada</b></option>
@@ -141,7 +148,7 @@
 
 </div>
 
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">ZIP Code</b>
     <input class="form-control py-2 low" type="text" name='zip' required>
 </div>
@@ -160,12 +167,12 @@
 
 
 <div class="row mt-3">
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">Adresse1</b>
     <input class="form-control py-2 low" type="text" name='Adresse1' required>
 </div>
 
-<div class="col-6">
+<div class="col-md-6 py-2">
     <b class="b8">Adresse2</b>
     <input class="form-control py-2 low" type="text" name='Adresse2' required>
 </div>
@@ -197,11 +204,11 @@
 
 
 <div class="row mt-3">
-<div class="col-6">
+<div class="col-md-6 py-2">
 <button class="form-control py-2 low" type="button" name='back' ><i class="bi bi-chevron-left  mx-2" style="font-size:18px;"></i>Back to Card</button>
 </div>
 
-<div class="col-6">
+<div class="col-md-6 py-2">
     <button class="form-control py-2 low ho" type="submit" name='env' >Proceed to Shipping<i class="bi bi-chevron-right mx-2" style="font-size:18px;"></i></button>
 </div>
 
