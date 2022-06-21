@@ -23,6 +23,7 @@
 
 
 <?php 
+session_start();
 include "BS.php";
 $slq=$data->prepare("SELECT * FROM produite");
 $slq->execute();
@@ -115,7 +116,7 @@ include "HEADER.php";
             <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
             <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
             <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
-            <a href="shopNew.php" style="text-decoration: none;margin: auto;"><button  class="btn1 mt-5 text-white"   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
+            <a href="shopNew.php" style="text-decoration: none;" class="ms-5"><button  class="btn1 mt-5 text-white"   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
         </div>
 <div class="col "><img src="image/272d197df3c6ec1716ea70b84da6c5b2.gif" style="width: 100%; " class="img-fluid w-100  "></div>
       </div>

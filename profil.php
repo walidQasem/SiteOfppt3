@@ -18,7 +18,7 @@
 <body>
 
 <?php
-
+session_start();
 $bole=false;
     $bob='none';
     $red='none';
@@ -232,7 +232,7 @@ include "HEADER.php";
 
    <p class="mt-4"><b>Tableau de bord</b></p>
 
-   <b><a href="#" class="lin"><i class="bi bi-bag me-3 "  style="font-size: 17px;"></i>Ordres</a></b><br><br>
+   <b><a href="order.php" class="lin"><i class="bi bi-bag me-3 "  style="font-size: 17px;"></i>Ordres</a></b><br><br>
    
    <b><a href="wishlist.php" class="lin"><i class="bi bi-heart me-3"  style="font-size: 17px;"></i>Liste de souhaits</a></b><br><br>
    <b><a href="#" class="lin"><i class="bi bi-broadcast me-3"  style="font-size: 17px;"></i></i>Billets d'assistance</a></b><br><br>

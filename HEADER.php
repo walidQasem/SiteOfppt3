@@ -3,18 +3,6 @@
 
 <?php
 include "BS.php";
-
-
-
-
-
-
-
-
-
-
-
-
 if(isset($_COOKIE)){
 if(!empty($_COOKIE['email'])){
 $go=$data->prepare("SELECT * FROM user WHERE emailU=:email");
@@ -38,6 +26,16 @@ else{
     $icon="bi bi-person-check";
     $gon="Bonjour";
 }
+
+
+
+if(isset($_SESSION['countNot'])){
+$count=$_SESSION['countNot'];
+}
+else{
+    $count=0;
+}
+
 
 ?>
 
@@ -105,7 +103,7 @@ else{
     <a href="login.php"   class="ms-auto d-flex align-items-center" style="text-decoration: none;"><i class=" <?php echo $icon ?> px-2" style="font-size: 25px;  color: rgb(128, 128, 128);"></i>  <p class="text-black d-none d-sm-block " style="font-weight: 500; font-size: 12px;"><span style="font-size: 9px;color: rgb(94, 94, 94) ; font-weight: bold;"><?php echo $gon; ?></span><br><b style="font-size: 11px;"><?php echo $nom." ".$prenom?></b></p> </a>
   
 
-<!-- <div id="brr" class="d-sm-none d-lg-block" >No products in the cart</div> --> <a href="panier.php"   class="ms-auto d-flex align-items-center p" style="text-decoration: none;"><div id="num">2</div><i class="bi bi-cart2 px-2 mx-2" style="font-size: 25px; color: rgb(133, 133, 133);"></i>  <p class="text-black d-none d-sm-block dropdown-toggle " style="font-size: 12px;"><span  style="font-size: 9px;color: rgb(97, 97, 97) ; font-weight: bold;">My cart</span><br><b style="font-size:10px;">$1,247.00</b> </p> </a>
+<!-- <div id="brr" class="d-sm-none d-lg-block" >No products in the cart</div> --> <a href="panier.php"   class="ms-auto d-flex align-items-center p" style="text-decoration: none;"><div id="num"><?php echo $count; ?></div><i class="bi bi-cart2 px-2 mx-2" style="font-size: 25px; color: rgb(133, 133, 133);"></i>  <p class="text-black d-none d-sm-block dropdown-toggle " style="font-size: 12px;"><span  style="font-size: 9px;color: rgb(97, 97, 97) ; font-weight: bold;">My cart</span><br><b style="font-size:10px;">$1,247.00</b> </p> </a>
   
 
     

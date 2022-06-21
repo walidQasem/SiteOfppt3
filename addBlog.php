@@ -18,7 +18,6 @@
     
 <div class="container">
     <?php include "headerAdmin.php";
-    
     ?>
 
 <form method="POST">

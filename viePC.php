@@ -22,16 +22,16 @@
 
 
 <?php
-// if(isset($_POST['ajpanier'])){
-//     session_start();
-//     $_SESSION['idP']=$_POST['ajpanier'];
+ session_start();
+ $id=$_GET['id'];
+if(isset($_POST['ajpanier'])){
+    $_SESSION['idPro']=$_POST['ajpanier'];
+    $_SESSION['Quantite']=$_POST['Quantite'];
  
-//     echo '<div class="alert alert-success"  style="position: absolute;" role="alert">
-//     est Ajouter au panier
-//   </div>';
-//   header("Location:viePC.php");
+echo '<div class="alert py-0 text-center text-white" style="position: absolute; width:100%; background-color: green;" ><b>est Ajouter au panier</b><i class="bi bi-calendar2-check ms-2" style="font-size:23px;"></i></div>';
+  header("refresh:2 url=viePC.php?id=$id");
   
-// }
+}
 ?>
 
 
@@ -73,12 +73,10 @@ include "BS.php";
 
 <?php
 
-
-$id=$_GET['id'];
-
 $sel=$data->prepare("SELECT * FROM Produite WHERE idProduit=:id");
 $sel->bindParam(":id",$id);
 $sel->execute();
+if($sel->rowCount()>0){
 foreach($sel as $men){
     $img1=$men['imgP'];
     $img2=$men['img1'];
@@ -90,6 +88,11 @@ foreach($sel as $men){
     $type=$men['typeP'];
     $prix=$men['prixP'];
     $description=$men['descriptionP'];
+}
+
+}
+else{
+    header("Location:shopNew.php");
 }
 
 
@@ -116,7 +119,7 @@ $com->execute();
     }
 }
 
-$sql=$data->prepare("SELECT * FROM commentaire WHERE id_produit=$id");
+$sql=$data->prepare("SELECT * FROM commentaire WHERE id_produit=$id ORDER BY dateC DESC ");
 $sql->execute();
 $rev=$sql->rowCount();
 
@@ -173,7 +176,7 @@ include "HEADER.php";
 
 
 
-     <div class="col-sm-9 ">
+     <div class="col-sm-9 " >
 <h2 class="mt-4" style="font-weight: bold; color: rgb(92, 92, 92);"><?php echo $lib ?></h2>
 <i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
@@ -254,24 +257,18 @@ include "HEADER.php";
     </div>
     </div>
 
-
-
-
-
-
-
-
-
-
 <div class="col ms-auto d-flex align-items-center justify-content-end py-4  ">
     <button class="mx-2" id="buy" ><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i></button>
-<select class=" info " style="height: 46px;">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-</select>
+    <form method="POST">
+    <select class=" info " name="Quantite" style="height: 46px;">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+        <option value="5">5</option>
+    </select>
+        </form>
+
 
 <button class="info mx-2"  style="height: 46px;"><i class="bi bi-heart"></i></button>
 <button class="info mx-2"  style="height: 46px;"><i class="bi bi-arrow-repeat " ></i></button>
@@ -772,13 +769,15 @@ include "HEADER.php";
     
     <div class="col ms-auto d-flex align-items-center justify-content-end py-4   " style="text-align: center;">
         <button class="mx-2" id="buy" ><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i></button>
-    <select class=" info " style="height: 46px;">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <form method="POST">
+    <select class=" info " name="Quantite" style="height: 46px;">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+        <option value="5">5</option>
     </select>
+        </form>
     
     <button class="info mx-2"  style="height: 46px;"><i class="bi bi-heart"></i></button>
     <button class="info mx-2"  style="height: 46px;"><i class="bi bi-arrow-repeat " ></i></button>
@@ -1190,7 +1189,7 @@ echo '
 
     <div class="mt-3">
         <div class="row">
-    <select class="col-2 info ">
+    <select class="col-2 info" name="Quantite">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

@@ -13,7 +13,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300;1,300&family=Spartan:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include "HEADER.php" ;
+    <?php 
+    session_start();
+    include "HEADER.php" ;
     if(isset($_POST['submit'])){
        $nom=$_POST['nom'];
        $email=$_POST['email'];

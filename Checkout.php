@@ -19,6 +19,14 @@
 
 
 <?php 
+session_start();
+
+
+
+
+if(!isset($_COOKIE['email'])){
+    header("location:login.php");
+}
 include "BS.php";
     if(isset($_POST['env'])){
         header("Location:Shipping.php");
@@ -33,8 +41,6 @@ include "BS.php";
         $tel=$f['telU'];
     }
     
-
-
 
 ?>
 

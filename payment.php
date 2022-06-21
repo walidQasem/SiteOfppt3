@@ -17,6 +17,51 @@
 </head>
 <body>
 <?php
+session_start();
+include "BS.php";
+$comm=unserialize($_COOKIE["panierid"]);
+$email=$_COOKIE['email'];
+$idUtilisateur=$data->prepare("SELECT * FROM user WHERE emailU='$email'");
+$idUtilisateur->execute();
+$id="";
+foreach($idUtilisateur as $id){
+$id=$id['idU'];
+}
+
+if(isset($_POST['submi'])){
+  $date=date('Y/m/d');
+  $somm=0;
+foreach ($comm as $key => $v){
+    $see=$data->prepare("SELECT sum(prixP) as prix FROM produite WHERE produite.idProduit in('$key')");
+    $see->execute();
+    foreach($see as $m){
+        $somm+=(int)($m['prix']);
+    }
+}
+
+
+
+$commende=$data->prepare("INSERT INTO cmmande(`idCM`, `dateC`, `prixTotal`, `modePaiment`, `codePromo`, `id_userComm`)VALUES(NULL, '$date', '$somm', 'pypal', '50000', $id)");
+$commende->execute();
+$maxid=$data->prepare("SELECT MAX(idCM) as id FROM cmmande");
+$maxid->execute();
+$idM=0;
+foreach($maxid as $id){
+$idM=$id['id'];
+}
+foreach ($comm as $key => $v){
+$lign=$data->prepare("INSERT INTO `lignecommande` (`QuantityC`, `idLign`, `idProduitCom`, `idCommande`) VALUES ('5', NULL, '$key', '$idM')");
+$lign->execute();
+}
+}
+
+
+
+
+
+
+
+
     include "HEADER.php";
     ?>
 
@@ -25,10 +70,12 @@
 
 
 <div class="col">
-<?php include "Progress.php"?>
+<?php
+include "Progress.php";
+?>
 
 
-<form method="POST ">
+
 
 
 <div class="accordion mt-5" id="accordionExample">
@@ -48,7 +95,7 @@
 
 <div class="row mt-3">
 <div class="col-6">
-    <input class="form-control py-2 low" type="text" name='Card number' placeholder="Card number" required>
+    <input class="form-control py-2 low" type="text" name='CardNumber' placeholder="Card number" required>
 </div>
 
 <div class="col-6">
@@ -72,7 +119,9 @@
 
 
 <div class="col-6">
-<button class="form-control py-2 low ho" type="submit" name='ss' >Submite</button>
+<form method="POST">
+<button class="form-control py-2 low ho"  name='submi' >Submite</button>
+</form>
 </div>
 
 </div>
@@ -114,7 +163,7 @@
 
 </div>
 <div class="col-3 py-3">
-<button class="form-control py-2 low ho" type="submit" name='paypal' >Log in</button>
+<button class="form-control py-2 low ho"  name='paypal' >Log in</button>
 </div>
 
 </div>
@@ -127,7 +176,7 @@
 
 
 
-</form>
+
 
 
 

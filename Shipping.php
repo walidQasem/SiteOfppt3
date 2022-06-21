@@ -17,6 +17,7 @@
 </head>
 <body>
 <?php 
+session_start();
     if(isset($_POST['env'])){
         header("Location:payment.php");
     }
@@ -178,15 +179,13 @@
     ?>
 
 <style>
-    #checkout-bar.step1:after,
+#checkout-bar.step1:after,
 #checkout-bar.step2:after,
 #checkout-bar.step3:after,
 #checkout-bar.step4:after {
   width: 75%;
   background-color: orange;
-  z-index: 2;
   -webkit-transition: width 2s;
-  /* Safari */
   transition: width 2s;
 }
 .step3 span{

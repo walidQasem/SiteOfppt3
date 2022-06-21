@@ -35,6 +35,7 @@
 
 
 <?php
+session_start();
 $bob='none';
 $red='none';
 $user='root';
@@ -51,7 +52,6 @@ if(isset($_POST['singin'])){
 
     if($go->rowCount()===1){
         foreach($go as $role){
-            session_start();
             if($role['role']=="admin"){
                 $_SESSION['email']=$role['emailU'];
                 setcookie('email',$_SESSION['email'],time() + (86400 * 30), "/");

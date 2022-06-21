@@ -19,7 +19,11 @@
     
 
 
-<?php include "HEADER.php" ?>
+<?php 
+session_start();
+include "HEADER.php" 
+
+?>
 
 
 <div class='container'>

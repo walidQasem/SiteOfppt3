@@ -99,11 +99,10 @@
      
  
  <?php
+  session_start();
  if(isset($_POST['btn1'])){
-     session_start();
-     $_SESSION['id']=$_POST['btn1'];
-     header("Location:viePC.php");
-
+     $_SESSION['idee']=$_POST['btn1'];
+     header("Location:panier.php");
  }
  ?>
     
@@ -398,7 +397,31 @@ include "HEADER.php";
 
 
 
+<style>
+    .slider > .range {
+	position: absolute;
 
+	left: 25%;
+	right: 25%;
+	top: 0;
+	bottom: 0;
+	border-radius: 5px;
+	background-color:orange;
+    cursor: pointer;
+}
+
+.slider > .thumb {
+	position: absolute;
+	
+	width: 25px;
+	height: 25px;
+	background-color:orange;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0 rgba(214, 214, 214, 0.1);
+	transition: box-shadow .3s ease-in-out;
+    
+}
+</style>
 
 
 
