@@ -18,11 +18,7 @@
 <body>
 
 <?php
-    $bob='none';
-    $red='none';
-    $user='root';
-    $ps="";
-    $data= new PDO("mysql:host=localhost;dbname=ordishop",$user,$ps);
+include "BS.php";
     session_start();
  if(!empty($_SESSION['email']))   {
 $sel=$data->prepare("SELECT * FROM user WHERE emailU=:email");

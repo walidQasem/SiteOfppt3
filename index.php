@@ -5,38 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Index</title>
         <link rel="stylesheet" href="css/hamid.css">
-        <link rel="shortcut icon" type="image/png" href="image/aa1.png">
+        <link rel="shortcut icon" type="image/png" href="image/logoP.png">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/jcarousel.responsive.css">
         <script type="text/javascript" src="js/jquery.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
         <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
         <script type="text/javascript" src="js/jcarousel.responsive.js"></script>
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="js/jquery-3.6.0.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300;1,300&family=Spartan:wght@300&display=swap" rel="stylesheet">
-
-
-        <body >
-
-
-
+<body >
 <?php 
 session_start();
 include "BS.php";
 $slq=$data->prepare("SELECT * FROM produite");
 $slq->execute();
-?>
-
-
-<?php
 include "HEADER.php";
 ?>
-
-
-
-
 <!----Hero-->
 <section class=" text-dark  mt-4" style="background-color: rgb(255, 255, 255); ">
     <div class="container-fluid d-md-flex align-items-center justify-content-center text-center  px-4 text-md-start" style="width: 90%; ">
@@ -45,62 +33,12 @@ include "HEADER.php";
     <div class="row d-flex align-items-centere  ">
 
 
+
         <div class="col-lg-3">
-            
-<div class="maina my-3"><img src="image/pcc5.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
-<div class="maina my-3"><img src="image/pcc5.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
-
-<div class="maina my-3"><img src="image/pcc3.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;">Banner Top Rated Gadget sare on Sale</b><br>    <div class="d-flex align-items-center py-2" ><a href="#" style="text-decoration: none; "><b>Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
+<div class="maina my-3"><img src="image/pcc5.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;" class="banner">Bannière de vente de gadgets les mieux notées</b><br>    <div class="d-flex align-items-center py-2" ><a class="shopN" href="#" style="text-decoration: none; "><b  class="shop">Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
+<div class="maina my-3"><img src="image/pcc5.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;" class="banner">Bannière de vente de gadgets les mieux notées</b><br>    <div class="d-flex align-items-center py-2" ><a  class="shopN" href="#" style="text-decoration: none; "><b class="shop">Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
+<div class="maina my-3"><img src="image/pcc3.png" style="width: 110px;" class="img-fluid w-40"><div><b style="color: white; font-size: 12px;" class="banner">Bannière de vente de gadgets les mieux notées</b><br>    <div class="d-flex align-items-center py-2" ><a  class="shopN" href="#" style="text-decoration: none; "><b class="shop">Shop now</b></a><i  class="bi bi-chevron-right " style="font-size: 16px; margin-top: 5px; color: rgb(0, 34, 255); "></i></div></div> </div>
         </div>
-
-<style>
-.maina{
-    width: 100%;
-    height: 120px;
-    background-image: linear-gradient(to left,rgb(241, 156, 151),rgb(252, 207, 162));
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-}
-</style>
-
-
-
-
-        <!-- <div class="col-md  py-5 ms-3    " >
-            <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
-            <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
-            <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
-            <a href="shopNew.php" style="text-decoration: none;"><button  class="btn1 mt-5 text-white  "   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
-        </div>
-<div class="col d-none d-sm-block "><img src="image/download.jpg" style="width: 100%; " class="img-fluid w-60 "></div>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="col d-flex align-items-center ">
  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -113,34 +51,22 @@ include "HEADER.php";
     <div class="carousel-item active">
       <div class="row d-flex align-items-center ">
       <div class="col-md  py-5 px-4   " >
-            <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
-            <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
+            <p class="check" style="color: rgb(0, 0, 0); font-weight: bold;font-size:26px;" >Consultez notre énorme</p>
+            <p class="display-5 ordi" style="font-weight: bold; color: rgb(0, 0, 0);">Des ordinateurs</p>
             <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
             <a href="shopNew.php" style="text-decoration: none;" class="ms-5"><button  class="btn1 mt-5 text-white"   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
         </div>
 <div class="col "><img src="image/272d197df3c6ec1716ea70b84da6c5b2.gif" style="width: 100%; " class="img-fluid w-100  "></div>
       </div>
-
-
     </div>
-    <div class="carousel-item">
-    <div class="row d-flex align-items-center">
-      <div class="col-md  py-5 px-4 " >
-            <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
-            <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
-            <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
-            <a href="shopNew.php" style="text-decoration: none;"><button  class="btn1 mt-5 text-white  "   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
-        </div>
-<div class="col  "><img src="image/apple-apple-mac.gif" style="width: 100%; height: 100%; " class="img-fluid w-100 "></div>
-      </div>
-    </div>
+
     <div class="carousel-item">
     <div class="row d-flex align-items-center">
       <div class="col-md  py-5 px-4   " >
-            <p class="display-6" style="color: rgb(0, 0, 0); font-weight: bold;">check our huge</p>
-            <p class="display-2 " style="font-weight: bold; color: rgb(0, 0, 0);">Computers</p>
+      <p class="check" style="color: rgb(0, 0, 0); font-weight: bold;font-size:26px;" >Consultez notre énorme</p>
+            <p class="display-5 ordi" style="font-weight: bold; color: rgb(0, 0, 0);">Des ordinateurs</p>
             <p class="display-5" style="font-size: 20px; color: rgb(0, 0, 0);font-weight: bold;">&Accessoier collection</p>
-            <a href="shopNew.php" style="text-decoration: none;"><button  class="btn1 mt-5 text-white  "   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
+            <a href="shopNew.php" style="text-decoration: none;" class="ms-5"><button  class="btn1 mt-5 text-white  "   style="height:40px ;">Shoop<i  class="bi bi-chevron-right " style="font-size: 18px; margin-top: 5px; color: white;"></i></button></a>
         </div>
         <div class="col "><img src="image/272d197df3c6ec1716ea70b84da6c5b2.gif" style="width: 100%; " class="img-fluid w-100  "></div>
       </div>
@@ -156,41 +82,9 @@ include "HEADER.php";
   </button>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
 </div>
-
-
-
-
-
+</div>
 </section>
-
 <!----Marque-->
 <div class="container marque py-4 ">
     <img  src="image/aa1.png">
@@ -223,10 +117,6 @@ include "HEADER.php";
             </div>
         </div>
     </div>
-
-
-
-
     <!---card1-->
     <div class="col py-3">
         <div class="card ">
@@ -244,9 +134,6 @@ include "HEADER.php";
             </div>
         </div>
     </div>
-
-
-
         <!---card1-->
         <div class="col-md py-3 ">
             <div class="card">
@@ -263,28 +150,7 @@ include "HEADER.php";
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
 </div>
 <!----card-->
 <div class="container my-5">
@@ -294,14 +160,10 @@ include "HEADER.php";
         <hr>
     </div>
    <div class="row ">
+<!---caroussel---->
    <div class="jcarousel-wrapper">
                 <div class="jcarousel">
                     <ul>
-                      
-                
-
-
-
 <?php
 foreach($slq as $date){
    echo' <li><div class="col-sm ckli py-2">
@@ -319,44 +181,17 @@ foreach($slq as $date){
          <i class="bi bi-star"></i>
              </div>
              <button class="bott"><i class="bi bi-cart"></i>Add to card</button>
-             
-       
     </div>
     </li>';
 }
 ?>
     </ul>
 </div>
-
 <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-
-
 </div>
 </div>
-
-
-
-
-
-
-
-
-
 <!---pub-->
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="d-sm-flex text-center  align-items-center py-3" id="main">
         <div class="ms-5">
 <b text-danger" style="font-weight: bold;">All new</b><br>
@@ -367,11 +202,6 @@ foreach($slq as $date){
         </div>
 <img src="image/kli.png" class="img-fluid w-50 ms-auto py-5 " >
     </div>
-
-
-
-
-
 <!----card2-->
 <div class="container my-2">
     <div class="row d-flex align-items-center ">
@@ -379,10 +209,8 @@ foreach($slq as $date){
            <div class="col-4 "> <a href="#" style="text-decoration: none;"><button class="boot">More Product</button> </a></div>
             <hr>
         </div>
-    <div class="row ">
- 
-        <div class="col-sm ckli">
-            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
+    <div class="row">
+        <div class="col ckli">
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -396,16 +224,10 @@ foreach($slq as $date){
              <i class="bi bi-star"></i>
                  </div>
                  <button class="bott"><i class="bi bi-cart"></i>shoop</button>
-                 <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+                 <!-- <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button> -->
             </div>
-        </div>
-    
-    
- 
-  
-
-        <div class="col-sm ckli">
-            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
+        </div>   
+        <div class="col ckli">
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -419,16 +241,10 @@ foreach($slq as $date){
              <i class="bi bi-star"></i>
                  </div>
                  <button class="bott"><i class="bi bi-cart"></i>shoop</button>
-                 <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+                 <!-- <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button> -->
             </div>
-        </div>
-    
-    
- 
- 
-
-        <div class="col-sm ckli">
-            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
+        </div>   
+        <div class="col ckli">
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -442,32 +258,10 @@ foreach($slq as $date){
              <i class="bi bi-star"></i>
                  </div>
                  <button class="bott"><i class="bi bi-cart"></i>shoop</button>
-                 <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+                 <!-- <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button> -->
             </div>
-        </div>
-    
-    
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-        <div class="col-sm ckli">
-            <i class="bi bi-heart main" style="margin-left: 250px;"></i>
+        </div>   
+        <div class="col ckli">
             <div class="card bg-light text-dark mb-5" style="border: none;">
                 <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
                 <div class="card-body">
@@ -481,13 +275,12 @@ foreach($slq as $date){
              <i class="bi bi-star"></i>
                  </div>
                  <button class="bott"><i class="bi bi-cart"></i>shoop</button>
-                 <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
+                 <!-- <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button> -->
             </div>
         </div>
-    
-    
-    </div></div></div>
-
+    </div>
+</div>
+</div>
 <!---les bass-->
 <div class="container">
     <div class="row ">
@@ -527,28 +320,6 @@ foreach($slq as $date){
             </div>
             <a href="#" class="d-flex align-items-center" style="text-decoration: none; font-weight: bold; font-size: 12px;" >View more<i class="bi bi-box-arrow-in-right" style="font-size: 22px;"></i></a>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="col">
             <b>Bestsellers</b>
             <!---article-->
@@ -587,26 +358,6 @@ foreach($slq as $date){
             <a href="#" class="d-flex align-items-center" style="text-decoration: none; font-weight: bold; font-size: 12px;" >View more<i class="bi bi-box-arrow-in-right" style="font-size: 22px;"></i></a>
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="col">
             <b>Bestsellers</b>
             <!---article-->
@@ -643,70 +394,10 @@ foreach($slq as $date){
             </div>
 
             <a href="#" class="d-flex align-items-center" style="text-decoration: none; font-weight: bold; font-size: 12px;" >View more<i class="bi bi-box-arrow-in-right" style="font-size: 22px;"></i></a>
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
 </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!---intagrame-->
 <div class="container row m-auto mt-4  ">
     <div class="col-sm text-center  py-3 "  id="pp1">
@@ -721,27 +412,141 @@ foreach($slq as $date){
     </div>
 </div> 
 
-
-
-
-
-
-
-<?php
-include "FOOTER.php";
-?>
-
-
-
-
-
-
+<?php include "FOOTER.php";?>
 </div>
 </div>
+</body>
+<script src="js/boo.js">
+    
+</script>
+<script>
+    var select=document.getElementById('select');
+    select.onchange=function(){
+    var i = select.selectedIndex;
+    var title=document.querySelectorAll(".check");
+    var text1=document.querySelectorAll('.banner');
+    var shop=document.querySelectorAll('.shop');
+    var btnshop=document.querySelectorAll('.bott');
+    var link=document.querySelectorAll(".linked");
+  var ord=document.querySelectorAll(".ordi");
+  var shopN=document.querySelectorAll(".shopN");
 
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
- <script src="js/boo.js"></script>
-  
-    </html>
+
+//json traduction francer
+    var Frdata=[
+    {
+
+    "home":"accueil",
+    "nosOrinateur":"Nos ordinateurs",
+    "nosCoffret":"nos coffre",
+    "fourniseur":"nos fournisseur",
+    "quiSommeNous":"Qui sommes-nous?",
+    "blog":"Blog",
+    "EspaceClient":"Espace Client",
+    "Aide":"Aide",
+    "titreSlider":"Bannière de vente de gadgets les mieux notées",
+    "btnShop":"Ajouter à la carte",
+    "check":"Consultez notre énorme",
+    "ordi":"Des ordinateurs",
+    "shopN":"boutique nouveau"
+
+    }];
+    //json traduction Arabe
+    var Ardata=[
+   
+    {
+    "home":"استقبال",
+    "nosCoffret":"خزائننا",
+    "nosOrinateur":"أجهزة الكمبيوتر لدينا",
+    "fourniseur":"موردينا",
+    "quiSommeNous":"من نحن؟",
+    "blog":"المدونة",
+    "EspaceClient":"منطقة العملاء",
+    "Aide":"مساعدة",
+    "titreSlider":"بيع الأداة أعلى تصنيف بانر",
+    "btnShop":"اضف الى البطاقة",
+    "check":"تحقق لدينا ضخمة",
+    "ordi":"أجهزة الكمبيوتر",
+    "shopN":"تسوق جديد"
+    }];
+
+
+
+
+
+//confition select arab ou france
+    if(select[i].innerHTML=="العربية"){
+        for(var i = 0 ; i<Ardata.length;i++){
+            for(var j=0;j<text1.length;j++){
+                text1[j].innerHTML=Ardata[i].titreSlider
+            }
+            for(var k=0;k<btnshop.length;k++){
+                btnshop[k].innerHTML=Ardata[i].btnShop;
+            }
+            for(var k=0;k<title.length;k++){
+                title[k].innerHTML=Ardata[i].check;
+            }
+            for(var k=0;k<ord.length;k++){
+                ord[k].innerHTML=Ardata[i].ordi;
+            }
+            for(var k=0;k<shopN.length;k++){
+                shopN[k].innerHTML=Ardata[i].shopN;
+            }
+            link[0].innerHTML=Ardata[i].home;
+            link[1].innerHTML=Ardata[i].nosOrinateur;
+            link[2].innerHTML=Ardata[i].nosCoffret;
+            link[3].innerHTML=Ardata[i].fourniseur;
+            link[4].innerHTML=Ardata[i].quiSommeNous;
+            link[5].innerHTML=Ardata[i].blog;
+            link[6].innerHTML=Ardata[i].EspaceClient;
+            link[7].innerHTML=Ardata[i].Aide;
+
+
+        }
+    }
+    else{
+    if(select[i].innerHTML=="France"){
+        for(var i = 0 ; i<Frdata.length;i++){
+            for(var j=0;j<text1.length;j++){
+                text1[j].innerHTML=Frdata[i].titreSlider
+            }
+            for(var k=0;k<btnshop.length;k++){
+                btnshop[k].innerHTML=Frdata[i].btnShop;
+            }
+            for(var k=0;k<title.length;k++){
+                title[k].innerHTML=Frdata[i].check;
+            }
+            for(var k=0;k<ord.length;k++){
+                ord[k].innerHTML=Frdata[i].ordi;
+            }
+            for(var k=0;k<shopN.length;k++){
+                shopN[k].innerHTML=Frdata[i].shopN;
+            }
+            link[0].innerHTML=Frdata[i].home;
+            link[1].innerHTML=Frdata[i].nosOrinateur;
+            link[2].innerHTML=Frdata[i].nosCoffret;
+            link[3].innerHTML=Frdata[i].fourniseur;
+            link[4].innerHTML=Frdata[i].quiSommeNous;
+            link[5].innerHTML=Frdata[i].blog;
+            link[6].innerHTML=Frdata[i].EspaceClient;
+            link[7].innerHTML=Frdata[i].Aide;
+        }
+    }
+    }
+    }
+</script>
+
+<style>
+.maina{
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(to left,rgb(241, 156, 151),rgb(252, 207, 162));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+</style>
+<script src="js/bootstrap.bundle.min.js"></script>
+</html>

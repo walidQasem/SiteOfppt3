@@ -24,12 +24,17 @@
        $sel=$data->prepare("SELECT * FROM produite");
        $sel->execute();
        $c=$sel->rowCount();
-       if(isset($_POST['supprimere'])){
-        $id=$_POST['supprimere'];
-        $rol=$data->prepare("DELETE FROM produite WHERE idProduit='$id'");
-        $rol->execute();
-        header('Location:addProduit.php');
-      
+
+
+if(isset($_POST['supprimere'])){
+    $id=$_POST['supprimere'];
+    $suprrimerC=$data->prepare("DELETE FROM commentaire WHERE id_produit='$id'");
+    $suprrimerC->execute();
+    $role=$data->prepare("DELETE FROM lignecommande WHERE idProduitCom='$id'");
+    $role->execute();
+    $rol=$data->prepare("DELETE FROM produite WHERE idProduit='$id'");
+    $rol->execute();
+    header('Location:addProduit.php');
     }
 if(isset($_POST['update'])){
     session_start();  
@@ -67,7 +72,7 @@ if(isset($_POST['update'])){
     $prix=$_POST['prix'];
     $Quantite=$_POST['Quantite'];
     $dec=$_POST['desc'];
-    $creat=$data->prepare("INSERT INTO `produite` (`idProduit`, `imgP`, `img1`, `img2`, `img3`, `img4`, `libelleP`, `descriptionP`, `typeP`, `MarqueP`, `prixP`, `Quantity`, `status`) VALUES (NULL, '$imgp', '$imgp', '$img1', '$img2', '$img3', '$libelle', '$dec', '$type', '$marque', '$prix', '$Quantite','$status');");
+    $creat=$data->prepare("INSERT INTO `produite` (`idProduit`, `imgP`, `img1`, `img2`, `img3`, `img4`, `libelleP`, `descriptionP`, `typeP`, `MarqueP`, `prixP`, `Quantity`, `status`,`Id_fourniseure`) VALUES (NULL, '$imgp', '$imgp', '$img1', '$img2', '$img3', '$libelle', '$dec', '$type', '$marque', '$prix', '$Quantite','$status','$marque');");
     $creat->execute();
     if($creat){
         $dex="block";
@@ -106,7 +111,20 @@ if(isset($_POST['update'])){
 
 
 <div class="row ">
-    <div class="col-md py-2"><label>Marque</label><input type="text" id="auteur" name="Marque" class="form-control p-2"></div>
+    <div class="col-md py-2">
+        <label>Marque</label>
+ 
+        <select class="form-select" name="Marque" id="auteur">
+        <?php 
+        $marque=$data->prepare("select * from fournisseur");
+        $marque->execute();
+         foreach($marque as $m){
+        echo "<option value='".$m['marque']."'>".$m['marque']."</option>";
+        
+         }
+        ?>
+    </select>
+    </div>
     <div class="col-md py-2">
         <label>type</label><br>
         <select class="form-select" name='type'>
@@ -186,7 +204,7 @@ if(isset($_POST['update'])){
                <td>".$me['Quantity']."</td>
                 <td>".$me['status']."</td>
                 <td><button  class='btn'  name='update' value='".$me['idProduit']."'><i class='bi bi-pencil-square text-success' style='font-size:22px;'></i></button></td>
-                <td><button  class='btn'   onclick='supprimer(this)'   name='supprimere' type='button'  value='".$me['idProduit']."'><i class='bi bi-trash3-fill text-danger' style='font-size:22px;'></i></button></td>
+                <td><button  class='btn'  name='supprimere' onclick='supprimer(this)' type='submit'  value='".$me['idProduit']."'><i class='bi bi-trash3-fill text-danger' style='font-size:22px;'></i></button></td>
                </tr>
                ";
            }

@@ -27,7 +27,6 @@ $id="";
 foreach($idUtilisateur as $id){
 $id=$id['idU'];
 }
-
 if(isset($_POST['submi'])){
   $date=date('Y/m/d');
   $somm=0;
@@ -35,13 +34,13 @@ foreach ($comm as $key => $v){
     $see=$data->prepare("SELECT sum(prixP) as prix FROM produite WHERE produite.idProduit in('$key')");
     $see->execute();
     foreach($see as $m){
-        $somm+=(int)($m['prix']);
+        $somm+=(int)($m['prix'])*$v;
     }
 }
 
 
 
-$commende=$data->prepare("INSERT INTO cmmande(`idCM`, `dateC`, `prixTotal`, `modePaiment`, `codePromo`, `id_userComm`)VALUES(NULL, '$date', '$somm', 'pypal', '50000', $id)");
+$commende=$data->prepare("INSERT INTO cmmande(`idCM`, `dateC`, `prixTotal`, `modePaiment`, `codePromo`, `id_userComm`,status)VALUES(NULL, '$date', '$somm', 'pypal', '50000', $id,'In Progress')");
 $commende->execute();
 $maxid=$data->prepare("SELECT MAX(idCM) as id FROM cmmande");
 $maxid->execute();
@@ -52,15 +51,11 @@ $idM=$id['id'];
 foreach ($comm as $key => $v){
 $lign=$data->prepare("INSERT INTO `lignecommande` (`QuantityC`, `idLign`, `idProduitCom`, `idCommande`) VALUES ('5', NULL, '$key', '$idM')");
 $lign->execute();
+if($lign){
+  echo "<script>alert('commande ajouter bien!!')</script>";
 }
 }
-
-
-
-
-
-
-
+}
 
     include "HEADER.php";
     ?>
@@ -81,7 +76,7 @@ include "Progress.php";
 <div class="accordion mt-5" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><b style="font-size:11px;"><i class="bi bi-credit-card-2-back mx-2" style="font-size:21px;"></i>Pay with Credit Card</b></button>
+      <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><b style="font-size:11px;"><i class="bi bi-credit-card-2-back mx-2" style="font-size:21px;"></i>Pay with Credit Card</b></button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
@@ -95,11 +90,11 @@ include "Progress.php";
 
 <div class="row mt-3">
 <div class="col-6">
-    <input class="form-control py-2 low" type="text" name='CardNumber' placeholder="Card number" required>
+    <input class="form-control py-2 low shadow-none type="text" name='CardNumber' placeholder="Card number" required>
 </div>
 
 <div class="col-6">
-    <input class="form-control py-2 low" type="text" placeholder="Full Name" name='name' required>
+    <input class="form-control py-2 low shadow-none" type="text" placeholder="Full Name" name='name' required>
 </div>
 
 </div>
@@ -110,17 +105,17 @@ include "Progress.php";
 
 <div class="row mt-3">
 <div class="col-3">
-    <input class="form-control py-2 low" type="text" name='Card number' placeholder="MM/Y" name='MM' required>
+    <input class="form-control py-2 low shadow-none" type="text" name='Card number' placeholder="MM/Y" name='MM' required>
 </div>
 
 <div class="col-3">
-    <input class="form-control py-2 low" type="text" placeholder="CVC" name='CVC' required>
+    <input class="form-control py-2 low shadow-none" type="text" placeholder="CVC" name='CVC' required>
 </div>
 
 
 <div class="col-6">
 <form method="POST">
-<button class="form-control py-2 low ho"  name='submi' >Submite</button>
+<button class="form-control py-2 low ho shadow-none"  name='submi' >Submite</button>
 </form>
 </div>
 
@@ -144,9 +139,9 @@ include "Progress.php";
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><b style="font-size:11px;"><i class="bi bi-paypal mx-2" style="font-size:21px;"></i>Pay with Credit Card</b></button>
+    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><b style="font-size:11px;"><i class="bi bi-paypal mx-2" style="font-size:21px;"></i>Pay with Credit Card</b></button>
     </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    <div id="collapseTwo" class="accordion-collapse collapse shadow-none" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
        
 
@@ -154,16 +149,16 @@ include "Progress.php";
 <div class="d-flex align-items-center py-2"><b  style="font-size: 10px;">PayPal - the safer, easier way to pay:</b> </div>
 <div class="row mt-3">
 <div class="col-6">
-    <input class="form-control py-2 low" type="text" name='E-email' placeholder="E-email" required>
+    <input class="form-control py-2 low shadow-none" type="text" name='E-email' placeholder="E-email" required>
 </div>
 
 <div class="col-6">
-    <input class="form-control py-2 low" type="text" placeholder="Password" name='PasswordP' required>
+    <input class="form-control py-2 low shadow-none" type="text" placeholder="Password" name='PasswordP' required>
 </div>
 
 </div>
 <div class="col-3 py-3">
-<button class="form-control py-2 low ho"  name='paypal' >Log in</button>
+<button class="form-control py-2 low ho shadow-none"  name='paypal' >Log in</button>
 </div>
 
 </div>

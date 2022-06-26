@@ -18,12 +18,9 @@
 <body>
 
 <?php
-    $bob='none';
-    $red='none';
-    $user='root';
-    $ps="";
-    $data= new PDO("mysql:host=localhost;dbname=ordishop",$user,$ps);
+
     session_start();
+    include "BS.php";
  if(isset($_COOKIE['email']))   {
 $sel=$data->prepare("SELECT * FROM user WHERE emailU=:email");
 $sel->bindParam(":email",$_COOKIE['email']);
@@ -38,14 +35,7 @@ $id;
         $password=$m['passwordU'];
         $img=$m['imgU'];
         }
-
-
-
-
-
 if(isset($_POST['singup'])){
-
-
    if($_POST['img']==""){
     $_POST['img']=$img;
    }
@@ -104,7 +94,7 @@ include "HEADER.php";
 
 
      <div class="col-sm-9 ">
-<h2 class="mt-4" style="font-weight: bold; color: rgb(92, 92, 92);">Your wishlise </h2>
+<h2 class="mt-4" style="font-weight: bold; color: rgb(92, 92, 92);">Your Ordres</h2>
 </div>
 
 
@@ -234,41 +224,66 @@ include "HEADER.php";
    <b><a href="#" class="lin"><i class="bi bi-credit-card-2-back me-3"  style="font-size: 17px;"></i></i>Payment methods</a></b><br><br>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
 <div class="col-md mt-5">
 <table  class="table table-hover" style="width:100%;">
     <tr>
     <th>id</th>
     <th>Date Purchased</th>
-    <th>Code promo</th>
+    <th>Status</th>
     <th>Mode paiment</th>
     <th>Total</th>
-
 <?php
-$c=$data->prepare("SELECT * FROM cmmande WHERE 	id_userComm=$id");
+$numpage=5;
+$t=$data->prepare("SELECT * FROM cmmande WHERE 	id_userComm=$id");
+$t->execute();
+$vae= $t->rowCount();
+if(!isset($_GET['page'])){
+    $page=1;
+}
+else{
+    $page=$_GET['page'];
+}
+$totalpage=ceil($vae/$numpage);
+echo "<div class='d-flex justify-content-center my-3'>";
+for($i=1;$i<=$totalpage;$i++){
+    echo "<a class='pagination mx-2'  href='order.php?page=".$i."'>".$i."</a>"."";
+}
+echo "</div>";
+$c=$data->prepare("SELECT * FROM cmmande WHERE 	id_userComm=$id order by dateC DESC limit ".$numpage." OFFSET ".($page-1)*$numpage);
 $c->execute();
 foreach($c as $com){
+ $var ="";
+    if($com['status']=='In Progress'){
+        $var="<b style='color:blue;'>".$com['status']."</b>";
+    }
+    if($com['status']=='Delivered'){
+        $var="<b style='color:green;'>".$com['status']."</b>";
+    }
+    if($com['status']=='Delayed'){
+        $var="<b style='color:orange;'>".$com['status']."</b>";
+    }
+    if($com['status']=='Canceled'){
+        $var="<b style='color:red;'>".$com['status']."</b>";
+    }
     echo "<tr>
+    <form method='POST'>
     <td>".$com['idCM']."</td>
     <td>".$com['dateC']."</td>
-    <td style='color:green;'>".$com['codePromo']."</td>
+    <td style='color:green;'>".$var."</td>
     <td style='color:red;'>".$com['modePaiment']."</td>
-    <td>".$com['prixTotal']."</td>
+    <td>".$com['prixTotal']." $</td>
+    <td><button value='".$com['idCM']."' name='afficher' class='btn'><i class='bi bi-eye' style='font-size:20px;'></i></button></td>
+    </form>
     </tr>";
 }
 
+
+
+
+
+
+if(isset($_POST['afficher'])){
+}
 ?>
 </tr>
 
@@ -342,6 +357,17 @@ include "FOOTER.php";
     }
     #file{
         border: none;
+    }
+    .pagination{
+        padding: 10px;
+        border-radius:10px;
+        background-color:orange;
+        font-weight: bold;
+        font-size: 11px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
 

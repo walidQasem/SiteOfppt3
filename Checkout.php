@@ -19,15 +19,20 @@
 
 
 <?php 
+$T=unserialize($_COOKIE["panierid"]);
+
+
+
+
+    if(count($T) == 0){
+    header("location:panier.php");
+    }
+    else{
+include "BS.php";      
 session_start();
-
-
-
-
 if(!isset($_COOKIE['email'])){
     header("location:login.php");
 }
-include "BS.php";
     if(isset($_POST['env'])){
         header("Location:Shipping.php");
     }
@@ -40,11 +45,12 @@ include "BS.php";
         $email=$f['emailU'];
         $tel=$f['telU'];
     }
-    
+
+    }
+
+
 
 ?>
-
-
 
 
     <?php
@@ -71,12 +77,12 @@ include "BS.php";
 <div class="row mt-3">
 <div class="col-md-6 py-2">
     <b class="b8">First Name</b>
-    <input class="form-control py-2 low" type="text" name='name' disabled value='<?php echo $name ?>' required>
+    <input class="form-control py-2 low shadow-none" type="text" name='name' disabled value='<?php echo $name ?>' required>
 </div>
 
 <div class="col-md-6 py-2">
     <b class="b8">Last Name</b>
-    <input class="form-control py-2 low" type="text" name='prenom'  disabled value='<?php echo $prenom ?>' required>
+    <input class="form-control py-2 low shadow-none" type="text" name='prenom'  disabled value='<?php echo $prenom ?>' required>
 </div>
 
 </div>
@@ -89,12 +95,12 @@ include "BS.php";
 <div class="row mt-3">
 <div class="col-md-6 py-2">
     <b class="b8">E-mail Address</b>
-    <input class="form-control py-2 low" type="email" disabled value="<?php echo  $email ?>" name='email' required>
+    <input class="form-control py-2 low shadow-none" type="email" disabled value="<?php echo  $email ?>" name='email' required>
 </div>
 
 <div class="col-md-6 py-2">
     <b class="b8">Phone Number</b>
-    <input class="form-control py-2 low" type="tel" disabled value="<?php echo  $tel ?>" name='tel' required>
+    <input class="form-control py-2 low shadow-none" type="tel" disabled value="<?php echo  $tel ?>" name='tel' required>
 </div>
 
 </div>
@@ -109,12 +115,12 @@ include "BS.php";
 <div class="row mt-3 ">
 <div class="col-md-6 py-2">
     <b class="b8">Company</b>
-    <input class="form-control py-2 low" type="text" name='Company' required>
+    <input class="form-control py-2 low shadow-none" type="text" name='Company' required>
 </div>
 
 <div class="col-md-6 py-2">
     <b class="b8">Country</b>
-    <select class="form-select py-2 low">
+    <select class="form-select py-2 low shadow-none">
         <option value="Canada"><b>Canada</b></option>
         <option value="France"><b>France</b></option>
         <option value="Espagne"><b>Espagne</b></option>
@@ -145,7 +151,7 @@ include "BS.php";
 
 <div class="col-md-6 py-2">
     <b class="b8">City</b>
-    <select class="form-select py-2 low">
+    <select class="form-select py-2 low shadow-none">
         <option value="Canada"><b>Canada</b></option>
         <option value="France"><b>France</b></option>
         <option value="Espagne"><b>Espagne</b></option>
@@ -156,108 +162,44 @@ include "BS.php";
 
 <div class="col-md-6 py-2">
     <b class="b8">ZIP Code</b>
-    <input class="form-control py-2 low" type="text" name='zip' required>
+    <input class="form-control py-2 low shadow-none" type="text" name='zip' required>
 </div>
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
 <div class="row mt-3">
 <div class="col-md-6 py-2">
     <b class="b8">Adresse1</b>
-    <input class="form-control py-2 low" type="text" name='Adresse1' required>
+    <input class="form-control py-2 low shadow-none" type="text" name='Adresse1' required>
 </div>
 
 <div class="col-md-6 py-2">
     <b class="b8">Adresse2</b>
-    <input class="form-control py-2 low" type="text" name='Adresse2' required>
+    <input class="form-control py-2 low shadow-none" type="text" name='Adresse2' required>
 </div>
 
 </div>
-
-
-
-
 <div class="mt-3"><b>Billing address</b></div>
 <hr>
-
-
 <div class="d-flex ">
 <input type="checkbox" name='c' style="background-color: #fe696a;" required >
 <b class="mx-3">Same as shipping address</b>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="row mt-3">
 <div class="col-md-6 py-2">
-<button class="form-control py-2 low" type="button" name='back' ><i class="bi bi-chevron-left  mx-2" style="font-size:18px;"></i>Back to Card</button>
+<button class="form-control py-2 low shadow-none" type="button" name='back' ><i class="bi bi-chevron-left  mx-2" style="font-size:18px;"></i>Back to Card</button>
 </div>
 
 <div class="col-md-6 py-2">
-    <button class="form-control py-2 low ho" type="submit" name='env' >Proceed to Shipping<i class="bi bi-chevron-right mx-2" style="font-size:18px;"></i></button>
+    <button class="form-control py-2 shadow-none low ho" type="submit" name='env' >Proceed to Shipping<i class="bi bi-chevron-right mx-2" style="font-size:18px;"></i></button>
 </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </form>
 </div>
   <!-- <button id="btn-progress" type="button" class="btn btn-success">Next</button> -->
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="col-lg-4 py-5">
     <?php include "menuComm.php"?>
 </div>
-
-
-
-
-
     </div>
 
 
@@ -346,22 +288,6 @@ justify-content: center;
         box-shadow: none;
         transition: 0.4s;
     }
-    .tft{
-        border: 1px solid orange;
-        border-radius: 5px;
-        color: orange;
-     transition: 0.3s;
-     font-weight: bold;
-     width: 100%;
-     padding: 10px;
-     background-color:white;
-    }
-    .tft:hover{
-        color: white;
-        background-color:orange;
-        transition: 0.3s;
-
-    }
     .low{
         font-size: 11px;
         font-weight: bold;
@@ -392,7 +318,9 @@ button {
   transition: width 2s;
 }
 
-
+.b8 {
+    font-size:11px;
+}
 
 
 

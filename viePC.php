@@ -5,76 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordi</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="css/Viepc.css">
     <link rel="shortcut icon" type="image/png" href="image/aa1.png">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300;1,300&family=Spartan:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/magnify.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+   <script src="js/jquery-3.6.0.js" ></script>
 </head>
 <body>
-    
-
-
 <?php
  session_start();
+ include "BS.php";
+ //condition pour verifier le get exist ou non
+ if(isset($_GET['id'])){
  $id=$_GET['id'];
+ }
+ else{
+    header('location:shopNew.php');
+ }
+ //ajouter un poriduit de panier
 if(isset($_POST['ajpanier'])){
     $_SESSION['idPro']=$_POST['ajpanier'];
     $_SESSION['Quantite']=$_POST['Quantite'];
- 
-echo '<div class="alert py-0 text-center text-white" style="position: absolute; width:100%; background-color: green;" ><b>est Ajouter au panier</b><i class="bi bi-calendar2-check ms-2" style="font-size:23px;"></i></div>';
-  header("refresh:2 url=viePC.php?id=$id");
-  
+echo "<script>alert('Bien ajouter')</script>";
+header("refresh:2 url=viePC.php?id=$id");
 }
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-include "BS.php";
-
-
-
-?>
-
-
-
-
-
-
-
-<?php
-
-$sel=$data->prepare("SELECT * FROM Produite WHERE idProduit=:id");
-$sel->bindParam(":id",$id);
+$sel=$data->prepare("SELECT * FROM Produite WHERE idProduit=$id");
 $sel->execute();
 if($sel->rowCount()>0){
 foreach($sel as $men){
@@ -89,25 +49,21 @@ foreach($sel as $men){
     $prix=$men['prixP'];
     $description=$men['descriptionP'];
 }
-
 }
 else{
     header("Location:shopNew.php");
 }
-
-
+//condition verifier login est click le button 
 if(isset($_POST['rev'])){
-    if(isset($_COOKIE['email'])){
+if(isset($_COOKIE['email'])){
 $date=date("Y-m-d h:i:sa");
 $email=$_COOKIE['email'];
+// lappel id pour creat un commentaire
 $sa=$data->prepare("SELECT * FROM user WHERE emailU='$email'");
 $sa->execute();
     foreach($sa as $men){
         $idC=$men['idU'];
     }
-
-
-
 $text=$_POST['textC'];
 $Pros=$_POST['Pros'];
 $Cons=$_POST['Cons'];
@@ -118,78 +74,25 @@ $com->execute();
         header("location:login.php");
     }
 }
-
+//affichage commentaire order par date
 $sql=$data->prepare("SELECT * FROM commentaire WHERE id_produit=$id ORDER BY dateC DESC ");
 $sql->execute();
 $rev=$sql->rowCount();
-
-
-?>
-
-
-
-
-
-
-
-
-
-<?php
-
-// session_start();
-// $id=$_SESSION['id'];
-// $sam=$data->prepare("select * from Produite where idproduit=$id");
-// $sam->execute();
-
 include "HEADER.php";
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!---head-->
-
 <div class="container-fluid py-3" style="width: 85%;" >
  <div class="row d-flex align-items-center">
-
-
-
-
-     <div class="col-sm-9 " >
+<div class="col-sm-9 " >
 <h2 class="mt-4" style="font-weight: bold; color: rgb(92, 92, 92);"><?php echo $lib ?></h2>
 <i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill" style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
 <i class="bi bi-star-fill"style="color: rgb(255, 85, 0); font-size: 12px;"></i>
+<!---rev le nombre de commentaire--->
 <b class="mx-1" style="color: gray; font-size: 12px;"><?php echo $rev?> Reviews</b>
 </div>
-
-
-
-
-
 <div class="col-sm  py-3">
 <style>
     .bi-chevron-right{
@@ -200,63 +103,34 @@ include "HEADER.php";
         color: rgb(0, 0, 0);
     }
 </style>
-
        <a href="index.html"><i class="bi bi-house px-2" style="font-size: 17px;"></i><b style="font-size: 12px; ">home</b></a>
        <i class="bi bi-chevron-right"></i>
        <a href="#"><b style="font-size: 12px; ">shop</b></a>
        <i class="bi bi-chevron-right"></i>
        <b style="font-size: 10px; color: rgb(102, 102, 102);">Product Page v.2</b>
-   
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  </div>
 </div>
-
 <div class="container-fluid" style="width: 87%;" >
         <div class="mmm py-2">
-<b id="c1">General Info</b>
-<b  id="c2">Tech Specs</b>
-<b  id="c3" >Reviews<span class="mx-2" style="color: gray;">(<?php echo $rev?>)</span></b>
+<b id="general">General Info</b>
+<b  id="tech">Tech Specs</b>
+<!---rev le nombre de commentaire--->
+<b  id="rev" >Reviews<span class="mx-2" style="color: gray;">(<?php echo $rev?>)</span></b>
 <hr>
     </div>
-
-
-
-
-
-
-
-<div id="v2">
+<div id="page2">
     <div class="row d-flex align-items-center" >
         <div class="col d-flex align-items-center">
+       <!---img1 image de produit-->
     <img src="image/<?php echo $img1 ?>" style="width: 150px;" class="img-fluid  px-3">
     <div >
+    <!---lib libeller de produite--->
     <b class="py-3" style="font-size: 12px;"><?php echo $lib ?></b><br>
+    <!---prix de procuit--->
     <span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;"><?php echo $prix ?>$</span>
     </div>
     </div>
-
 <div class="col ms-auto d-flex align-items-center justify-content-end py-4  ">
     <button class="mx-2" id="buy" ><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i></button>
     <form method="POST">
@@ -268,70 +142,18 @@ include "HEADER.php";
         <option value="5">5</option>
     </select>
         </form>
-
-
 <button class="info mx-2"  style="height: 46px;"><i class="bi bi-heart"></i></button>
 <button class="info mx-2"  style="height: 46px;"><i class="bi bi-arrow-repeat " ></i></button>
 </div>
 </div>
-
-
-
-
-
 <hr>
+<div>
+    <h1><b>À propos de cet article</b></h1>
+    <!---description de produite--->
+    <p style="text-align:justify;"><b><?php echo $men['descriptionP'] ?></b></p>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- table1 -->
+<!-- <table1>
 <div class="row">
 
     <table class="col-md table table-hover ">
@@ -404,30 +226,7 @@ include "HEADER.php";
     </table>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- table2 -->
+ table2 
 <div class="row">
 
     <table class="col-md table table-hover ">
@@ -509,61 +308,10 @@ include "HEADER.php";
     </table>
 
 </div>
+ 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- table2 -->
+ table2
 <div class="row">
 
     <table class="col-md table table-hover ">
@@ -658,99 +406,11 @@ include "HEADER.php";
     <td><b class="bit">Ventilateurs</b></td>
     
 </tr>
+    </table> 
 
-
-
-    </table>
-
+ </div>  -->
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="v3">
+<div id="page3">
     <div class="row d-flex align-items-center" >
         <div class="col d-flex align-items-center">
     <img src="image/<?php echo $img1 ?>" style="width: 150px;" class="img-fluid  px-3">
@@ -758,15 +418,7 @@ include "HEADER.php";
     <b class="py-3" style="font-size: 12px;"><?php echo $lib ?></b><br>
     <span  class="py-3" style="color: blue; font-size: 22px; font-weight: bold;"><?php echo $prix ?>$</span>
     </div>
-    </div>';
-
-
-    
-    
-    
-    
-    
-    
+    </div>
     <div class="col ms-auto d-flex align-items-center justify-content-end py-4   " style="text-align: center;">
         <button class="mx-2" id="buy" ><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i></button>
         <form method="POST">
@@ -778,24 +430,14 @@ include "HEADER.php";
         <option value="5">5</option>
     </select>
         </form>
-    
     <button class="info mx-2"  style="height: 46px;"><i class="bi bi-heart"></i></button>
     <button class="info mx-2"  style="height: 46px;"><i class="bi bi-arrow-repeat " ></i></button>
     </div>
     </div>
-    
-    
-    
-    
-    
     <hr>
-    
-
-
-
-
    <div class="row  d-flex align-items-center">
        <div class="col-md-4 ">
+      <!---rev nombre de commontaire--->
            <h1><b style="font-size: 20px;""><?php echo $rev?> Reviews</b></h1>
            <div class="">
            <i class="bi bi-star-fill"></i>
@@ -810,79 +452,33 @@ include "HEADER.php";
         <p style="font-weight: bold; font-size: 10px;">58 out of 74 (77%)<br>Customers recommended this product</p>
        </div>
 <div class="col">
-    
-  
-  
        <div class="progress my-4 " style="height: 4px;">
         <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-  
       </div>
       <div class="progress my-4" style="height: 4px;">
         <div class="progress-bar bg-danger" role="progressbar" style="width: 30%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-        
       </div>
       <div class="progress my-4" style="height: 4px;">
         <div class="progress-bar bg-warning" role="progressbar" style="width: 20%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-        
       </div>
       <div class="progress my-4" style="height: 4px;">
         <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-        
       </div>
       <div class="progress my-4" style="height: 4px;">
-        <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-        
+        <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>   
       </div>
     </div>
        
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
 <div class="row">
     <!--profil1-->
-
     <div class="col-md-7 ">
-
     <?php
-$sql1=$data->prepare("SELECT * FROM commentaire WHERE id_produit=$id");
-$sql1->execute();
-
-
-
-foreach($sql as $qs){
-    foreach($sql1 as $m){
+//boucle pour appel id user pour afficher les nom est prenom de user
+    foreach($sql as $m){
         $s=$m["id_user"];
+        //boucle pour appel user par id S
         $use=$data->prepare("SELECT * FROM user WHERE idU=$s");
         $use->execute();
         foreach($use as $yh){
@@ -900,249 +496,36 @@ echo '
 <div class="d-flex">
 <div class="d-flex align-items-center"   ><i class="bi bi-hand-thumbs-up " onclick="hani(this)"   style="font-size: 22px ;color: green; cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 17</b></i></div>
 <div class="d-flex align-items-center ms-3"><i class="bi bi-hand-thumbs-down"  onclick="hani(this)"    style="font-size: 22px ;color: rgb(255, 1, 1); cursor: pointer; "><b id="contr" style="font-size: 10px;" class="ms-1"> 5</b></i></div>
-</div>';
-}
-}
-}
+</div>
+<hr>
+';
+}}
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 <div class="col-md-4 ms-auto py-5">
 <form method="POST">
 <h1><b style="font-size: 20px;">Write a review</b></h1>
 <b style="font-size: 10px; color: gray;">Authentication only - we won't spam you.</b><br>
   <label class="py-2"><b style="font-size: 13px;">Review*</b></label>
-  <textarea  class="form-control" style="height: 140px;" name='textC'></textarea>
+  <textarea  class="form-control shadow-none" style="height: 140px;" name='textC'></textarea>
 
 
 
   <label class="py-2"><b style="font-size: 13px;">Pros</b></label>
-  <textarea  class="form-control" name='Pros'></textarea>
+  <textarea  class="form-control shadow-none" name='Pros' ></textarea>
 
 
 
 
   <label class="py-2"><b style="font-size: 13px;">Cons</b></label>
-  <textarea  class="form-control" name='Cons'></textarea>
+  <textarea  class="form-control shadow-none" name='Cons'></textarea>
   <button class=" mino " type="submit" name='rev'>submit Reviews</button>
-  
 </form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="v11">
+    <div id="page1">
 <div class="row">
- 
-   
-
 <div class="col-2 imagex ">
 <img src="image/<?php echo $img2 ?>"  onmousemove="change(this)" class="img-fluid " style="width: 80px;">
          <img  src="image/<?php echo $img3 ?>" onmousemove="change(this)"  class="img-fluid " style="width: 80px;">
@@ -1163,28 +546,6 @@ echo '
     <div class="col  " style="margin-left: 20px;"> <span id="spanix"><i class="bi bi-patch-check px-2" style="color: white; font-size: 16px;"></i>Product available</span></div>
     </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
-
 <form method="POST">
 
     <div class="mt-3">
@@ -1196,20 +557,8 @@ echo '
         <option value="4">4</option>
         <option value="5">5</option>
     </select>
-    
-
-   
    <button class="col" id="buy" value="<?php echo $id ?>" name="ajpanier" style="margin-left: 20px;"><i class="bi bi-bag-plus px-2" style="color: balck; font-size:17px;"></i>Add to card</button>';
-
-
 </div>
-
-
-
-
-
-
-
 <div class="mt-3">
     <div class="row">
 <button class="col info "><i class="bi bi-heart px-2" style="color: balck; font-size:15px;"></i>Add to Wishlist</button>
@@ -1245,18 +594,6 @@ echo '
 </div>
 </div>
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
 <div style="display: flex; align-items: center; justify-content: start; " >
 <b>Share:</b>
 <div class="twitter mx-1">
@@ -1268,87 +605,15 @@ echo '
     <div class="facebook mx-1">
         <b class="bi bi-facebook"></b><b>facebook</b>
         </div>
-
-
-
-
-
-
 </div>
     </div>
-
-
         </div>
-
 </div>
 </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container py-3">
     <h1 style="font-weight: bold; text-align: center; font-size: 23px;">You may also like</h1>
 </div>
-
-
-
-
 <!----card-->
 <!-- <div class="lefex"><i class="bi bi-chevron-left"></i></div>
 <div class="reghtix"><i class="bi bi-chevron-right"></i></div> -->
@@ -1372,11 +637,7 @@ echo '
              <button class="bott"><i class="bi bi-cart"></i>shoop</button>
              <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
         </div>
-        
     </div>
-
-
- 
        <div class="col-sm ckli">
         <div class="card bg-light text-dark mb-5" style="border: none;">
             <img class="card-img-top img-fluid m-auto" src="image/pcc5.png" style="width: 250px;">
@@ -1395,10 +656,6 @@ echo '
              <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
         </div>
     </div>
-
-
-
-
     <div class="col-sm ckli">
         <div class="card bg-light text-dark mb-5" style="border: none;">
             <img class="card-img-top img-fluid m-auto" src="image/pcc5.png" style="width: 250px;">
@@ -1417,24 +674,6 @@ echo '
              <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="col-sm ckli">
         <div class="card bg-light text-dark mb-5" style="border: none;">
             <img class="card-img-top img-fluid m-auto"src="image/pcc5.png" style="width: 250px;">
@@ -1452,51 +691,6 @@ echo '
              <button class="bott1"><i class="bi bi-eye px-2" style="color: balck; "></i>Quick view</button>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
 <div class="container py-5 " style="border: 1px solid rgb(234, 234, 234);">
     <div style="padding-bottom: 20px;"><h1 style="font-weight: bold; text-align: center; font-size: 23px;">Cheaper together</h1></div>
 <div class="row d-flex align-items-center" >
@@ -1509,21 +703,12 @@ echo '
     <div class="col-1">
         <b style="font-size: 40px; color: gray;">+</b>
     </div>
-
-
-
     <div class="col m-auto" style="margin: auto ; text-align: center;">
         <img src="image/LD0005523855_2_0005916680.jpg" class="img-fluid" style="width: 200px;"><br>
         <b>Your products</b><br>
         <b>Logitech G G502 SE Hero</b><br>
         <b style="color: blue;">$1412.1</b>
             </div>
-
-
-
-
-
-
             <div class="col-1 d-none d-lg-block">
                 <b style="font-size: 40px; color: gray;">=</b>
             </div>
@@ -1531,56 +716,85 @@ echo '
 <b style="color: blue; font-size: 25px;">$2000.5</b><br>
 <button class="btn text-white my-3"  style="  background-image: linear-gradient(to left,rgb(255, 119, 0) , rgb(224, 111, 111)); padding: 10px 60px; font-weight: bold; font-size: 12px; border-radius: 10px;" >purchase together</button>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
    </div>
 </div>
-
-
-
 <?php
 include "FOOTER.php";
 ?>
 </div>
 </div>
- 
-
 </body>
 <script src="js/jquery.magnify.js"  charset="utf-8"></script>
 
-<script src="js/Viepc.js"></script>
+<script src="js/Viepc.j"></script>
+<script>
+    
+function change(id){
+img =$(".pub")
+img.attr('src',id.src)
+img.attr('data-magnify-src',id.src)
+img.magnify()
+}
+
+$(document).ready(
+    function() {
+        $('.zoom').magnify();
+});
+
+function walid(c,d,v){
+
+    document.getElementById(c).style.color="red"
+    document.getElementById(c).style.borderBottomColor = "red";
+    document.getElementById(c).style.transition = "all 0.5s";
+    document.getElementById(d).style.color="black"
+    document.getElementById(v).style.color="black"
+    document.getElementById(d).style.borderBottomColor = "#DCDCDC";
+    document.getElementById(v).style.borderBottomColor = "#DCDCDC";
+} 
+function dispaly(page1,page2,page3){
+    document.getElementById(page1).style.display="none"
+    document.getElementById(page2).style.display="block"
+    document.getElementById(page3).style.display="none"
+}
+
+
+document.getElementById('page2').style.display="none"
+document.getElementById('page3').style.display="none"
+
+
+document.getElementById('tech').onclick=function chan1(){
+   dispaly("page1","page2","page3")
+    walid("tech","general","rev")
+    
+}
+document.getElementById('general').onclick=function chan2(){
+    dispaly("page2","page1","page3")
+    walid("general","rev","tech")
+}
+document.getElementById('rev').onclick=function chan3(){
+    dispaly("page1","page3","page2")
+    walid("rev","tech","general")
+}
+
+//function like
+function hani(x){
+var res=parseInt(x.children[0].innerHTML)
+if(x.style.fontSize=="22px"){
+x.children[0].innerHTML=res+1
+x.style.transition='0.5s'
+x.style.fontSize="26px"
+}
+else{
+if(x.style.fontSize=="26px"){
+    x.children[0].innerHTML=res-1
+    x.style.fontSize="22px"
+    x.style.transition='0.5s'
+    }
+}}
+
+</script>
 
 </html>

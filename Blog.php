@@ -6,54 +6,32 @@
     <title>panier</title>
     <link rel="stylesheet" href="css/Blog.css">
     <link rel="shortcut icon" type="image/png" href="image/aa1.png">
-
+    <link rel="shortcut icon" type="image/png" href="image/aa1.png">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300;1,300&family=Spartan:wght@300&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 if(isset($_GET['dec'])){
   session_start();
   $_SESSION['id']=$_GET['dec'];
   header('Location:DecriptionBlog.php');
-  
 }
 ?>
-
 <?php
-
 include "HEADER.php";
 ?>
-
-
  <div class="container py-5" > 
 <h1 style='font-size: 20px;'><b>Le Blog ordishoop Web Services</b></h1>
 <form method='GET' >
 <div class="row mt-5"> 
 <?php
 include "BS.php";
-$da=$data->prepare("select * from Bloge order by DateB DESC LIMIT 7");
+$da=$data->prepare("select * from Bloge order by DateB DESC ");
 $da->execute();
 foreach($da as $in){
   
@@ -72,51 +50,15 @@ foreach($da as $in){
     </div>
   </div>';
 }
-
-
-
-
 // include "FOOTER.php";
 
 ?>
     </form>
-
-
-
-
-
 </div>
-
 </div> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
 <style>
         .geeks {
-       
             overflow: hidden;
             margin: 0 auto;
         }
@@ -130,17 +72,6 @@ foreach($da as $in){
             transform: scale(1.1);
         }
     </style>
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 

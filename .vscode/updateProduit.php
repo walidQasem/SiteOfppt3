@@ -149,8 +149,8 @@ ob_end_flush();
     <div class="col-md-12 py-2">
         <label>Status</label>
         <select class="form-select" name='status'>
-        <option value='pas disponible'>pas disponible</option>
-        <option value='disponible'>disponible</option>
+        <option value='EN STOCK'>EN STOCK</option>
+        <option value='EN STOCK'>EN STOCK</option>
     </select>
 </div>
   

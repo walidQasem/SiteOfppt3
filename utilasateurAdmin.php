@@ -28,22 +28,13 @@
        $c=$sel->rowCount();
        if(isset($_POST['supprimere'])){
         $id=$_POST['supprimere'];
+        $suprrimerC=$data->prepare("DELETE FROM commentaire WHERE id_user='$id'");
+        $suprrimerC->execute();
         $rol=$data->prepare("DELETE FROM user WHERE idU='$id'");
         $rol->execute();
         header('Location:utilasateurAdmin.php');
       
     }
-
-
-
-
-
-
-
-
-
-
-    
     $dex="none";
     if(isset($_POST['add'])){
     
@@ -60,12 +51,7 @@
         $sec = "2.3";
         header("Refresh: $sec; url=BlogAdmin.php");
     }
-    
-
-
-
     }
-
     if(isset($_POST['update'])){
     //     foreach($sel as $men){
     //         $om=$men['imgB'];
@@ -90,11 +76,7 @@
     session_start();
     $_SESSION['id']=$_POST['update'];
     header('Location:profilUtilasateur.php');
-
-
     }
-
-       
     ?>
     <?php
     include "headerAdmin.php";
@@ -118,42 +100,16 @@
 </div>
 
       <div class="alert w-50" style="display: <?php echo $dex ?>;    background-image: linear-gradient(to right, #1D976C 0%, #1D976C 100%); color: white;" id="alert"><div style="display: flex; align-items: center;"><i>opération réussie<i><i class="bi bi-patch-check-fill mx-3" style="font-size:25px;"></i></div></div>
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 <div style="overflow-x:auto;">
 
        <table class="table table-hover mt-4 table-responsive " >
-  
-
-
-
-
       <form method='POST'>
-     
            <tr >
-
                <th >ID Utilisateur</th>
                <th>image</th>
                <th>UserName</th>
                <th>Telephon</th>
-    
-               
-               
            </tr>
            <tbody id='myTable'  >
            <?php

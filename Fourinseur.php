@@ -19,55 +19,44 @@
 <body>
     <?php
        include "BS.php";
-       if(isset($_POST['aff'])){
-       $limit=$_POST['limit'];
-       }
-       $sel=$data->prepare("SELECT * FROM bloge order By DateB DESC  ");
+
+
+
+
+       $sel=$data->prepare("SELECT * FROM fournisseur ");
        $sel->execute();
        $c=$sel->rowCount();
        if(isset($_POST['supprimere'])){
-        $id=$_POST['supprimere'];
-        $rol=$data->prepare("DELETE FROM bloge WHERE idB='$id'");
+        $marque=$_POST['supprimere'];
+        $rol=$data->prepare("DELETE FROM fournisseur WHERE marque ='$marque'");
         $rol->execute();
-        header('Location:BlogAdmin.php');
+        header('Location:Fourinseur.php');
       
     }
     $dex="none";
     if(isset($_POST['add'])){
-    $img=$_POST['img'];
-    $titre=$_POST['titre'];
-    $autour=$_POST['auteur'];
-    $date=$_POST['date'];
-    $dec=$_POST['desc'];
-    $creat=$data->prepare("INSERT INTO  bloge (`idB`, `imgB`, `titleP`, `DateB`, `disctiptionB`, `NomL`, `DecB`) VALUES (NULL, '$img', ' $titre', '$date', '$dec', '$autour', '$dec');");
+    $marque=$_POST['qes'];
+    $adresse=$_POST['rep'];
+    $tel=$_POST['date'];
+    $creat=$data->prepare("INSERT INTO `fournisseur` (`marque`, `adresseF`, `telF`) VALUES ('$marque', '$adresse', '$tel');");
     $creat->execute();
     if($creat){
         $dex="block";
         $sec = "2.3";
-        header("Refresh: $sec; url=BlogAdmin.php");
+        header("Refresh:$sec; url=Fourinseur.php");
     }
     }
-    //update 
-    if(isset($_POST['update'])){
-            //update image blog
-        foreach($sel as $men){
-            $om=$men['imgB'];
-        if($_POST['img']==""){
-            $img=$om;
-        }
-        else{
-            $img=$_POST['img'];
-        }
-        }
-    $id=$_POST['id'];
-        $titre=$_POST['titre'];
-        $autour=$_POST['auteur'];
-        $date=$_POST['date'];
-        $dec=$_POST['desc'];
-    $ce=$data->prepare("UPDATE bloge set imgB='$img',titleP='$titre',DateB='$date',decB='$dec',NomL='$autour'  Where idB=$id");
+    if(isset($_POST["update"])){
+        $marque=$_POST['qes'];
+        $adresse=$_POST['rep'];
+        $tel=$_POST['date'];
+    $ce=$data->prepare("UPDATE fournisseur set marque='$marque',adresseF='$adresse',telF='$tel' Where marque=$marque");
     $ce->execute();
-    header('Location:BlogAdmin.php');
+    header('Location:Fourinseur.php');
     }
+
+
+       
     ?>
     <?php
     include "headerAdmin.php";
@@ -76,41 +65,57 @@
 
 <div class="d-flex align-items-center mt-4">
    <button class="lole my-3">Add New<i class="bi bi-plus-circle mx-2"></i></button>
-      <b style="font-size: 11px; color: grey;" class="mx-2 ms-5">Resultas Page</b>
-      <form method="POST">
-      <select class=" m-auto info " name="limit"  >
+   
 
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-      </select>
-      <button name="aff" class="info " ;><i class="bi bi-eye-fill "></i></button>
-      </form>
-      <input type="search" id="myInput" class="form-control py-2 w-50 ms-auto" name="search" placeholder="Search in Blog...">
 </div>
 
       <div class="alert w-50" style="display: <?php echo $dex ?>;    background-image: linear-gradient(to right, #1D976C 0%, #1D976C 100%); color: white;" id="alert"><div style="display: flex; align-items: center;"><i>opération réussie<i><i class="bi bi-patch-check-fill mx-3" style="font-size:25px;"></i></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="add mt-5">
+
+
       <form method="POST">
+
 <div class="row d-flex m-auto"><div class="col-12">
-<input type='file'  name="img" id='img' style="display: none;"  class="form-control mt-2" id="customFile">
+
+
+
        
-       <label for="img" id='ffil' >Add image Blog..<i class="bi bi-cloud-arrow-up mx-2" style="font-size: 40px;"></i></label>
 </div></div>
 <div class="row mt-3">
-    <div class="col-md py-2"><label>Id Blog</label><input type="text" id="id" name="id" class="form-control p-2" readonly></div>
-    <div class="col-md py-2"><label>Titre Blog</label><input type="text" id="titre" name="titre" class="form-control  p-2"></div>
+    <div class="col-md py-2"><label>Marque</label><input type="text" id="id" name="qes" class="form-control p-2" ></div>
+    <div class="col-md py-2"><label>Adresse</label><input type="text" id="qeu" name="rep" class="form-control  p-2"></div>
 </div>
 <div class="row ">
-    <div class="col-md py-2"><label>Auteur</label><input type="text" id="auteur" name="auteur" class="form-control p-2"></div>
-    <div class="col-md py-2"><label>Date</label><input  name="date"  value='<?php echo date('Y-m-d') ?>' type="date" class="form-control  p-2"></div>
+<div class="col-md py-2"><label>telphon</label><input type="text" id="rep" name="date" class="form-control  p-2"></div>
 </div>
+
+
+
+
+
+
+
+
+
 <div class="row ">
-    <div class="col-md-12 py-2"><label>Description</label><textarea rows="8" id="desce" name="desc" style="resize: none;" class="form-control"></textarea></div>
-</div>
-<div class="row ">
-    <button  class="col-md-4 btn  my-2 d-flex align-items-center justify-content-center " id="btn" name="add"><i class="bi bi-node-plus  mx-2 "  style="font-size:24px;"></i>Add Blog</button>
+    <button  class="col-md-4 btn  my-2 d-flex align-items-center justify-content-center " id="btn" name="add"    ;
+"    ><i class="bi bi-node-plus  mx-2 "  style="font-size:24px;"></i>Add Blog</button>
     <button  class="col-md-2 btn btn-danger ms-2 my-2 close d-flex align-items-center justify-content-center" type="button" style="border-radius:10px;"><i class="bi bi-reply-all mx-2"  style="font-size:23px;"></i>Close</button>
   
 </div>
@@ -124,42 +129,76 @@
 
 
 
+
+
+
+
+
+
 <div style="overflow-x:auto;">
+
        <table class="table table-hover mt-4 table-responsive " >
+  
+
+
+
+
       <form method='POST'>
+     
            <tr >
-               <th>ID Blog</th>
-               <th>Blog Name</th>
-               <th >Date Blog</th>
-               <th >DEs Blog</th>
-               <th >Auteur Nom</th>
-               <th>Img</th>
-               <th >Update</th>
-               <th >Supprimer</th>
+
+               <th>Marque</th>
+               <th>Adresse</th>
+               <th >telephon</th>
            </tr>
            <tbody id='myTable' >
            <?php
            foreach($sel as $me){
+            
                echo "
+            
                <tr >
-               <td>".$me['idB']."</td>
-               <td>".$me['titleP']."</td>
-               <td style='color:blue;'>".$me['DateB']."</td>
-               <td><textarea disabled>".$me['DecB']."</textarea></td>
-               <td>".$me['NomL']."</td>
-               <td>".$me['imgB']."</td>
-                <td><a href='#'><button  class='btn' type='button' onclick='app(this)' value='".$me['idB']."'><i class='bi bi-pencil-square text-success' style='font-size:22px;'></i></button></a></td>
-                <td><button  class='btn'   onclick='supprimer(this)'   name='supprimere' type='button'  value='".$me['idB']."'><i class='bi bi-trash3-fill text-danger' style='font-size:22px;'></i></button></td>
+               <td>".$me['marque']."</td>
+               <td><textarea disabled>".$me['adresseF']."</textarea></td>
+               <td><textarea disabled>".$me['telF']."</textarea></td>
+                <td><button  class='btn' type='button' onclick='app(this)' value='".$me['marque']."'><i class='bi bi-pencil-square text-success' style='font-size:22px;'></i></button></td>
+                <td><button  class='btn'   onclick='supprimer(this)'   name='supprimere' type='button'  value='".$me['marque']."'><i class='bi bi-trash3-fill text-danger' style='font-size:22px;'></i></button></td>
                </tr>
                ";
            }
 
            ?>
             </tbody>
+        
+
        </table>
+       
        <?php
          echo "<b style='font-size:11px;color:'grey''>Showing 1 to 10 of ".$c." entries</b>";
        ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    </div>
    </form>
    <style>
@@ -168,7 +207,9 @@
           
            justify-content: center;
            align-items: center;
+           
        }
+         
        #btn {
 
         background-image: linear-gradient(to right, #f46b45 0%, #eea849 51%, #f46b45 100%);
@@ -240,7 +281,36 @@
        
     }
    </style>
+   
+
+
+
+
+
+
    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 <script>
   
@@ -252,13 +322,17 @@
         let text = 'Vraiment?.';
         if (confirm(text)==true){
            x.type="submit";
+           
+        
+           
         } 
         else{
             x.type="button";
         }
+          
+    
     }
     $('.add').hide();
-     //function on clik add new 
     $(".lole").click(function(){
         $(".add").slideToggle("slow");
         document.getElementById('id').value="";
@@ -271,27 +345,32 @@
     });
     $('.close').click(function(){
         $(".add").slideUp("slow")
-   
     })
 //  $('.lole').hide();
- //function replace les info de tgable dane form
+ 
+
+
+
 function app(x){
     document.getElementById('btn').innerHTML="<i class=' bi bi-arrow-repeat mx-2 'style='font-size:24px;'></i>Update artice"
     document.getElementById('btn').name='update'
+ 
     $(".add").slideDown("slow");
-     document.getElementById('id').value=x.parentNode.parentNode.parentNode.children[0].innerHTML
-     document.getElementById('titre').value=x.parentNode.parentNode.parentNode.children[1].innerHTML
-     document.getElementById('auteur').value=x.parentNode.parentNode.parentNode.children[4].innerHTML
-      document.getElementById('desce').value=x.parentNode.parentNode.parentNode.children[3].children[0].innerHTML
+     document.getElementById('id').value=x.parentNode.parentNode.children[0].innerHTML
+     document.getElementById('qeu').value=x.parentNode.parentNode.children[1].children[0].innerHTML
+     document.getElementById('rep').value=x.parentNode.parentNode.children[2].children[0].innerHTML
     // document.getElementById('ffil').innerHTML=x.parentNode.parentNode.parentNode.children[5].innerHTML   
      
     }
-//function searsh
+$(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
+});
+
+
 </script>
 </html>
